@@ -38,7 +38,7 @@ public class GlobalErrorControlador extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(CamposDuplicadosException.class)
     @ResponseStatus(HttpStatus.CONFLICT)
-    public ProblemDetail handleRegistroYaExistente(CamposDuplicadosException ex, WebRequest request){
+    public ProblemDetail handleCamposDuplicados(CamposDuplicadosException ex, WebRequest request){
         ProblemDetail resultado= ProblemDetail.forStatusAndDetail(HttpStatus.CONFLICT, ex.getMessage());
         resultado.setTitle("Campos duplicados");
         resultado.setType(URI.create("https://api.recreadejuerga.com/errores/campos-duplicados"));
@@ -77,4 +77,16 @@ public class GlobalErrorControlador extends ResponseEntityExceptionHandler {
 
         return handleExceptionInternal(ex, problem, headers, status, request);
     }
+
+    @ExceptionHandler(ClasificacionNoEncontradaException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ProblemDetail handleClasificacionNoEncontrada(ClasificacionNoEncontradaException ex, WebRequest request){
+        ProblemDetail resultado= ProblemDetail.forStatusAndDetail(HttpStatus.NOT_FOUND, ex.getMessage());
+        resultado.setTitle("Clasificación no encontrada");
+        resultado.setType(URI.create("https://api.recreadejuerga.com/errores/clasificacion-no-encontrada"));
+        resultado.setInstance(URI.create(request.getDescription(false).replace("uri=", "")));
+        return resultado;
+    }
+
+
 }
