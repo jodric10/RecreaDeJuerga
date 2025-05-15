@@ -11,9 +11,7 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class EquipoDTO {
-    private UUID id;
-    private String nombre;
-    private String url_logo;
+public class EquipoSalidaDTO {
+    private EquipoDTO equipo;
     private ClasificacionCamposPrincipales clasificacion;
 }

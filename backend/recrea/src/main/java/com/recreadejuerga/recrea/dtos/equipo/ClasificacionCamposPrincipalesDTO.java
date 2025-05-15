@@ -10,7 +10,6 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ClasificacionCamposPrincipales {
-    private Integer posicion;
     private Integer puntos;
     private Integer partidosJugados;
 }
