@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.UuidGenerator;
 
 import java.time.LocalDate;
 import java.util.*;
@@ -21,7 +23,7 @@ import java.util.*;
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Jugador {
         @Id
-        @Column(name = "id", nullable = false)
+        @UuidGenerator
         private UUID id;
 
         @Column(name = "nombre", nullable = false, length = 100)
@@ -61,15 +63,7 @@ public class Jugador {
         @OneToMany(mappedBy = "jugador", cascade = CascadeType.ALL, orphanRemoval = true)
         private List<JugadorParecido> parecidos= new ArrayList<>();
 
-        @ManyToMany
-        @JoinTable(
-                name = "jugadores_nacionalidad",
-                joinColumns = @JoinColumn(name = "jugador_id"),
-                inverseJoinColumns = @JoinColumn(name = "nacionalidad_id")
-        )
-        private Set<Nacionalidad> nacionalidades = new HashSet<>();
-
-        @OneToMany(mappedBy = "mvp",cascade = CascadeType.ALL,orphanRemoval = true)
+        @OneToMany(mappedBy = "mvp",cascade = CascadeType.ALL, orphanRemoval = true)
         private List<Partido> partidosComoMvp= new ArrayList<>();
 
         @Column(name = "foto_frontal", columnDefinition = "TEXT")

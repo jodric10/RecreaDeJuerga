@@ -5,13 +5,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.UUID;
-
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class EquipoSalidaDTO {
+public class EquipoResponseDTO {
     private EquipoDTO equipo;
-    private ClasificacionCamposPrincipales clasificacion;
+    private ClasificacionCamposPrincipalesDTO clasificacion;
 }

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.UuidGenerator;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -11,7 +12,8 @@ import java.util.UUID;
 @Entity
 @Table(name = "partidos",
         uniqueConstraints = {
-        @UniqueConstraint(name = "partido_unico", columnNames = {"fecha","lugar"})
+        @UniqueConstraint(name = "uk_partido_fecha_lugar", columnNames = {"fecha","lugar"}),
+                @UniqueConstraint(name = "uk_partido_equipo_local_equipo_visitante", columnNames = {"equipo_local","equipo_visitante"})
         })
 @Getter
 @Setter
@@ -22,7 +24,7 @@ import java.util.UUID;
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Partido {
         @Id
-        @Column(name = "id", nullable = false)
+        @UuidGenerator
         private UUID id;
 
         @Column(name = "fecha", nullable = false)

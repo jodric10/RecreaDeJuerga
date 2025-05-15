@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ClasificacionCamposPrincipales {
+public class ClasificacionCamposPrincipalesDTO {
     private Integer puntos;
     private Integer partidosJugados;
 }
