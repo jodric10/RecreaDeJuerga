@@ -1,8 +1,7 @@
 package com.recreadejuerga.recrea.controladores;
 
-import com.recreadejuerga.recrea.dtos.equipo.EquipoDTO;
-import com.recreadejuerga.recrea.dtos.equipo.EquipoEditarDTO;
-import com.recreadejuerga.recrea.dtos.equipo.EquipoInsertDTO;
+import com.recreadejuerga.recrea.dtos.equipo.EquipoResponseDTO;
+import com.recreadejuerga.recrea.dtos.equipo.EquipoFormularioDTO;
 import com.recreadejuerga.recrea.servicios.EquipoServicio;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -22,7 +21,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/equipos")
-@Tag(name = "Equipos", description = "Gestión básica de equipos")
+@Tag(name = "Equipos", description = "Gestión básica de los equipos")
 public class EquipoControlador {
 
     @Autowired
@@ -31,13 +30,13 @@ public class EquipoControlador {
     @Operation(
             summary = "Obtener una lista de todos los equipos",
             description = "Permite obtener la información de todos los equipos",
-            tags = {"parámetros", "equipos", "detalle"}
+            tags = {"todos","detalles"}
     )
     @ApiResponse(
             description = "Información detallada de todos los equipos", responseCode = "200",
             content = @Content(
                     mediaType = "application/json",
-                    schema = @Schema(implementation = EquipoDTO.class),
+                    schema = @Schema(implementation = EquipoResponseDTO.class),
                     examples = {
                             @ExampleObject("""
                                     [
@@ -67,21 +66,21 @@ public class EquipoControlador {
             )
     )
     @GetMapping
-    public ResponseEntity<List<EquipoDTO>> getEquipos(){
-        List<EquipoDTO> equipos= equipoServicio.getEquipos();
+    public ResponseEntity<List<EquipoResponseDTO>> getEquipos(){
+        List<EquipoResponseDTO> equipos= equipoServicio.getEquipos();
         return ResponseEntity.ok(equipos);
     }
 
     @Operation(
             summary = "Obtener un equipo concreto",
             description = "Permite obtener la información de un equipo si se le proporciona un id",
-            tags = {"parámetros", "equipos", "detalle"}
+            tags = {"parámetros","detalles"}
     )
     @ApiResponse(
             description = "Información detallada del equipo", responseCode = "200",
             content = @Content(
                     mediaType = "application/json",
-                    schema = @Schema(implementation = EquipoDTO.class),
+                    schema = @Schema(implementation = EquipoResponseDTO.class),
                     examples = {
                             @ExampleObject("""
                                     {
@@ -99,20 +98,20 @@ public class EquipoControlador {
             )
     )
     @GetMapping("/{id}")
-    public ResponseEntity<EquipoDTO> getEquipoById(@Parameter(description = "Identificador del equipo") @PathVariable UUID id){
+    public ResponseEntity<EquipoResponseDTO> getEquipoById(@Parameter(description = "Identificador del equipo") @PathVariable UUID id){
         return ResponseEntity.ok(equipoServicio.getEquipo(id));
     }
 
     @Operation(
             summary = "Para crear un equipo en la base de datos",
             description = "Permite crear un equipo proporcionando un DTO",
-            tags = {"parámetros", "equipos", "creacion"}
+            tags = {"parámetros","creación"}
     )
     @ApiResponse(
             description = "El equipo creado en la base de datos", responseCode = "200",
             content = @Content(
                     mediaType = "application/json",
-                    schema = @Schema(implementation = EquipoDTO.class),
+                    schema = @Schema(implementation = EquipoResponseDTO.class),
                     examples = {
                             @ExampleObject("""
                                     {
@@ -126,35 +125,35 @@ public class EquipoControlador {
             )
     )
     @PostMapping("/alta")
-    public ResponseEntity<EquipoDTO> crear(@io.swagger.v3.oas.annotations.parameters.RequestBody(
+    public ResponseEntity<EquipoResponseDTO> crear(@io.swagger.v3.oas.annotations.parameters.RequestBody(
             description = "Equipo a crear",
             required = true,
             content = @Content(
                     mediaType = "application/json",
-                    schema = @Schema(implementation = EquipoInsertDTO.class),
+                    schema = @Schema(implementation = EquipoFormularioDTO.class),
                     examples = {
                             @ExampleObject("""
                                     {
-                                        "name": "Real Madrid FC",
+                                        "nombre": "Real Madrid FC",
                                         "url_logo": "http://example.com/logo1.png"
                                     }
                                     """)
                     }
             )
-    ) @Valid @RequestBody EquipoInsertDTO equipo) {
+    ) @Valid @RequestBody EquipoFormularioDTO equipo) {
         return ResponseEntity.status(HttpStatus.CREATED).body(equipoServicio.insertarEquipo(equipo));
     }
 
     @Operation(
-            summary = "Para crear un equipo en la base de datos",
+            summary = "Para modificar un equipo en la base de datos",
             description = "Permite editar un equipo proporcionando un DTO con los datos y un id",
-            tags = {"parámetros", "equipos", "actualizar"}
+            tags = {"parámetros","actualizar"}
     )
     @ApiResponse(
             description = "El equipo actualizado en la base de datos", responseCode = "200",
             content = @Content(
                     mediaType = "application/json",
-                    schema = @Schema(implementation = EquipoDTO.class),
+                    schema = @Schema(implementation = EquipoResponseDTO.class),
                     examples = {
                             @ExampleObject("""
                                     {
@@ -172,30 +171,30 @@ public class EquipoControlador {
             )
     )
     @PutMapping("/{id}")
-    public ResponseEntity<EquipoDTO> editar(@io.swagger.v3.oas.annotations.parameters.RequestBody(
+    public ResponseEntity<EquipoResponseDTO> editar(@io.swagger.v3.oas.annotations.parameters.RequestBody(
             description = "Equipo para editar",
             required = true,
             content = @Content(
                     mediaType = "application/json",
-                    schema = @Schema(implementation = EquipoEditarDTO.class),
+                    schema = @Schema(implementation = EquipoFormularioDTO.class),
                     examples = {
                             @ExampleObject("""
                                     {
-                                        "name": "Real Madrid FC",
+                                        "nombre": "Real Madrid FC",
                                         "url_logo": "http://example.com/logo1.png"
                                     }
                                     """)
                     }
             )
-    ) @Valid @RequestBody EquipoEditarDTO equipo, @PathVariable UUID id){
-        EquipoDTO actualizado = equipoServicio.modificarEquipo(equipo, id);
+    ) @Valid @RequestBody EquipoFormularioDTO equipo, @Parameter(description = "Identificador del equipo") @PathVariable UUID id){
+        EquipoResponseDTO actualizado = equipoServicio.modificarEquipo(equipo, id);
         return ResponseEntity.ok(actualizado);
     }
 
     @Operation(
             summary = "Para borrar un equipo de la base de datos",
             description = "Permite borrar un equipo mediante un id",
-            tags = {"parámetros", "equipos", "eliminar"}
+            tags = {"parámetros","eliminar"}
     )
     @ApiResponse(
             description = "El equipo eliminado en la base de datos", responseCode = "204"
@@ -205,6 +204,5 @@ public class EquipoControlador {
         equipoServicio.eliminarEquipo(id);
         return ResponseEntity.noContent().build();
     }
-
 
 }

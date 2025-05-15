@@ -28,9 +28,6 @@ public class Clasificacion {
     @JoinColumn(name = "equipo_id", foreignKey = @ForeignKey(name = "fk_equipo_clasificacion"))
     private Equipo equipo;
 
-    @Column(name = "posicion")
-    private Integer posicion;
-
     @Column(name = "puntos")
     private Integer puntos = 0;
 
@@ -46,8 +43,8 @@ public class Clasificacion {
     @Column(name = "perdidos")
     private Integer perdidos = 0;
 
-    @Column(name = "goles_favor")
-    private Integer golesFavor = 0;
+    @Column(name = "goles_a_favor")
+    private Integer golesAFavor = 0;
 
     @Column(name = "goles_contra")
     private Integer golesContra = 0;
@@ -56,5 +53,5 @@ public class Clasificacion {
     private Integer diferenciaGoles = 0;
 
     @Column(name = "promedio_tf_tc", precision = 4, scale = 2)
-    private BigDecimal promedioTfTc;
+    private BigDecimal promedioTfTc = BigDecimal.valueOf(0.0);
 }

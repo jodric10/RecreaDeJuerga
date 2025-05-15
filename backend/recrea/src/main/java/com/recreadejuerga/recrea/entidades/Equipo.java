@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.UuidGenerator;
 import org.hibernate.mapping.Constraint;
 import org.w3c.dom.Text;
 
@@ -22,6 +24,7 @@ import java.util.UUID;
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Equipo {
     @Id
+    @UuidGenerator
     private UUID id;
 
     @OneToOne(mappedBy = "equipo", cascade = CascadeType.ALL, orphanRemoval = true)

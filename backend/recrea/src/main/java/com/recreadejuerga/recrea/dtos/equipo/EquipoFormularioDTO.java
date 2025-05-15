@@ -11,7 +11,7 @@ import org.hibernate.validator.constraints.URL;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class EquipoEditarDTO {
+public class EquipoFormularioDTO {
     @NotBlank(message = "El nombre no puede estar vacío")
     private String nombre;
 
