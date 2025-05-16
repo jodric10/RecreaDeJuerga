@@ -13,7 +13,7 @@ import java.util.*;
 @Entity
 @Table(name = "jugadores",
         uniqueConstraints = {
-            @UniqueConstraint(name = "unique_dorsal_por_team", columnNames = {"equipo_id", "dorsal"})
+            @UniqueConstraint(name = "uk_jugador_equipo_dorsal", columnNames = {"equipo_id", "dorsal"})
         })
 @Getter
 @Setter

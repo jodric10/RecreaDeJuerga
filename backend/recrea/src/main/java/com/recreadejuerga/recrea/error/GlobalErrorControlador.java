@@ -88,5 +88,25 @@ public class GlobalErrorControlador extends ResponseEntityExceptionHandler {
         return resultado;
     }
 
+    @ExceptionHandler(JugadorNoEncontradoException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ProblemDetail handleClasificacionNoEncontrada(JugadorNoEncontradoException ex, WebRequest request){
+        ProblemDetail resultado= ProblemDetail.forStatusAndDetail(HttpStatus.NOT_FOUND, ex.getMessage());
+        resultado.setTitle("Jugadores no encontrados");
+        resultado.setType(URI.create("https://api.recreadejuerga.com/errores/jugadores-no-encontrados"));
+        resultado.setInstance(URI.create(request.getDescription(false).replace("uri=", "")));
+        return resultado;
+    }
+
+    @ExceptionHandler(JugadorYaExistenteException.class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public ProblemDetail handleClasificacionNoEncontrada(JugadorYaExistenteException ex, WebRequest request){
+        ProblemDetail resultado= ProblemDetail.forStatusAndDetail(HttpStatus.CONFLICT, ex.getMessage());
+        resultado.setTitle("Jugadores ya existente");
+        resultado.setType(URI.create("https://api.recreadejuerga.com/errores/jugadores-ya-existente"));
+        resultado.setInstance(URI.create(request.getDescription(false).replace("uri=", "")));
+        return resultado;
+    }
+
 
 }
