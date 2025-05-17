@@ -1,9 +1,7 @@
 package com.recreadejuerga.recrea.controladores;
 
+import com.recreadejuerga.recrea.dtos.clasificacion.ClasificacionDTO;
 import com.recreadejuerga.recrea.dtos.clasificacion.ClasificacionEditarDTO;
-import com.recreadejuerga.recrea.dtos.clasificacion.ClasificacionResponseDTO;
-import com.recreadejuerga.recrea.dtos.equipo.EquipoResponseDTO;
-import com.recreadejuerga.recrea.entidades.Clasificacion;
 import com.recreadejuerga.recrea.servicios.ClasificacionServicio;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -37,7 +35,7 @@ public class ClasificacionControlador {
             description = "Información detallada de la clasificación de la liga", responseCode = "200",
             content = @Content(
                     mediaType = "application/json",
-                    schema = @Schema(implementation = Clasificacion.class),
+                    schema = @Schema(implementation = ClasificacionDTO.class),
                     examples = {
                             @ExampleObject("""
                                     [
@@ -81,8 +79,8 @@ public class ClasificacionControlador {
             )
     )
     @GetMapping
-    public ResponseEntity<List<ClasificacionResponseDTO>> getClasificacion(){
-        List<ClasificacionResponseDTO> clasificacion= clasificacionServicio.getClasificacion();
+    public ResponseEntity<List<ClasificacionDTO>> getClasificacion(){
+        List<ClasificacionDTO> clasificacion= clasificacionServicio.getClasificacion();
         return ResponseEntity.ok(clasificacion);
     }
 
@@ -96,7 +94,7 @@ public class ClasificacionControlador {
             description = "La clasificación del equipo actualizada en la base de datos", responseCode = "200",
             content = @Content(
                     mediaType = "application/json",
-                    schema = @Schema(implementation = EquipoResponseDTO.class),
+                    schema = @Schema(implementation = ClasificacionEditarDTO.class),
                     examples = {
                             @ExampleObject("""
                                     {
@@ -121,7 +119,7 @@ public class ClasificacionControlador {
             )
     )
     @PutMapping("/{id}")
-    public ResponseEntity<ClasificacionResponseDTO> editar(@io.swagger.v3.oas.annotations.parameters.RequestBody(
+        public ResponseEntity<ClasificacionDTO> editar(@io.swagger.v3.oas.annotations.parameters.RequestBody(
             description = "Clasificación de un equipo para modificar",
             required = true,
             content = @Content(
@@ -142,7 +140,7 @@ public class ClasificacionControlador {
                     }
             )
     )@Valid @RequestBody ClasificacionEditarDTO clasificacion, @Parameter(description = "Identificador de la clasificación de un equipo") @PathVariable UUID id){
-        ClasificacionResponseDTO actualizado = clasificacionServicio.modificarClasificacion(clasificacion, id);
+        ClasificacionDTO actualizado = clasificacionServicio.modificarClasificacion(clasificacion, id);
         return ResponseEntity.ok(actualizado);
     }
 }

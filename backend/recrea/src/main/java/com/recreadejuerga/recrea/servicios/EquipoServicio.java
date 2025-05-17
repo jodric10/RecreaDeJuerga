@@ -21,25 +21,25 @@ public class EquipoServicio {
     @Autowired
     private EquipoRepositorio repo;
 
-    public List<EquipoResponseDTO> getEquipos() {
+    public List<EquipoDTO> getEquipos() {
         List<Equipo> equipos = repo.findAll();
         if (equipos.isEmpty())
             throw new EquipoNoEncontradoException();
-        return equipos.stream().map(EquipoMapper::toEquipoResponseDTO).toList();
+        return equipos.stream().map(EquipoMapper::toEquipoDTO).toList();
     }
 
-    public EquipoResponseDTO getEquipo(UUID id) {
-        return repo.findById(id).map(EquipoMapper::toEquipoResponseDTO).orElseThrow(() -> new EquipoNoEncontradoException(id));
+    public EquipoDTO getEquipo(UUID id) {
+        return repo.findById(id).map(EquipoMapper::toEquipoDTO).orElseThrow(() -> new EquipoNoEncontradoException(id));
     }
 
-    public EquipoResponseDTO insertarEquipo(EquipoFormularioDTO e) {
+    public EquipoDTO insertarEquipo(EquipoFormularioDTO e) {
         if (repo.buscarPorNombre(e.getNombre()).isPresent())
             throw new EquipoYaExistenteException(e.getNombre());
 
         try {
             Equipo equipo= EquipoMapper.toEquipo(e);
             Equipo equipoGuardado = repo.save(equipo);
-            return EquipoMapper.toEquipoResponseDTO(equipoGuardado);
+            return EquipoMapper.toEquipoDTO(equipoGuardado);
 
         } catch (DataIntegrityViolationException ex) {
             Throwable causa = ex.getRootCause();
@@ -57,11 +57,11 @@ public class EquipoServicio {
         }
     }
 
-    public EquipoResponseDTO modificarEquipo(EquipoFormularioDTO e, UUID id) {
+    public EquipoDTO modificarEquipo(EquipoFormularioDTO e, UUID id) {
         if (repo.existsById(id)) {
             try {
                 repo.actualizarEquipo(id, e.getNombre(), e.getUrl_logo());
-                return repo.findById(id).map(EquipoMapper::toEquipoResponseDTO).orElseThrow(() -> new EquipoNoEncontradoException(id));
+                return repo.findById(id).map(EquipoMapper::toEquipoDTO).orElseThrow(() -> new EquipoNoEncontradoException(id));
             } catch (DataIntegrityViolationException ex) {
                 Throwable causa = ex.getRootCause();
                 if (causa != null) {

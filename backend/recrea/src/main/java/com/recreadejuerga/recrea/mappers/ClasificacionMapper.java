@@ -1,7 +1,7 @@
 package com.recreadejuerga.recrea.mappers;
 
 import com.recreadejuerga.recrea.dtos.clasificacion.ClasificacionDTO;
-import com.recreadejuerga.recrea.dtos.clasificacion.ClasificacionResponseDTO;
+import com.recreadejuerga.recrea.dtos.equipo.EquipoDTO;
 import com.recreadejuerga.recrea.entidades.Clasificacion;
 
 public class ClasificacionMapper {
@@ -18,13 +18,8 @@ public class ClasificacionMapper {
                 clasificacion.getGolesAFavor(),
                 clasificacion.getGolesContra(),
                 clasificacion.getDiferenciaGoles(),
-                clasificacion.getPromedioTfTc()
+                clasificacion.getPromedioTfTc(),
+                EquipoMapper.toEquipoDTO(clasificacion.getEquipo())
         );
-    }
-
-    public static ClasificacionResponseDTO toClasificacionResponseDTO(Clasificacion clasificacion){
-        if(clasificacion==null) return null;
-        ClasificacionDTO salida_clasificacion= toClasificacionDTO(clasificacion);
-        return new ClasificacionResponseDTO(salida_clasificacion,EquipoMapper.toEquipoDTO(clasificacion.getEquipo()));
     }
 }

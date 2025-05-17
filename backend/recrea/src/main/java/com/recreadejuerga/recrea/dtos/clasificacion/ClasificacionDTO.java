@@ -1,5 +1,6 @@
 package com.recreadejuerga.recrea.dtos.clasificacion;
 
+import com.recreadejuerga.recrea.dtos.equipo.EquipoDTO;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,4 +24,5 @@ public class ClasificacionDTO {
     private Integer golesContra;
     private Integer diferenciaGoles;
     private BigDecimal promedioTfTc;
+    private EquipoDTO equipo;
 }
