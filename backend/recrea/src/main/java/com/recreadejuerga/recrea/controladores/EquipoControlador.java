@@ -1,6 +1,6 @@
 package com.recreadejuerga.recrea.controladores;
 
-import com.recreadejuerga.recrea.dtos.equipo.EquipoResponseDTO;
+import com.recreadejuerga.recrea.dtos.equipo.EquipoDTO;
 import com.recreadejuerga.recrea.dtos.equipo.EquipoFormularioDTO;
 import com.recreadejuerga.recrea.servicios.EquipoServicio;
 import io.swagger.v3.oas.annotations.Operation;
@@ -36,38 +36,29 @@ public class EquipoControlador {
             description = "Información detallada de todos los equipos", responseCode = "200",
             content = @Content(
                     mediaType = "application/json",
-                    schema = @Schema(implementation = EquipoResponseDTO.class),
+                    schema = @Schema(implementation = EquipoDTO.class),
                     examples = {
                             @ExampleObject("""
                                     [
-                                       {
-                                             "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-                                             "nombre": "Real Madrid CF",
-                                             "url_logo": "http://example.com/logo1.png",
-                                             "clasificacion": {
-                                               "posicion": 1,
-                                               "puntos": 80,
-                                               "partidosJugados": 35
-                                             }
-                                           },
-                                           {
-                                             "id": "3fa85f64-5717-4562-b3fc-2c963f54rds2",
-                                             "nombre": "Barcelona FC",
-                                             "url_logo": "http://example.com/logo2.png",
-                                             "clasificacion": {
-                                               "posicion": 2,
-                                               "puntos": 78,
-                                               "partidosJugados": 35
-                                             }
-                                           }
+                                      {
+                                        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                                        "nombre": "Real Madrid CF",
+                                        "url_logo": "http://example.com/logo1.png"
+                                      },
+                                      {
+                                        "id": "3fa85f64-5717-4562-b3fc-2c963f54rds2",
+                                        "nombre": "Barcelona FC",
+                                        "url_logo": "http://example.com/logo2.png"
+                                      }
                                     ]
+                                    
                                     """)
                     }
             )
     )
     @GetMapping
-    public ResponseEntity<List<EquipoResponseDTO>> getEquipos(){
-        List<EquipoResponseDTO> equipos= equipoServicio.getEquipos();
+    public ResponseEntity<List<EquipoDTO>> getEquipos(){
+        List<EquipoDTO> equipos= equipoServicio.getEquipos();
         return ResponseEntity.ok(equipos);
     }
 
@@ -80,25 +71,20 @@ public class EquipoControlador {
             description = "Información detallada del equipo", responseCode = "200",
             content = @Content(
                     mediaType = "application/json",
-                    schema = @Schema(implementation = EquipoResponseDTO.class),
+                    schema = @Schema(implementation = EquipoDTO.class),
                     examples = {
                             @ExampleObject("""
                                     {
-                                        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-                                        "name": "Real Madrid FC",
-                                        "url_logo": "http://example.com/logo1.png",
-                                        clasificacion:{
-                                            "posicion": 1,
-                                            "puntos":80,
-                                            "partidosJugados":35
-                                        }
+                                      "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                                      "nombre": "Real Madrid FC",
+                                      "url_logo": "http://example.com/logo1.png",
                                     }
                                     """)
                     }
             )
     )
     @GetMapping("/{id}")
-    public ResponseEntity<EquipoResponseDTO> getEquipoById(@Parameter(description = "Identificador del equipo") @PathVariable UUID id){
+    public ResponseEntity<EquipoDTO> getEquipoById(@Parameter(description = "Identificador del equipo") @PathVariable UUID id){
         return ResponseEntity.ok(equipoServicio.getEquipo(id));
     }
 
@@ -111,21 +97,20 @@ public class EquipoControlador {
             description = "El equipo creado en la base de datos", responseCode = "200",
             content = @Content(
                     mediaType = "application/json",
-                    schema = @Schema(implementation = EquipoResponseDTO.class),
+                    schema = @Schema(implementation = EquipoDTO.class),
                     examples = {
                             @ExampleObject("""
                                     {
                                         "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-                                        "name": "Real Madrid FC",
-                                        "url_logo": "http://example.com/logo1.png",
-                                        clasificacion: null
+                                        "nombre": "Real Madrid FC",
+                                        "url_logo": "http://example.com/logo1.png"
                                     }
                                     """)
                     }
             )
     )
     @PostMapping("/alta")
-    public ResponseEntity<EquipoResponseDTO> crear(@io.swagger.v3.oas.annotations.parameters.RequestBody(
+    public ResponseEntity<EquipoDTO> crear(@io.swagger.v3.oas.annotations.parameters.RequestBody(
             description = "Equipo a crear",
             required = true,
             content = @Content(
@@ -153,12 +138,12 @@ public class EquipoControlador {
             description = "El equipo actualizado en la base de datos", responseCode = "200",
             content = @Content(
                     mediaType = "application/json",
-                    schema = @Schema(implementation = EquipoResponseDTO.class),
+                    schema = @Schema(implementation = EquipoDTO.class),
                     examples = {
                             @ExampleObject("""
                                     {
                                         "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-                                        "name": "Real Madrid FC",
+                                        "nombre": "Real Madrid FC",
                                         "url_logo": "http://example.com/logo1.png",
                                         clasificacion: {
                                             "posicion": 1,
@@ -171,7 +156,7 @@ public class EquipoControlador {
             )
     )
     @PutMapping("/{id}")
-    public ResponseEntity<EquipoResponseDTO> editar(@io.swagger.v3.oas.annotations.parameters.RequestBody(
+    public ResponseEntity<EquipoDTO> editar(@io.swagger.v3.oas.annotations.parameters.RequestBody(
             description = "Equipo para editar",
             required = true,
             content = @Content(
@@ -187,7 +172,7 @@ public class EquipoControlador {
                     }
             )
     ) @Valid @RequestBody EquipoFormularioDTO equipo, @Parameter(description = "Identificador del equipo") @PathVariable UUID id){
-        EquipoResponseDTO actualizado = equipoServicio.modificarEquipo(equipo, id);
+        EquipoDTO actualizado = equipoServicio.modificarEquipo(equipo, id);
         return ResponseEntity.ok(actualizado);
     }
 

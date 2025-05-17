@@ -1,10 +1,9 @@
 package com.recreadejuerga.recrea.servicios;
 
+import com.recreadejuerga.recrea.dtos.jugador.JugadorDTO;
 import com.recreadejuerga.recrea.dtos.jugador.JugadorFormularioDTO;
-import com.recreadejuerga.recrea.dtos.jugador.JugadorResponseDTO;
 import com.recreadejuerga.recrea.entidades.Jugador;
 import com.recreadejuerga.recrea.error.*;
-import com.recreadejuerga.recrea.mappers.EquipoMapper;
 import com.recreadejuerga.recrea.mappers.JugadorMapper;
 import com.recreadejuerga.recrea.repositorios.JugadorRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,24 +24,28 @@ public class JugadorServicio {
     private EquipoServicio EquipoServicio;
 
 
-    public List<JugadorResponseDTO> getJugadoresByEquipo(UUID equipo_id){
+    public List<JugadorDTO> getJugadoresByEquipo(UUID equipo_id){
         List<Jugador> jugadores= repo.getJugadoresByEquipo(equipo_id);
         if (jugadores.isEmpty()){
-            String nombreEquipo= EquipoServicio.getEquipo(equipo_id).getEquipo().getNombre();
+            String nombreEquipo= EquipoServicio.getEquipo(equipo_id).getNombre();
             throw new JugadorNoEncontradoException(nombreEquipo);
         }
-        return jugadores.stream().map(JugadorMapper::toJugadorResponseDTO).toList();
+        return jugadores.stream().map(JugadorMapper::toJugadorDTO).toList();
     }
 
-    public JugadorResponseDTO insertarJugador(JugadorFormularioDTO jugador) {
-        String nombreEquipo= EquipoServicio.getEquipo(jugador.getEquipoId()).getEquipo().getNombre();
+    public JugadorDTO getJugadorById(UUID id){
+        return repo.findById(id).map(JugadorMapper::toJugadorDTO).orElseThrow(() -> new JugadorNoEncontradoException(id));
+    }
+
+    public JugadorDTO insertarJugador(JugadorFormularioDTO jugador) {
+        String nombreEquipo= EquipoServicio.getEquipo(jugador.getEquipoId()).getNombre();
         if (repo.getJugador(jugador.getDorsal(),jugador.getEquipoId()).isPresent()) {
             throw new JugadorYaExistenteException(nombreEquipo,jugador.getDorsal());
         }
         try {
            Jugador insertar_jugador=JugadorMapper.toJugador(jugador);
            Jugador insertado=repo.save(insertar_jugador);
-           return JugadorMapper.toJugadorResponseDTO(insertado);
+           return JugadorMapper.toJugadorDTO(insertado);
 
         } catch (DataIntegrityViolationException ex) {
             Throwable causa = ex.getRootCause();
@@ -61,12 +64,12 @@ public class JugadorServicio {
         }
     }
 
-    public JugadorResponseDTO modificarEquipo(JugadorFormularioDTO jugador, UUID id) {
-        String nombreEquipo= EquipoServicio.getEquipo(jugador.getEquipoId()).getEquipo().getNombre();
+    public JugadorDTO modificarJugador(JugadorFormularioDTO jugador, UUID id) {
+        String nombreEquipo= EquipoServicio.getEquipo(jugador.getEquipoId()).getNombre();
         if (repo.existsById(id)) {
             try {
-                repo.actualizarJugador(id,jugador.getNombre(),jugador.getApodo(),jugador.getDorsal(),jugador.getPosicion(),jugador.getPieDominante(),jugador.getGolesTotales(),jugador.getAsistenciasTotales(),jugador.getFortalezas(),jugador.getFechaNacimiento(),jugador.getFotoFrontal(),jugador.getFotoTarjeta(),jugador.getFotoPose());
-                return repo.findById(id).map(JugadorMapper::toJugadorResponseDTO).orElseThrow(() -> new JugadorNoEncontradoException(id));
+                repo.actualizarJugador(id,jugador.getNombre(),jugador.getApodo(),jugador.getDorsal(),jugador.getPosicion(),jugador.getPieDominante(),jugador.getGolesTotales(),jugador.getAsistenciasTotales(),jugador.getFortalezas(),jugador.getFechaNacimiento(),jugador.getEquipoId(),jugador.getFotoFrontal(),jugador.getFotoTarjeta(),jugador.getFotoPose());
+                return repo.findById(id).map(JugadorMapper::toJugadorDTO).orElseThrow(() -> new JugadorNoEncontradoException(id));
             } catch (DataIntegrityViolationException ex) {
                 Throwable causa = ex.getRootCause();
                 if (causa != null) {

@@ -19,14 +19,14 @@ public interface JugadorRepositorio extends JpaRepository<Jugador, UUID> {
     @Query("""
             SELECT j
             FROM Jugador j
-            WHERE equipo = :equipo_id
+            WHERE j.equipo.id = :equipo_id
             """)
     List<Jugador> getJugadoresByEquipo(@Param("equipo_id") UUID equipo_id);
 
     @Query("""
             SELECT j
             FROM Jugador j
-            WHERE dorsal = :dorsal AND equipo_id = :equipo_id
+            WHERE j.dorsal = :dorsal AND j.equipo.id = :equipo_id
             """)
     Optional<Jugador> getJugador(@Param("dorsal") Integer dorsal, @Param("equipo_id") UUID equipo_id);
 
@@ -43,6 +43,7 @@ public interface JugadorRepositorio extends JpaRepository<Jugador, UUID> {
         j.asistenciasTotales = :asistenciasTotales,
         j.fortalezas = :fortalezas,
         j.fechaNacimiento = :fechaNacimiento,
+        j.equipo.id = :equipo_id,
         j.fotoFrontal = :fotoFrontal,
         j.fotoTarjeta = :fotoTarjeta,
         j.fotoPose = :fotoPose
@@ -59,6 +60,7 @@ public interface JugadorRepositorio extends JpaRepository<Jugador, UUID> {
             @Param("asistenciasTotales") Integer asistenciasTotales,
             @Param("fortalezas") String fortalezas,
             @Param("fechaNacimiento") LocalDate fechaNacimiento,
+            @Param("equipo_id") UUID equipo_id,
             @Param("fotoFrontal") String fotoFrontal,
             @Param("fotoTarjeta") String fotoTarjeta,
             @Param("fotoPose") String fotoPose

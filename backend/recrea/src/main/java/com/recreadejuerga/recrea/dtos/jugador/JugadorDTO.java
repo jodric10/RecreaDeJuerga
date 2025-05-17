@@ -1,5 +1,6 @@
 package com.recreadejuerga.recrea.dtos.jugador;
 
+import com.recreadejuerga.recrea.dtos.equipo.EquipoDTO;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,4 +26,5 @@ public class JugadorDTO {
     private String fotoFrontal;
     private String fotoTarjeta;
     private String fotoPose;
+    private EquipoDTO equipo;
 }
