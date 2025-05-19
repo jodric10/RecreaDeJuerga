@@ -128,5 +128,25 @@ public class GlobalErrorControlador extends ResponseEntityExceptionHandler {
         return resultado;
     }
 
+    @ExceptionHandler(PartidoNoEncontradoException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ProblemDetail handlePartidoNoEncontrado(PartidoNoEncontradoException ex, WebRequest request){
+        ProblemDetail resultado= ProblemDetail.forStatusAndDetail(HttpStatus.NOT_FOUND, ex.getMessage());
+        resultado.setTitle("Partido no encontrado");
+        resultado.setType(URI.create("https://api.recreadejuerga.com/errores/partido-no-encontrado"));
+        resultado.setInstance(URI.create(request.getDescription(false).replace("uri=", "")));
+        return resultado;
+    }
+
+    @ExceptionHandler(PartidoYaExistenteException.class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public ProblemDetail handlePartidoNoEncontrado(PartidoYaExistenteException ex, WebRequest request){
+        ProblemDetail resultado= ProblemDetail.forStatusAndDetail(HttpStatus.CONFLICT, ex.getMessage());
+        resultado.setTitle("Partido ya existente");
+        resultado.setType(URI.create("https://api.recreadejuerga.com/errores/partido-ya-existente"));
+        resultado.setInstance(URI.create(request.getDescription(false).replace("uri=", "")));
+        return resultado;
+    }
+
 
 }
