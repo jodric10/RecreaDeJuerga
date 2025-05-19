@@ -21,7 +21,7 @@ import java.util.*;
 @AllArgsConstructor
 @Builder
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
-public class Jugador {
+public class  Jugador {
         @Id
         @UuidGenerator
         private UUID id;

@@ -1,11 +1,13 @@
 package com.recreadejuerga.recrea.dtos.jugador;
 
 import com.recreadejuerga.recrea.dtos.equipo.EquipoDTO;
+import com.recreadejuerga.recrea.dtos.jugadorparecido.JugadorParecidoSimpleDTO;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.UUID;
 
 @Getter
@@ -26,5 +28,6 @@ public class JugadorDTO {
     private String fotoFrontal;
     private String fotoTarjeta;
     private String fotoPose;
+    private List<JugadorParecidoSimpleDTO> parecidos;
     private EquipoDTO equipo;
 }

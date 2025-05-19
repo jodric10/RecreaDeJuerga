@@ -90,7 +90,7 @@ public class GlobalErrorControlador extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(JugadorNoEncontradoException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public ProblemDetail handleClasificacionNoEncontrada(JugadorNoEncontradoException ex, WebRequest request){
+    public ProblemDetail handleJugadorNoEncontrado(JugadorNoEncontradoException ex, WebRequest request){
         ProblemDetail resultado= ProblemDetail.forStatusAndDetail(HttpStatus.NOT_FOUND, ex.getMessage());
         resultado.setTitle("Jugadores no encontrados");
         resultado.setType(URI.create("https://api.recreadejuerga.com/errores/jugadores-no-encontrados"));
@@ -100,10 +100,30 @@ public class GlobalErrorControlador extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(JugadorYaExistenteException.class)
     @ResponseStatus(HttpStatus.CONFLICT)
-    public ProblemDetail handleClasificacionNoEncontrada(JugadorYaExistenteException ex, WebRequest request){
+    public ProblemDetail handleJugadorYaExistente(JugadorYaExistenteException ex, WebRequest request){
         ProblemDetail resultado= ProblemDetail.forStatusAndDetail(HttpStatus.CONFLICT, ex.getMessage());
         resultado.setTitle("Jugadores ya existente");
         resultado.setType(URI.create("https://api.recreadejuerga.com/errores/jugadores-ya-existente"));
+        resultado.setInstance(URI.create(request.getDescription(false).replace("uri=", "")));
+        return resultado;
+    }
+
+    @ExceptionHandler(JugadorParecidoNoEncontradoException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ProblemDetail handleJugadorParecidoNoEncontrado(JugadorParecidoNoEncontradoException ex, WebRequest request){
+        ProblemDetail resultado= ProblemDetail.forStatusAndDetail(HttpStatus.NOT_FOUND, ex.getMessage());
+        resultado.setTitle("Parecido no encontrado");
+        resultado.setType(URI.create("https://api.recreadejuerga.com/errores/parecido-no-encontrado"));
+        resultado.setInstance(URI.create(request.getDescription(false).replace("uri=", "")));
+        return resultado;
+    }
+
+    @ExceptionHandler(JugadorParecidoYaExistenteException.class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public ProblemDetail handleJugadorParecidoYaExistente(JugadorParecidoYaExistenteException ex, WebRequest request){
+        ProblemDetail resultado= ProblemDetail.forStatusAndDetail(HttpStatus.CONFLICT, ex.getMessage());
+        resultado.setTitle("Parecido ya existente");
+        resultado.setType(URI.create("https://api.recreadejuerga.com/errores/parecido-ya-existente"));
         resultado.setInstance(URI.create(request.getDescription(false).replace("uri=", "")));
         return resultado;
     }
