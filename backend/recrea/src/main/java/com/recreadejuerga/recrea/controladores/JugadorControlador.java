@@ -55,6 +55,16 @@ public class JugadorControlador {
                                         "fotoFrontal": "https://example.com/fotos/vini-frontal.jpg",
                                         "fotoTarjeta": "https://example.com/fotos/vini-tarjeta.jpg",
                                         "fotoPose": "https://example.com/fotos/vini-pose.jpg",
+                                        "parecidos": [
+                                          {
+                                            "id": "a1111111-bbbb-4ccc-dddd-eeeeeeeeeeee",
+                                            "parecido": "Neymar Jr"
+                                          },
+                                          {
+                                            "id": "a2222222-bbbb-4ccc-dddd-eeeeeeeeeeee",
+                                            "parecido": "Ronaldinho"
+                                          }
+                                        ],
                                         "equipo": {
                                           "id": "b8a5bfa4-7e52-4dcb-a50c-3d7dbdc4e9a2",
                                           "nombre": "Real Madrid CF",
@@ -75,6 +85,16 @@ public class JugadorControlador {
                                         "fotoFrontal": "https://example.com/fotos/bellingham-frontal.jpg",
                                         "fotoTarjeta": "https://example.com/fotos/bellingham-tarjeta.jpg",
                                         "fotoPose": "https://example.com/fotos/bellingham-pose.jpg",
+                                        "parecidos": [
+                                          {
+                                            "id": "b1111111-bbbb-4ccc-dddd-eeeeeeeeeeee",
+                                            "parecido": "Steven Gerrard"
+                                          },
+                                          {
+                                            "id": "b2222222-bbbb-4ccc-dddd-eeeeeeeeeeee",
+                                            "parecido": "Zinedine Zidane"
+                                          }
+                                        ],
                                         "equipo": {
                                           "id": "b8a5bfa4-7e52-4dcb-a50c-3d7dbdc4e9a2",
                                           "nombre": "Real Madrid CF",
@@ -104,26 +124,36 @@ public class JugadorControlador {
                     schema = @Schema(implementation = JugadorDTO.class),
                     examples = {
                             @ExampleObject("""
-                                     {
-                                        "id": "5c1d46be-1a23-4fa8-8c6e-7e6e9f98dfbb",
-                                        "nombre": "Vinícius Júnior",
-                                        "apodo": "Vini",
-                                        "dorsal": 7,
-                                        "posicion": "Extremo Izquierdo",
-                                        "pieDominante": "Derecho",
-                                        "golesTotales": 24,
-                                        "asistenciasTotales": 11,
-                                        "fortalezas": "Velocidad, regate, uno contra uno, desborde por banda",
-                                        "fechaNacimiento": "2000-07-12",
-                                        "fotoFrontal": "https://example.com/fotos/vini-frontal.jpg",
-                                        "fotoTarjeta": "https://example.com/fotos/vini-tarjeta.jpg",
-                                        "fotoPose": "https://example.com/fotos/vini-pose.jpg",
-                                        "equipo": {
-                                          "id": "b8a5bfa4-7e52-4dcb-a50c-3d7dbdc4e9a2",
-                                          "nombre": "Real Madrid CF",
-                                          "url_logo": "https://example.com/logos/realmadrid.png"
+                                    {
+                                      "id": "5c1d46be-1a23-4fa8-8c6e-7e6e9f98dfbb",
+                                      "nombre": "Vinícius Júnior",
+                                      "apodo": "Vini",
+                                      "dorsal": 7,
+                                      "posicion": "Extremo Izquierdo",
+                                      "pieDominante": "Derecho",
+                                      "golesTotales": 24,
+                                      "asistenciasTotales": 11,
+                                      "fortalezas": "Velocidad, regate, uno contra uno, desborde por banda",
+                                      "fechaNacimiento": "2000-07-12",
+                                      "fotoFrontal": "https://example.com/fotos/vini-frontal.jpg",
+                                      "fotoTarjeta": "https://example.com/fotos/vini-tarjeta.jpg",
+                                      "fotoPose": "https://example.com/fotos/vini-pose.jpg",
+                                      "parecidos": [
+                                        {
+                                          "id": "12a3b456-7890-4def-ab12-34567890abcd",
+                                          "parecido": "Neymar Jr"
+                                        },
+                                        {
+                                          "id": "34cd5678-1234-4abc-bcde-567890abcdef",
+                                          "parecido": "Ronaldinho"
                                         }
+                                      ],
+                                      "equipo": {
+                                        "id": "b8a5bfa4-7e52-4dcb-a50c-3d7dbdc4e9a2",
+                                        "nombre": "Real Madrid CF",
+                                        "url_logo": "https://example.com/logos/realmadrid.png"
                                       }
+                                    }
                                     """)
                     }
             )
@@ -147,25 +177,35 @@ public class JugadorControlador {
                     examples = {
                             @ExampleObject("""
                                     {
-                                         "id": "5c1d46be-1a23-4fa8-8c6e-7e6e9f98dfbb",
-                                         "nombre": "Vinícius Júnior",
-                                         "apodo": "Vini",
-                                         "dorsal": 7,
-                                         "posicion": "Extremo Izquierdo",
-                                         "pieDominante": "Derecho",
-                                         "golesTotales": 24,
-                                         "asistenciasTotales": 11,
-                                         "fortalezas": "Velocidad, regate, uno contra uno, desborde por banda",
-                                         "fechaNacimiento": "2000-07-12",
-                                         "fotoFrontal": "https://example.com/fotos/vini-frontal.jpg",
-                                         "fotoTarjeta": "https://example.com/fotos/vini-tarjeta.jpg",
-                                         "fotoPose": "https://example.com/fotos/vini-pose.jpg",
-                                         "equipo": {
-                                            "id": "b8a5bfa4-7e52-4dcb-a50c-3d7dbdc4e9a2",
-                                            "nombre": "Real Madrid CF",
-                                            "url_logo": "https://example.com/logos/realmadrid.png"
-                                          }
-                                     }
+                                      "id": "5c1d46be-1a23-4fa8-8c6e-7e6e9f98dfbb",
+                                      "nombre": "Vinícius Júnior",
+                                      "apodo": "Vini",
+                                      "dorsal": 7,
+                                      "posicion": "Extremo Izquierdo",
+                                      "pieDominante": "Derecho",
+                                      "golesTotales": 24,
+                                      "asistenciasTotales": 11,
+                                      "fortalezas": "Velocidad, regate, uno contra uno, desborde por banda",
+                                      "fechaNacimiento": "2000-07-12",
+                                      "fotoFrontal": "https://example.com/fotos/vini-frontal.jpg",
+                                      "fotoTarjeta": "https://example.com/fotos/vini-tarjeta.jpg",
+                                      "fotoPose": "https://example.com/fotos/vini-pose.jpg",
+                                      "parecidos": [
+                                        {
+                                          "id": "12a3b456-7890-4def-ab12-34567890abcd",
+                                          "parecido": "Neymar Jr"
+                                        },
+                                        {
+                                          "id": "34cd5678-1234-4abc-bcde-567890abcdef",
+                                          "parecido": "Ronaldinho"
+                                        }
+                                      ],
+                                      "equipo": {
+                                        "id": "b8a5bfa4-7e52-4dcb-a50c-3d7dbdc4e9a2",
+                                        "nombre": "Real Madrid CF",
+                                        "url_logo": "https://example.com/logos/realmadrid.png"
+                                      }
+                                    }
                                     """)
                     }
             )
@@ -214,25 +254,35 @@ public class JugadorControlador {
                     examples = {
                             @ExampleObject("""
                                     {
-                                         "id": "5c1d46be-1a23-4fa8-8c6e-7e6e9f98dfbb",
-                                         "nombre": "Vinícius Júnior",
-                                         "apodo": "Vini",
-                                         "dorsal": 7,
-                                         "posicion": "Extremo Izquierdo",
-                                         "pieDominante": "Derecho",
-                                         "golesTotales": 24,
-                                         "asistenciasTotales": 11,
-                                         "fortalezas": "Velocidad, regate, uno contra uno, desborde por banda",
-                                         "fechaNacimiento": "2000-07-12",
-                                         "fotoFrontal": "https://example.com/fotos/vini-frontal.jpg",
-                                         "fotoTarjeta": "https://example.com/fotos/vini-tarjeta.jpg",
-                                         "fotoPose": "https://example.com/fotos/vini-pose.jpg"
-                                         "equipo": {
-                                            "id": "b8a5bfa4-7e52-4dcb-a50c-3d7dbdc4e9a2",
-                                            "nombre": "Real Madrid CF",
-                                            "url_logo": "https://example.com/logos/realmadrid.png"
+                                        "id": "5c1d46be-1a23-4fa8-8c6e-7e6e9f98dfbb",
+                                        "nombre": "Vinícius Júnior",
+                                        "apodo": "Vini",
+                                        "dorsal": 7,
+                                        "posicion": "Extremo Izquierdo",
+                                        "pieDominante": "Derecho",
+                                        "golesTotales": 24,
+                                        "asistenciasTotales": 11,
+                                        "fortalezas": "Velocidad, regate, uno contra uno, desborde por banda",
+                                        "fechaNacimiento": "2000-07-12",
+                                        "fotoFrontal": "https://example.com/fotos/vini-frontal.jpg",
+                                        "fotoTarjeta": "https://example.com/fotos/vini-tarjeta.jpg",
+                                        "fotoPose": "https://example.com/fotos/vini-pose.jpg",
+                                        "parecidos": [
+                                          {
+                                            "id": "12a3b456-7890-4def-ab12-34567890abcd",
+                                            "parecido": "Neymar Jr"
+                                          },
+                                          {
+                                            "id": "34cd5678-1234-4abc-bcde-567890abcdef",
+                                            "parecido": "Ronaldinho"
                                           }
-                                     }
+                                        ],
+                                        "equipo": {
+                                          "id": "b8a5bfa4-7e52-4dcb-a50c-3d7dbdc4e9a2",
+                                          "nombre": "Real Madrid CF",
+                                          "url_logo": "https://example.com/logos/realmadrid.png"
+                                        }
+                                      }
                                     """)
                     }
             )
@@ -283,9 +333,4 @@ public class JugadorControlador {
         jugadorServicio.eliminarJugador(id);
         return ResponseEntity.noContent().build();
     }
-
-
-
-
-
 }

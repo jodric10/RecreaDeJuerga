@@ -62,6 +62,7 @@ ON CONFLICT (equipo_id, dorsal) DO UPDATE SET
   asistencias_totales = EXCLUDED.asistencias_totales,
   fortalezas = EXCLUDED.fortalezas,
   fecha_nacimiento = EXCLUDED.fecha_nacimiento,
+  nacionalidad= EXCLUDED.nacionalidad,
   foto_frontal = EXCLUDED.foto_frontal,
   foto_tarjeta = EXCLUDED.foto_tarjeta,
   foto_pose = EXCLUDED.foto_pose;
