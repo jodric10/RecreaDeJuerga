@@ -1,10 +1,7 @@
 package com.recreadejuerga.recrea.dtos.clasificacion;
 
 import com.recreadejuerga.recrea.dtos.equipo.EquipoDTO;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.util.UUID;
@@ -13,6 +10,7 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class ClasificacionDTO {
     private UUID id;
     private Integer puntos;

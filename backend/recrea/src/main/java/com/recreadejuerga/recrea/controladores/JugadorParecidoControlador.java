@@ -165,10 +165,4 @@ public class JugadorParecidoControlador {
         jugadorParecidoServicio.eliminarParecido(id);
         return ResponseEntity.noContent().build();
     }
-
-
-
-
-
-
 }

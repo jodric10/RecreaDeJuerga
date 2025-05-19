@@ -1,16 +1,14 @@
 package com.recreadejuerga.recrea.dtos.equipo;
 
 import jakarta.validation.constraints.NotBlank;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.validator.constraints.URL;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class EquipoFormularioDTO {
     @NotBlank(message = "El nombre no puede estar vacío")
     private String nombre;

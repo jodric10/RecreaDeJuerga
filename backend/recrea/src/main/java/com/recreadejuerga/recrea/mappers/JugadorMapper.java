@@ -2,6 +2,7 @@ package com.recreadejuerga.recrea.mappers;
 
 import com.recreadejuerga.recrea.dtos.jugador.JugadorDTO;
 import com.recreadejuerga.recrea.dtos.jugador.JugadorFormularioDTO;
+import com.recreadejuerga.recrea.dtos.jugador.JugadorSimpleDTO;
 import com.recreadejuerga.recrea.dtos.jugadorparecido.JugadorParecidoSimpleDTO;
 import com.recreadejuerga.recrea.entidades.Jugador;
 
@@ -28,6 +29,17 @@ public class JugadorMapper {
         );
     }
 
+    public static JugadorSimpleDTO jugadorSimpleDTO(Jugador jugador){
+        if (jugador == null) return null;
+        return new JugadorSimpleDTO(
+                jugador.getId(),
+                jugador.getNombre(),
+                jugador.getApodo(),
+                jugador.getDorsal(),
+                jugador.getEquipo().getId()
+        );
+    }
+
     public static Jugador toJugador(JugadorFormularioDTO insertar_jugador) {
         return Jugador.builder()
                 .nombre(insertar_jugador.getNombre())
@@ -44,9 +56,4 @@ public class JugadorMapper {
                 .fotoPose(insertar_jugador.getFotoPose())
                 .build();
     }
-
-
-
-
-
 }
