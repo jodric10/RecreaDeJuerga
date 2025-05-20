@@ -9,7 +9,7 @@ public class EquipoNoEncontradoException extends RuntimeException {
     }
 
     public EquipoNoEncontradoException(){
-        super("No se ha encontrado ningún equipo registrado.");
+        super("No se ha encontrado ningún equipo registrado");
     }
 
     public EquipoNoEncontradoException(UUID id){

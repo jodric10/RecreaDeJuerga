@@ -1,17 +1,13 @@
 package com.recreadejuerga.recrea.servicios;
 
+import com.recreadejuerga.recrea.dtos.estadisticasJugadorPartido.EstadisticasJugadorPartidoActualizarDTO;
 import com.recreadejuerga.recrea.dtos.estadisticasJugadorPartido.EstadisticasJugadorPartidoDTO;
-import com.recreadejuerga.recrea.dtos.estadisticasJugadorPartido.EstadisticasJugadorPartidoFormularioDTO;
-import com.recreadejuerga.recrea.dtos.partido.PartidoDTO;
-import com.recreadejuerga.recrea.dtos.partido.PartidoFormularioDTO;
-import com.recreadejuerga.recrea.entidades.Equipo;
+import com.recreadejuerga.recrea.dtos.estadisticasJugadorPartido.EstadisticasJugadorPartidoInsertarDTO;
 import com.recreadejuerga.recrea.entidades.EstadisticasJugadorPartido;
 import com.recreadejuerga.recrea.entidades.Jugador;
 import com.recreadejuerga.recrea.entidades.Partido;
 import com.recreadejuerga.recrea.error.*;
 import com.recreadejuerga.recrea.mappers.EstadisticasJugadorPartidoMapper;
-import com.recreadejuerga.recrea.mappers.JugadorParecidoMapper;
-import com.recreadejuerga.recrea.mappers.PartidoMapper;
 import com.recreadejuerga.recrea.repositorios.EstadisticasJugadorPartidoRepositorio;
 import com.recreadejuerga.recrea.repositorios.JugadorRepositorio;
 import com.recreadejuerga.recrea.repositorios.PartidoRepositorio;
@@ -55,7 +51,7 @@ public class EstadisticasJugadorPartidoServicio {
         return estadisticasJugador.stream().map(EstadisticasJugadorPartidoMapper::toEstadisticasJugadorPartidoDTO).toList();
     }
 
-    public EstadisticasJugadorPartidoDTO insertarEstadisticaJugadorEnPartido(EstadisticasJugadorPartidoFormularioDTO dto) {
+    public EstadisticasJugadorPartidoDTO insertarEstadisticaJugadorEnPartido(EstadisticasJugadorPartidoInsertarDTO dto) {
         if (repo.getEstadisticasDeUnJugadorEnUnPartido(dto.getJugadorId(),dto.getPartidoId()).isPresent()) {
             throw new EstadisticaJugadorPartidoYaExistenteException(dto.getJugadorId(),dto.getPartidoId());
         }
@@ -83,7 +79,7 @@ public class EstadisticasJugadorPartidoServicio {
         }
     }
 
-    public EstadisticasJugadorPartidoDTO modificarEstadisticaJugadorEnPartido(EstadisticasJugadorPartidoFormularioDTO dto, UUID id) {
+    public EstadisticasJugadorPartidoDTO modificarEstadisticaJugadorEnPartido(EstadisticasJugadorPartidoActualizarDTO dto, UUID id) {
         if (!repo.existsById(id)) {
             throw new EstadisticasJugadorPartidoNoEncontradoException(id);
         }

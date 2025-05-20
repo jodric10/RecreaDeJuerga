@@ -9,7 +9,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class EstadisticasJugadorPartidoFormularioDTO {
+public class EstadisticasJugadorPartidoInsertarDTO {
 
     private UUID jugadorId;
 
