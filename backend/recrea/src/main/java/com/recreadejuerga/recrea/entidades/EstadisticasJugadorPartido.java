@@ -4,9 +4,11 @@ import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import lombok.*;
+import java.util.UUID;
 
 @Entity
-@Table(name = "estadisticas_jugador_partido")
+@Table(name = "estadisticas_jugador_partido",
+        uniqueConstraints = @UniqueConstraint(name = "unique_jugador_partido", columnNames = {"jugador_id", "partido_id"}))
 @Getter
 @Setter
 @NoArgsConstructor
@@ -14,17 +16,17 @@ import lombok.*;
 @Builder
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class EstadisticasJugadorPartido {
-    @EmbeddedId
-    private EstadisticasJugadorPartidoId id;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private UUID id;
 
     @ManyToOne
-    @MapsId
-    @JoinColumn(name = "jugador_id",foreignKey = @ForeignKey(name = "fk_jugador"))
+    @JoinColumn(name = "jugador_id", nullable = false, foreignKey = @ForeignKey(name = "fk_jugador"))
     private Jugador jugador;
 
     @ManyToOne
-    @MapsId
-    @JoinColumn(name = "partido_id",foreignKey = @ForeignKey(name = "fk_partido"))
+    @JoinColumn(name = "partido_id", nullable = false, foreignKey = @ForeignKey(name = "fk_partido"))
     private Partido partido;
 
     @Column(name = "goles")

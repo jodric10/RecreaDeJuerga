@@ -1,4 +1,4 @@
-package com.recreadejuerga.recrea.dtos.jugadorparecido;
+package com.recreadejuerga.recrea.dtos.jugadorParecido;
 
 import lombok.*;
 

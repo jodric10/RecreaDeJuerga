@@ -1,7 +1,7 @@
 package com.recreadejuerga.recrea.dtos.jugador;
 
 import com.recreadejuerga.recrea.dtos.equipo.EquipoDTO;
-import com.recreadejuerga.recrea.dtos.jugadorparecido.JugadorParecidoSimpleDTO;
+import com.recreadejuerga.recrea.dtos.jugadorParecido.JugadorParecidoSimpleDTO;
 import lombok.*;
 
 import java.time.LocalDate;
