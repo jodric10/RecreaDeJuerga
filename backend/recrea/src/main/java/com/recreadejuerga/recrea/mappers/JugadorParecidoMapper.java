@@ -1,8 +1,8 @@
 package com.recreadejuerga.recrea.mappers;
 
-import com.recreadejuerga.recrea.dtos.jugadorparecido.JugadorParecidoDTO;
-import com.recreadejuerga.recrea.dtos.jugadorparecido.JugadorParecidoInsertarDTO;
-import com.recreadejuerga.recrea.dtos.jugadorparecido.JugadorParecidoSimpleDTO;
+import com.recreadejuerga.recrea.dtos.jugadorParecido.JugadorParecidoDTO;
+import com.recreadejuerga.recrea.dtos.jugadorParecido.JugadorParecidoInsertarDTO;
+import com.recreadejuerga.recrea.dtos.jugadorParecido.JugadorParecidoSimpleDTO;
 import com.recreadejuerga.recrea.entidades.Jugador;
 import com.recreadejuerga.recrea.entidades.JugadorParecido;
 

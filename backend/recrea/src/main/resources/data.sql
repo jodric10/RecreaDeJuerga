@@ -292,443 +292,724 @@ SET
   diferencia_goles = EXCLUDED.diferencia_goles,
   promedio_tf_tc = EXCLUDED.promedio_tf_tc;
 
-INSERT INTO estadisticas_jugador_partido (jugador_id, partido_id, goles, asistencias, amarilla, roja, portero) VALUES
--- Partido 2024-10-06
-((SELECT id FROM jugadores WHERE nombre = 'Adrián Carvajal Sánchez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2024-10-06 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 2, 0, FALSE, FALSE, TRUE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Nacho Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2024-10-06 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 1, 0, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Alfonso Peris Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2024-10-06 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 0, 0, FALSE, FALSE, TRUE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Mario Rodríguez Díaz' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2024-10-06 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 0, 0, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Jorge González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2024-10-06 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 0, 1, FALSE, FALSE, TRUE),
-
--- Partido 2024-10-20
-((SELECT id FROM jugadores WHERE nombre = 'Adrián Carvajal Sánchez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2024-10-20 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 2, 1, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2024-10-20 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 1, 1, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Jorge González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2024-10-20 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 1, 2, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Alfonso Peris Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2024-10-20 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 1, 0, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Raúl García Rodrigo' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2024-10-20 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 0, 0, FALSE, FALSE, TRUE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Nacho Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2024-10-20 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 0, 0, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Jorge Sánchez Rodríguez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2024-10-20 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 0, 0, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Alberto González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2024-10-20 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 0, 0, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Mario Rodríguez Díaz' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2024-10-20 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 0, 0, FALSE, FALSE, FALSE),
-
- -- Partido 2024-10-27
- ((SELECT id FROM jugadores WHERE nombre = 'Adrián Carvajal Sánchez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
-  (SELECT id FROM partidos WHERE fecha = '2024-10-27 16:00:00' AND lugar = 'La Granadilla'), 1, 2, FALSE, FALSE, FALSE),
-
- ((SELECT id FROM jugadores WHERE nombre = 'Raúl García Rodrigo' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
-  (SELECT id FROM partidos WHERE fecha = '2024-10-27 16:00:00' AND lugar = 'La Granadilla'), 1, 0, FALSE, FALSE, TRUE),
-
- ((SELECT id FROM jugadores WHERE nombre = 'Nacho Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
-  (SELECT id FROM partidos WHERE fecha = '2024-10-27 16:00:00' AND lugar = 'La Granadilla'), 1, 1, FALSE, FALSE, FALSE),
-
- ((SELECT id FROM jugadores WHERE nombre = 'Alfonso Peris Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
-  (SELECT id FROM partidos WHERE fecha = '2024-10-27 16:00:00' AND lugar = 'La Granadilla'), 1, 0, FALSE, FALSE, FALSE),
-
- ((SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
-  (SELECT id FROM partidos WHERE fecha = '2024-10-27 16:00:00' AND lugar = 'La Granadilla'), 0, 0, FALSE, FALSE, FALSE),
-
- ((SELECT id FROM jugadores WHERE nombre = 'Jorge Sánchez Rodríguez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
-  (SELECT id FROM partidos WHERE fecha = '2024-10-27 16:00:00' AND lugar = 'La Granadilla'), 0, 0, FALSE, FALSE, FALSE),
-
- ((SELECT id FROM jugadores WHERE nombre = 'Alberto González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
-  (SELECT id FROM partidos WHERE fecha = '2024-10-27 16:00:00' AND lugar = 'La Granadilla'), 0, 0, FALSE, FALSE, FALSE),
-
- ((SELECT id FROM jugadores WHERE nombre = 'Mario Rodríguez Díaz' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
-  (SELECT id FROM partidos WHERE fecha = '2024-10-27 16:00:00' AND lugar = 'La Granadilla'), 0, 0, FALSE, FALSE, FALSE),
-
- ((SELECT id FROM jugadores WHERE nombre = 'Jorge González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
-  (SELECT id FROM partidos WHERE fecha = '2024-10-27 16:00:00' AND lugar = 'La Granadilla'), 0, 1, FALSE, FALSE, FALSE),
-
- -- Partido 2024-11-10
- ((SELECT id FROM jugadores WHERE nombre = 'Jorge González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
-  (SELECT id FROM partidos WHERE fecha = '2024-11-10 16:00:00' AND lugar = 'P. Felipe – Pista Central'), 2, 0, FALSE, FALSE, FALSE),
-
- ((SELECT id FROM jugadores WHERE nombre = 'Nacho Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
-  (SELECT id FROM partidos WHERE fecha = '2024-11-10 16:00:00' AND lugar = 'P. Felipe – Pista Central'), 0, 0, FALSE, FALSE, FALSE),
-
- ((SELECT id FROM jugadores WHERE nombre = 'Alberto González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
-  (SELECT id FROM partidos WHERE fecha = '2024-11-10 16:00:00' AND lugar = 'P. Felipe – Pista Central'), 0, 0, FALSE, FALSE, FALSE),
-
- ((SELECT id FROM jugadores WHERE nombre = 'Mario Rodríguez Díaz' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
-  (SELECT id FROM partidos WHERE fecha = '2024-11-10 16:00:00' AND lugar = 'P. Felipe – Pista Central'), 0, 0, FALSE, TRUE, FALSE),
-
- ((SELECT id FROM jugadores WHERE nombre = 'Adrián Carvajal Sánchez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
-  (SELECT id FROM partidos WHERE fecha = '2024-11-10 16:00:00' AND lugar = 'P. Felipe – Pista Central'), 0, 0, FALSE, FALSE, FALSE),
-
- ((SELECT id FROM jugadores WHERE nombre = 'Alfonso Peris Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
-  (SELECT id FROM partidos WHERE fecha = '2024-11-10 16:00:00' AND lugar = 'P. Felipe – Pista Central'), 0, 0, FALSE, FALSE, FALSE),
-
- ((SELECT id FROM jugadores WHERE nombre = 'Raúl García Rodrigo' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
-  (SELECT id FROM partidos WHERE fecha = '2024-11-10 16:00:00' AND lugar = 'P. Felipe – Pista Central'), 0, 0, FALSE, FALSE, TRUE),
-
-  ((SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
-   (SELECT id FROM partidos WHERE fecha = '2024-11-24 16:00:00' AND lugar = 'P. Felipe – Pista Central'), 2, 0, FALSE, FALSE, FALSE),
-
-  ((SELECT id FROM jugadores WHERE nombre = 'Raúl García Rodrigo' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
-   (SELECT id FROM partidos WHERE fecha = '2024-11-24 16:00:00' AND lugar = 'P. Felipe – Pista Central'), 0, 0, FALSE, FALSE, TRUE),
-
-  ((SELECT id FROM jugadores WHERE nombre = 'Daniel Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
-   (SELECT id FROM partidos WHERE fecha = '2024-11-24 16:00:00' AND lugar = 'P. Felipe – Pista Central'), 0, 0, FALSE, FALSE, FALSE),
-
-  ((SELECT id FROM jugadores WHERE nombre = 'Alfonso Peris Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
-   (SELECT id FROM partidos WHERE fecha = '2024-11-24 16:00:00' AND lugar = 'P. Felipe – Pista Central'), 0, 0, FALSE, FALSE, FALSE),
-
-  ((SELECT id FROM jugadores WHERE nombre = 'Mario Rodríguez Díaz' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
-   (SELECT id FROM partidos WHERE fecha = '2024-11-24 16:00:00' AND lugar = 'P. Felipe – Pista Central'), 0, 0, FALSE, FALSE, FALSE),
-
-  ((SELECT id FROM jugadores WHERE nombre = 'Alberto González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
-   (SELECT id FROM partidos WHERE fecha = '2024-11-24 16:00:00' AND lugar = 'P. Felipe – Pista Central'), 0, 0, FALSE, TRUE, FALSE),
-
-  ((SELECT id FROM jugadores WHERE nombre = 'Jorge Sánchez Rodríguez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
-   (SELECT id FROM partidos WHERE fecha = '2024-11-24 16:00:00' AND lugar = 'P. Felipe – Pista Central'), 0, 0, FALSE, TRUE, FALSE),
-
-  ((SELECT id FROM jugadores WHERE nombre = 'Adrián Carvajal Sánchez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
-   (SELECT id FROM partidos WHERE fecha = '2024-11-24 16:00:00' AND lugar = 'P. Felipe – Pista Central'), 0, 1, FALSE, TRUE, FALSE),
-
-  ((SELECT id FROM jugadores WHERE nombre = 'Jorge González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
-   (SELECT id FROM partidos WHERE fecha = '2024-11-24 16:00:00' AND lugar = 'P. Felipe – Pista Central'), 0, 1, FALSE, FALSE, FALSE),
-
-  -- Estadísticas del partido del 2024-12-01 (vs Los Potros FC)
-  ((SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
-   (SELECT id FROM partidos WHERE fecha = '2024-12-01 16:00:00' AND lugar = 'La Granadilla'), 1, 1, FALSE, FALSE, FALSE),
-
-  ((SELECT id FROM jugadores WHERE nombre = 'Jorge González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
-   (SELECT id FROM partidos WHERE fecha = '2024-12-01 16:00:00' AND lugar = 'La Granadilla'), 1, 0, FALSE, FALSE, FALSE),
-
-  ((SELECT id FROM jugadores WHERE nombre = 'Jorge Sánchez Rodríguez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
-   (SELECT id FROM partidos WHERE fecha = '2024-12-01 16:00:00' AND lugar = 'La Granadilla'), 0, 0, FALSE, FALSE, FALSE),
-
-  ((SELECT id FROM jugadores WHERE nombre = 'Alberto González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
-   (SELECT id FROM partidos WHERE fecha = '2024-12-01 16:00:00' AND lugar = 'La Granadilla'), 0, 1, FALSE, FALSE, FALSE),
-
-  ((SELECT id FROM jugadores WHERE nombre = 'Alfonso Peris Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
-   (SELECT id FROM partidos WHERE fecha = '2024-12-01 16:00:00' AND lugar = 'La Granadilla'), 0, 0, FALSE, FALSE, FALSE),
-
-  ((SELECT id FROM jugadores WHERE nombre = 'Daniel Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
-   (SELECT id FROM partidos WHERE fecha = '2024-12-01 16:00:00' AND lugar = 'La Granadilla'), 0, 0, FALSE, FALSE, FALSE),
-
-  ((SELECT id FROM jugadores WHERE nombre = 'Raúl García Rodrigo' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
-   (SELECT id FROM partidos WHERE fecha = '2024-12-01 16:00:00' AND lugar = 'La Granadilla'), 0, 0, FALSE, FALSE, TRUE),
-
-   -- Estadísticas del partido del 2024-12-15
-  ((SELECT id FROM jugadores WHERE nombre = 'Fernando Méndez Lera' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
-   (SELECT id FROM partidos WHERE fecha = '2024-12-15 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 4, 1, FALSE, FALSE, FALSE),
-
-  ((SELECT id FROM jugadores WHERE nombre = 'Adrián Carvajal Sánchez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
-   (SELECT id FROM partidos WHERE fecha = '2024-12-15 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 2, 2, FALSE, FALSE, FALSE),
-
-  ((SELECT id FROM jugadores WHERE nombre = 'Daniel Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
-   (SELECT id FROM partidos WHERE fecha = '2024-12-15 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 2, 1, FALSE, FALSE, FALSE),
-
-  ((SELECT id FROM jugadores WHERE nombre = 'Mario Rodríguez Díaz' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
-   (SELECT id FROM partidos WHERE fecha = '2024-12-15 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 1, 1, FALSE, FALSE, FALSE),
-
-  ((SELECT id FROM jugadores WHERE nombre = 'Raúl García Rodrigo' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
-   (SELECT id FROM partidos WHERE fecha = '2024-12-15 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 1, 1, FALSE, FALSE, TRUE),
-
-  ((SELECT id FROM jugadores WHERE nombre = 'Alberto González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
-   (SELECT id FROM partidos WHERE fecha = '2024-12-15 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 1, 1, FALSE, FALSE, FALSE),
-
-  ((SELECT id FROM jugadores WHERE nombre = 'Jorge González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
-   (SELECT id FROM partidos WHERE fecha = '2024-12-15 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 1, 1, FALSE, FALSE, TRUE),
-
-  ((SELECT id FROM jugadores WHERE nombre = 'Alfonso Peris Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
-   (SELECT id FROM partidos WHERE fecha = '2024-12-15 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 0, 1, FALSE, FALSE, FALSE),
-
--- Estadísticas del partido del 2025-01-12
-((SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-01-12 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 2, 0, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Jorge González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-01-12 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 1, 2, FALSE, FALSE, TRUE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Adrián Carvajal Sánchez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-01-12 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 1, 0, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Jorge Sánchez Rodríguez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-01-12 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 1, 0, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Alfonso Peris Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-01-12 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 0, 0, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Fernando Méndez Lera' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-01-12 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 0, 1, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Nacho Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-01-12 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 0, 0, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Mario Rodríguez Díaz' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-01-12 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 0, 0, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Alberto González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-01-12 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 0, 1, FALSE, FALSE, TRUE),
-
--- Estadísticas del partido del 2025-01-19
-((SELECT id FROM jugadores WHERE nombre = 'Jorge Sánchez Rodríguez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-01-19 19:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 1, 1, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Adrián Carvajal Sánchez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-01-19 19:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 2, 1, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Fernando Méndez Lera' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-01-19 19:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 1, 0, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Jorge González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-01-19 19:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 0, 1, FALSE, FALSE, TRUE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Alfonso Peris Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-01-19 19:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 0, 0, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Nacho Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-01-19 19:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 0, 0, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Mario Rodríguez Díaz' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-01-19 19:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 0, 0, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Alberto González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-01-19 19:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 0, 1, FALSE, FALSE, TRUE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-01-19 19:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 0, 0, FALSE, FALSE, FALSE),
-
--- Estadísticas del partido del 2025-01-26
-((SELECT id FROM jugadores WHERE nombre = 'Adrián Carvajal Sánchez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-01-26 18:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 2, 1, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Alberto González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-01-26 18:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 1, 0, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-01-26 18:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 1, 1, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Daniel Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-01-26 18:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 1, 0, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Raúl García Rodrigo' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-01-26 18:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 0, 0, FALSE, FALSE, TRUE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Mario Rodríguez Díaz' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-01-26 18:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 0, 0, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Alfonso Peris Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-01-26 18:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 0, 0, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Fernando Méndez Lera' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-01-26 18:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 0, 2, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Jorge González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-01-26 18:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 0, 1, FALSE, FALSE, TRUE),
-
- -- Estadísticas del partido del 2025-02-02
-((SELECT id FROM jugadores WHERE nombre = 'Adrián Carvajal Sánchez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-02-02 18:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 1, 0, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Fernando Méndez Lera' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-02-02 18:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 1, 0, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Mario Rodríguez Díaz' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-02-02 18:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 0, 0, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Jorge González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-02-02 18:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 0, 1, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Alberto González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-02-02 18:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 0, 0, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-02-02 18:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 0, 0, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Jorge Sánchez Rodríguez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-02-02 18:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 0, 1, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Alfonso Peris Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-02-02 18:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 0, 0, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Raúl García Rodrigo' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-02-02 18:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 0, 0, FALSE, FALSE, TRUE),
-
- -- Estadísticas del partido del 2025-02-09
-((SELECT id FROM jugadores WHERE nombre = 'Fernando Méndez Lera' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-02-09 19:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 3, 1, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-02-09 19:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 2, 1, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Adrián Carvajal Sánchez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-02-09 19:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 1, 1, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Alfonso Peris Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-02-09 19:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 1, 0, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Raúl García Rodrigo' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-02-09 19:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 0, 0, FALSE, FALSE, TRUE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Jorge González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-02-09 19:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 0, 2, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Jorge Sánchez Rodríguez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-02-09 19:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 0, 0, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Mario Rodríguez Díaz' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-02-09 19:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 0, 1, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Nacho Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-02-09 19:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 0, 0, FALSE, FALSE, FALSE),
-
- -- Estadísticas del partido del 2025-02-23
-((SELECT id FROM jugadores WHERE nombre = 'Jorge Sánchez Rodríguez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-02-23 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 1, 1, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Fernando Méndez Lera' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-02-23 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 3, 2, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Adrián Carvajal Sánchez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-02-23 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 3, 1, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-02-23 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 1, 1, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Mario Rodríguez Díaz' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-02-23 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 1, 0, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Raúl García Rodrigo' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-02-23 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 0, 0, FALSE, FALSE, TRUE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Nacho Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-02-23 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 0, 1, FALSE, FALSE, FALSE),
-
- -- Estadísticas del partido del 2025-03-02
-((SELECT id FROM jugadores WHERE nombre = 'Adrián Carvajal Sánchez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-03-02 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 4, 0, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Fernando Méndez Lera' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-03-02 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 1, 1, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Raúl García Rodrigo' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-03-02 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 0, 0, FALSE, FALSE, TRUE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Jorge González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-03-02 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 0, 1, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Nacho Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-03-02 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 0, 1, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Mario Rodríguez Díaz' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-03-02 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 0, 1, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Alberto González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-03-02 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'), 0, 1, FALSE, FALSE, FALSE),
-
- -- Estadísticas del partido del 2025-03-09
-((SELECT id FROM jugadores WHERE nombre = 'Adrián Carvajal Sánchez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-03-09 16:00:00' AND lugar = 'La Granadilla'), 1, 0, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Fernando Méndez Lera' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-03-09 16:00:00' AND lugar = 'La Granadilla'), 1, 1, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-03-09 16:00:00' AND lugar = 'La Granadilla'), 2, 0, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Jorge Sánchez Rodríguez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-03-09 16:00:00' AND lugar = 'La Granadilla'), 1, 1, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Raúl García Rodrigo' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-03-09 16:00:00' AND lugar = 'La Granadilla'), 0, 0, FALSE, FALSE, TRUE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Mario Rodríguez Díaz' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-03-09 16:00:00' AND lugar = 'La Granadilla'), 0, 1, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Nacho Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-03-09 16:00:00' AND lugar = 'La Granadilla'), 0, 1, FALSE, FALSE, FALSE),
-
- -- Estadísticas del partido del 2025-03-16
-((SELECT id FROM jugadores WHERE nombre = 'Adrián Carvajal Sánchez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-03-16 16:00:00' AND lugar = 'P. Felipe – Pista Central'), 1, 0, TRUE, TRUE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Jorge González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-03-16 16:00:00' AND lugar = 'P. Felipe – Pista Central'), 1, 0, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Jorge Sánchez Rodríguez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-03-16 16:00:00' AND lugar = 'P. Felipe – Pista Central'), 0, 0, TRUE, TRUE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Nacho Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-03-16 16:00:00' AND lugar = 'P. Felipe – Pista Central'), 0, 0, TRUE, TRUE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Raúl García Rodrigo' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-03-16 16:00:00' AND lugar = 'P. Felipe – Pista Central'), 0, 0, FALSE, FALSE, TRUE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Mario Rodríguez Díaz' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-03-16 16:00:00' AND lugar = 'P. Felipe – Pista Central'), 0, 0, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Alberto González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-03-16 16:00:00' AND lugar = 'P. Felipe – Pista Central'), 0, 0, FALSE, FALSE, FALSE),
-
- -- Estadísticas del partido del 2025-03-30
-((SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-03-30 16:00:00' AND lugar = 'P. Felipe – Pista Central'), 1, 0, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Fernando Méndez Lera' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-03-30 16:00:00' AND lugar = 'P. Felipe – Pista Central'), 1, 0, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Raúl García Rodrigo' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-03-30 16:00:00' AND lugar = 'P. Felipe – Pista Central'), 0, 0, FALSE, FALSE, TRUE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Jorge González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-03-30 16:00:00' AND lugar = 'P. Felipe – Pista Central'), 0, 0, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Mario Rodríguez Díaz' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-03-30 16:00:00' AND lugar = 'P. Felipe – Pista Central'), 0, 0, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Daniel Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-03-30 16:00:00' AND lugar = 'P. Felipe – Pista Central'), 0, 0, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Alberto González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-03-30 16:00:00' AND lugar = 'P. Felipe – Pista Central'), 0, 0, FALSE, FALSE, FALSE),
-
- -- Estadísticas del partido del 2025-04-06
-((SELECT id FROM jugadores WHERE nombre = 'Jorge González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-04-06 16:00:00' AND lugar = 'La Granadilla'), 2, 2, FALSE, FALSE, TRUE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Nacho Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-04-06 16:00:00' AND lugar = 'La Granadilla'), 1, 1, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Raúl García Rodrigo' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-04-06 16:00:00' AND lugar = 'La Granadilla'), 1, 1, FALSE, FALSE, TRUE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Mario Rodríguez Díaz' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-04-06 16:00:00' AND lugar = 'La Granadilla'), 0, 0, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-04-06 16:00:00' AND lugar = 'La Granadilla'), 0, 0, FALSE, FALSE, FALSE),
-
-((SELECT id FROM jugadores WHERE nombre = 'Alfonso Peris Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
- (SELECT id FROM partidos WHERE fecha = '2025-04-06 16:00:00' AND lugar = 'La Granadilla'), 1, 0, FALSE, FALSE, FALSE)
+INSERT INTO estadisticas_jugador_partido (
+    id, jugador_id, partido_id, goles, asistencias, amarilla, roja, portero
+) VALUES
+(
+    '63f8e4dc-7b4d-4cb7-9c23-943d4cf912a1',
+    (SELECT id FROM jugadores WHERE nombre = 'Adrián Carvajal Sánchez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+    (SELECT id FROM partidos WHERE fecha = '2024-10-06 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+    2, 0, FALSE, FALSE, TRUE
+),
+(
+    '5ad33b71-daa5-4ed1-975c-3e1cb7dc16d2',
+    (SELECT id FROM jugadores WHERE nombre = 'Nacho Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+    (SELECT id FROM partidos WHERE fecha = '2024-10-06 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+    1, 0, FALSE, FALSE, FALSE
+),
+(
+    '3eaf0a96-7f1d-4423-bb76-442ee14261c9',
+    (SELECT id FROM jugadores WHERE nombre = 'Alfonso Peris Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+    (SELECT id FROM partidos WHERE fecha = '2024-10-06 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+    0, 0, FALSE, FALSE, TRUE
+),
+(
+    'c01cdb15-0124-4c48-bf36-58989fe05a90',
+    (SELECT id FROM jugadores WHERE nombre = 'Mario Rodríguez Díaz' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+    (SELECT id FROM partidos WHERE fecha = '2024-10-06 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+    0, 0, FALSE, FALSE, FALSE
+),
+(
+    'f8a0a234-fef4-419c-8d23-58f9573535c1',
+    (SELECT id FROM jugadores WHERE nombre = 'Jorge González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+    (SELECT id FROM partidos WHERE fecha = '2024-10-06 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+    0, 1, FALSE, FALSE, TRUE
+),
+
+(
+    '8a7f661b-64a7-41a0-bafe-61b08d1cd489',
+    (SELECT id FROM jugadores WHERE nombre = 'Adrián Carvajal Sánchez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+    (SELECT id FROM partidos WHERE fecha = '2024-10-20 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+    2, 1, FALSE, FALSE, FALSE
+),
+(
+    '5e6dff27-0b8d-4ec9-93be-950226df0ed7',
+    (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+    (SELECT id FROM partidos WHERE fecha = '2024-10-20 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+    1, 1, FALSE, FALSE, FALSE
+),
+(
+    'a39d0556-0ea0-4f1d-a9c6-e23f20666342',
+    (SELECT id FROM jugadores WHERE nombre = 'Jorge González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+    (SELECT id FROM partidos WHERE fecha = '2024-10-20 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+    1, 2, FALSE, FALSE, FALSE
+),
+(
+    '9fcb31fa-11f7-490f-a0be-b5246f846fc1',
+    (SELECT id FROM jugadores WHERE nombre = 'Alfonso Peris Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+    (SELECT id FROM partidos WHERE fecha = '2024-10-20 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+    1, 0, FALSE, FALSE, FALSE
+),
+(
+    '3e8f98ea-6c68-4cc2-a282-9e706b7a7b2d',
+    (SELECT id FROM jugadores WHERE nombre = 'Raúl García Rodrigo' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+    (SELECT id FROM partidos WHERE fecha = '2024-10-20 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+    0, 0, FALSE, FALSE, TRUE
+),
+(
+    '37f558fa-52cb-4749-a432-b63f32aa5074',
+    (SELECT id FROM jugadores WHERE nombre = 'Nacho Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+    (SELECT id FROM partidos WHERE fecha = '2024-10-20 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+    0, 0, FALSE, FALSE, FALSE
+),
+(
+    'f69d4134-3556-4292-90db-99d5a89e5645',
+    (SELECT id FROM jugadores WHERE nombre = 'Jorge Sánchez Rodríguez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+    (SELECT id FROM partidos WHERE fecha = '2024-10-20 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+    0, 0, FALSE, FALSE, FALSE
+),
+(
+    '9c5ec8b3-4b4f-4cf9-9fcd-4ff9c924c26d',
+    (SELECT id FROM jugadores WHERE nombre = 'Alberto González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+    (SELECT id FROM partidos WHERE fecha = '2024-10-20 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+    0, 0, FALSE, FALSE, FALSE
+),
+(
+    '6a3c4ae4-1a3b-4e41-8267-5b3e4e3fa760',
+    (SELECT id FROM jugadores WHERE nombre = 'Mario Rodríguez Díaz' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+    (SELECT id FROM partidos WHERE fecha = '2024-10-20 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+    0, 0, FALSE, FALSE, FALSE
+),
+
+('63a1e7a6-7051-4f91-b80d-ec13c53176db',
+ (SELECT id FROM jugadores WHERE nombre = 'Adrián Carvajal Sánchez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2024-10-27 16:00:00' AND lugar = 'La Granadilla'),
+ 1, 2, FALSE, FALSE, FALSE),
+
+('d4f149e0-5536-4c82-8322-89b073e05461',
+ (SELECT id FROM jugadores WHERE nombre = 'Raúl García Rodrigo' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2024-10-27 16:00:00' AND lugar = 'La Granadilla'),
+ 1, 0, FALSE, FALSE, TRUE),
+
+('0d6d2c7f-99d3-4e23-9f58-8fef43b8bda5',
+ (SELECT id FROM jugadores WHERE nombre = 'Nacho Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2024-10-27 16:00:00' AND lugar = 'La Granadilla'),
+ 1, 1, FALSE, FALSE, FALSE),
+
+('3ec73ae3-07ac-4cc0-b26b-45a6bb7b4370',
+ (SELECT id FROM jugadores WHERE nombre = 'Alfonso Peris Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2024-10-27 16:00:00' AND lugar = 'La Granadilla'),
+ 1, 0, FALSE, FALSE, FALSE),
+
+('8441ab39-df33-464f-a5c3-53a7f87c4d4c',
+ (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2024-10-27 16:00:00' AND lugar = 'La Granadilla'),
+ 0, 0, FALSE, FALSE, FALSE),
+
+('bb56e963-f6a5-4f3b-ae3a-e3f5b72e28c7',
+ (SELECT id FROM jugadores WHERE nombre = 'Jorge Sánchez Rodríguez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2024-10-27 16:00:00' AND lugar = 'La Granadilla'),
+ 0, 0, FALSE, FALSE, FALSE),
+
+('9d85886a-4462-42fb-ae59-1faea30ac891',
+ (SELECT id FROM jugadores WHERE nombre = 'Alberto González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2024-10-27 16:00:00' AND lugar = 'La Granadilla'),
+ 0, 0, FALSE, FALSE, FALSE),
+
+('f671ce70-96f7-4cf8-9b6b-e0cc2f38e85b',
+ (SELECT id FROM jugadores WHERE nombre = 'Mario Rodríguez Díaz' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2024-10-27 16:00:00' AND lugar = 'La Granadilla'),
+ 0, 0, FALSE, FALSE, FALSE),
+
+('1b72a3a9-39b6-4ad2-8971-2bfeeb8abcf2',
+ (SELECT id FROM jugadores WHERE nombre = 'Jorge González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2024-10-27 16:00:00' AND lugar = 'La Granadilla'),
+ 0, 1, FALSE, FALSE, FALSE),
+
+('3e9d063f-0f85-4390-a829-37d38e5891ae',
+ (SELECT id FROM jugadores WHERE nombre = 'Jorge González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2024-11-10 16:00:00' AND lugar = 'P. Felipe – Pista Central'),
+ 2, 0, FALSE, FALSE, FALSE),
+
+('d951413c-c5f0-4cf2-8f0a-632e5a7e69b0',
+ (SELECT id FROM jugadores WHERE nombre = 'Nacho Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2024-11-10 16:00:00' AND lugar = 'P. Felipe – Pista Central'),
+ 0, 0, FALSE, FALSE, FALSE),
+
+('a6eb136d-1d1b-4223-bd0f-48956d9eb9a3',
+ (SELECT id FROM jugadores WHERE nombre = 'Alberto González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2024-11-10 16:00:00' AND lugar = 'P. Felipe – Pista Central'),
+ 0, 0, FALSE, FALSE, FALSE),
+
+('ee83f3b2-bf26-49c2-950f-1e9c2ea8c8dc',
+ (SELECT id FROM jugadores WHERE nombre = 'Mario Rodríguez Díaz' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2024-11-10 16:00:00' AND lugar = 'P. Felipe – Pista Central'),
+ 0, 0, FALSE, TRUE, FALSE),
+
+('d78ffda1-13e0-4aa6-9603-e9607f3736f4',
+ (SELECT id FROM jugadores WHERE nombre = 'Adrián Carvajal Sánchez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2024-11-10 16:00:00' AND lugar = 'P. Felipe – Pista Central'),
+ 0, 0, FALSE, FALSE, FALSE),
+
+('3fa6742c-0b33-429a-8f7e-b442e775bead',
+ (SELECT id FROM jugadores WHERE nombre = 'Alfonso Peris Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2024-11-10 16:00:00' AND lugar = 'P. Felipe – Pista Central'),
+ 0, 0, FALSE, FALSE, FALSE),
+
+('149e3f7c-2d82-4e5d-a6d6-65a48b116c95',
+ (SELECT id FROM jugadores WHERE nombre = 'Raúl García Rodrigo' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2024-11-10 16:00:00' AND lugar = 'P. Felipe – Pista Central'),
+ 0, 0, FALSE, FALSE, TRUE),
+
+('24558760-8c5b-4ec7-b9c1-c7c3e6c1c430',
+ (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2024-11-24 16:00:00' AND lugar = 'P. Felipe – Pista Central'),
+ 2, 0, FALSE, FALSE, FALSE),
+
+('b54a2d5b-4f5c-4fd0-a14f-8f3adf5071dc',
+ (SELECT id FROM jugadores WHERE nombre = 'Raúl García Rodrigo' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2024-11-24 16:00:00' AND lugar = 'P. Felipe – Pista Central'),
+ 0, 0, FALSE, FALSE, TRUE),
+
+('aa5e79d4-8913-47bb-a1ee-5f296ccdcaf8',
+ (SELECT id FROM jugadores WHERE nombre = 'Daniel Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2024-11-24 16:00:00' AND lugar = 'P. Felipe – Pista Central'),
+ 0, 0, FALSE, FALSE, FALSE),
+
+('0a3f09a2-1819-4043-8650-c82ce6611d8f',
+ (SELECT id FROM jugadores WHERE nombre = 'Alfonso Peris Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2024-11-24 16:00:00' AND lugar = 'P. Felipe – Pista Central'),
+ 0, 0, FALSE, FALSE, FALSE),
+
+('8b32ce99-bc71-4db5-b6a9-05e3c7e1c90e',
+ (SELECT id FROM jugadores WHERE nombre = 'Mario Rodríguez Díaz' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2024-11-24 16:00:00' AND lugar = 'P. Felipe – Pista Central'),
+ 0, 0, FALSE, FALSE, FALSE),
+
+('9ea05ab8-129e-49cf-bb83-768f1c41095c',
+ (SELECT id FROM jugadores WHERE nombre = 'Alberto González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2024-11-24 16:00:00' AND lugar = 'P. Felipe – Pista Central'),
+ 0, 0, FALSE, TRUE, FALSE),
+
+('35813f3c-6167-4b79-a3be-4ffb2ad24b44',
+ (SELECT id FROM jugadores WHERE nombre = 'Jorge Sánchez Rodríguez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2024-11-24 16:00:00' AND lugar = 'P. Felipe – Pista Central'),
+ 0, 0, FALSE, TRUE, FALSE),
+
+('9ef221ed-f8bb-4f4f-a3bc-d09c37a2be27',
+ (SELECT id FROM jugadores WHERE nombre = 'Adrián Carvajal Sánchez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2024-11-24 16:00:00' AND lugar = 'P. Felipe – Pista Central'),
+ 0, 1, FALSE, TRUE, FALSE),
+
+('ebc1f91a-92e3-487f-97fa-d3f839edb933',
+ (SELECT id FROM jugadores WHERE nombre = 'Jorge González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2024-11-24 16:00:00' AND lugar = 'P. Felipe – Pista Central'),
+ 0, 1, FALSE, FALSE, FALSE),
+
+('0fb67d86-7b63-4cb6-87c1-3fc79cdbe92b',
+ (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2024-12-01 16:00:00' AND lugar = 'La Granadilla'),
+ 1, 1, FALSE, FALSE, FALSE),
+
+('f4f8186b-7f28-4867-8c92-0de6e9624728',
+ (SELECT id FROM jugadores WHERE nombre = 'Jorge González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2024-12-01 16:00:00' AND lugar = 'La Granadilla'),
+ 1, 0, FALSE, FALSE, FALSE),
+
+('9937b85d-203b-4cd9-a6db-f2c1d34a1ea3',
+ (SELECT id FROM jugadores WHERE nombre = 'Jorge Sánchez Rodríguez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2024-12-01 16:00:00' AND lugar = 'La Granadilla'),
+ 0, 0, FALSE, FALSE, FALSE),
+
+('2f7c79cb-c6e5-46c6-a7d4-d8d04ee96c92',
+ (SELECT id FROM jugadores WHERE nombre = 'Alberto González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2024-12-01 16:00:00' AND lugar = 'La Granadilla'),
+ 0, 1, FALSE, FALSE, FALSE),
+
+('a29a5f46-f787-4c9e-98e6-08c2925c43bb',
+ (SELECT id FROM jugadores WHERE nombre = 'Alfonso Peris Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2024-12-01 16:00:00' AND lugar = 'La Granadilla'),
+ 0, 0, FALSE, FALSE, FALSE),
+
+('fa46e586-b5eb-4878-a208-72601a8fa7ed',
+ (SELECT id FROM jugadores WHERE nombre = 'Daniel Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2024-12-01 16:00:00' AND lugar = 'La Granadilla'),
+ 0, 0, FALSE, FALSE, FALSE),
+
+('a462ed3f-c84d-4ab4-9826-4eb18d9cd0e3',
+ (SELECT id FROM jugadores WHERE nombre = 'Raúl García Rodrigo' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2024-12-01 16:00:00' AND lugar = 'La Granadilla'),
+ 0, 0, FALSE, FALSE, TRUE),
+
+('9c4f3cc5-3de0-4ac9-87b8-949002bd1598',
+ (SELECT id FROM jugadores WHERE nombre = 'Fernando Méndez Lera' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2024-12-15 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 4, 1, FALSE, FALSE, FALSE),
+
+('3b8a2b4e-bcd2-4040-9f15-d5a00b5c1f58',
+ (SELECT id FROM jugadores WHERE nombre = 'Adrián Carvajal Sánchez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2024-12-15 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 2, 2, FALSE, FALSE, FALSE),
+
+('70aa867e-82cb-4327-9be9-709009d6fa7a',
+ (SELECT id FROM jugadores WHERE nombre = 'Daniel Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2024-12-15 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 2, 1, FALSE, FALSE, FALSE),
+
+('e02df420-cce5-4b90-a74b-6d414f0c0e36',
+ (SELECT id FROM jugadores WHERE nombre = 'Mario Rodríguez Díaz' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2024-12-15 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 1, 1, FALSE, FALSE, FALSE),
+
+('db29de44-cd3e-4d6a-8c3b-2c2d59c8421d',
+ (SELECT id FROM jugadores WHERE nombre = 'Raúl García Rodrigo' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2024-12-15 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 1, 1, FALSE, FALSE, TRUE),
+
+('6b6ea6bb-754b-4e4e-9e64-7f835998e758',
+ (SELECT id FROM jugadores WHERE nombre = 'Alberto González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2024-12-15 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 1, 1, FALSE, FALSE, FALSE),
+
+('bf9a3a42-5ec2-4de1-85d4-1f9fa4421ba0',
+ (SELECT id FROM jugadores WHERE nombre = 'Jorge González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2024-12-15 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 1, 1, FALSE, FALSE, TRUE),
+
+('b021a658-d93c-4d4f-85be-e1958ae76344',
+ (SELECT id FROM jugadores WHERE nombre = 'Alfonso Peris Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2024-12-15 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 0, 1, FALSE, FALSE, FALSE),
+
+('80c24e4a-75a3-43a5-842f-1d7b87cf50dc',
+ (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-01-12 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 2, 0, FALSE, FALSE, FALSE),
+
+('9cb14258-226f-49e3-8495-4cc514c9a2ff',
+ (SELECT id FROM jugadores WHERE nombre = 'Jorge González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-01-12 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 1, 2, FALSE, FALSE, TRUE),
+
+('5d0ed67f-2cf3-4cfd-abc9-57e7fa2cc80b',
+ (SELECT id FROM jugadores WHERE nombre = 'Adrián Carvajal Sánchez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-01-12 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 1, 0, FALSE, FALSE, FALSE),
+
+('dc8b0f42-8f20-4be1-80ed-5952a3f6f2fb',
+ (SELECT id FROM jugadores WHERE nombre = 'Jorge Sánchez Rodríguez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-01-12 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 1, 0, FALSE, FALSE, FALSE),
+
+('b8362ab6-206e-4fe8-8005-1fc457bf47b4',
+ (SELECT id FROM jugadores WHERE nombre = 'Alfonso Peris Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-01-12 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 0, 0, FALSE, FALSE, FALSE),
+
+('c0939827-9d7a-41b7-9502-4909f8ad2364',
+ (SELECT id FROM jugadores WHERE nombre = 'Fernando Méndez Lera' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-01-12 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 0, 1, FALSE, FALSE, FALSE),
+
+('78c7cf11-4fa6-42c2-a02d-4cb81e77f2cb',
+ (SELECT id FROM jugadores WHERE nombre = 'Nacho Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-01-12 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 0, 0, FALSE, FALSE, FALSE),
+
+('9d01c496-68e2-4451-81ec-705118d16a43',
+ (SELECT id FROM jugadores WHERE nombre = 'Mario Rodríguez Díaz' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-01-12 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 0, 0, FALSE, FALSE, FALSE),
+
+('3c4b3e0f-1244-4c74-ae5b-b6b4f5d6d365',
+ (SELECT id FROM jugadores WHERE nombre = 'Alberto González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-01-12 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 0, 1, FALSE, FALSE, TRUE),
+
+('b3ae4077-3736-4401-80c6-c740b34f82a6',
+ (SELECT id FROM jugadores WHERE nombre = 'Jorge Sánchez Rodríguez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-01-19 19:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 1, 1, FALSE, FALSE, FALSE),
+
+('23fae0f1-19fc-4f21-9679-b8dca26b0be2',
+ (SELECT id FROM jugadores WHERE nombre = 'Adrián Carvajal Sánchez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-01-19 19:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 2, 1, FALSE, FALSE, FALSE),
+
+('8e50ddc5-19d2-4b2c-b7b7-fc54696345b1',
+ (SELECT id FROM jugadores WHERE nombre = 'Fernando Méndez Lera' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-01-19 19:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 1, 0, FALSE, FALSE, FALSE),
+
+('18d99996-d037-4a65-a3e1-535b3c5dc2cf',
+ (SELECT id FROM jugadores WHERE nombre = 'Jorge González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-01-19 19:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 0, 1, FALSE, FALSE, TRUE),
+
+('cbf2036a-6b7d-4499-a3b5-d4d8b1df3464',
+ (SELECT id FROM jugadores WHERE nombre = 'Alfonso Peris Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-01-19 19:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 0, 0, FALSE, FALSE, FALSE),
+
+('de80b6e6-73d4-45a2-bb96-fb5c41bb92ee',
+ (SELECT id FROM jugadores WHERE nombre = 'Nacho Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-01-19 19:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 0, 0, FALSE, FALSE, FALSE),
+
+('c5f3188e-9f30-4467-8451-15a4bdb5c01f',
+ (SELECT id FROM jugadores WHERE nombre = 'Mario Rodríguez Díaz' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-01-19 19:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 0, 0, FALSE, FALSE, FALSE),
+
+('3cc52bc3-69e2-4b08-9e2d-c31f181177c3',
+ (SELECT id FROM jugadores WHERE nombre = 'Alberto González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-01-19 19:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 0, 1, FALSE, FALSE, TRUE),
+
+('ec158780-79b7-4e62-8c84-32cb319b18cf',
+ (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-01-19 19:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 0, 0, FALSE, FALSE, FALSE),
+
+('7ea1cfa8-56b5-4647-99cf-6a9e48269a28',
+ (SELECT id FROM jugadores WHERE nombre = 'Adrián Carvajal Sánchez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-01-26 18:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 2, 1, FALSE, FALSE, FALSE),
+
+('e3f1a97f-897e-4e8e-a7a8-c0f6cd4cbd0d',
+ (SELECT id FROM jugadores WHERE nombre = 'Alberto González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-01-26 18:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 1, 0, FALSE, FALSE, FALSE),
+
+('409730a4-f062-4fe8-8c13-f4cf4c0ea053',
+ (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-01-26 18:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 1, 1, FALSE, FALSE, FALSE),
+
+('5fc8417a-c300-4a0d-8c91-c3b95658994b',
+ (SELECT id FROM jugadores WHERE nombre = 'Daniel Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-01-26 18:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 1, 0, FALSE, FALSE, FALSE),
+
+('9f27e982-9ab4-49dc-a8f3-f362c56fcde2',
+ (SELECT id FROM jugadores WHERE nombre = 'Raúl García Rodrigo' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-01-26 18:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 0, 0, FALSE, FALSE, TRUE),
+
+('f253f098-18e5-4569-9622-6f3ed319c6e0',
+ (SELECT id FROM jugadores WHERE nombre = 'Mario Rodríguez Díaz' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-01-26 18:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 0, 0, FALSE, FALSE, FALSE),
+
+('de8d8f80-36c0-4680-88c8-9a52cd250e5d',
+ (SELECT id FROM jugadores WHERE nombre = 'Alfonso Peris Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-01-26 18:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 0, 0, FALSE, FALSE, FALSE),
+
+('eb49dfd7-9a0d-41a0-a9a5-43b4c0bb282b',
+ (SELECT id FROM jugadores WHERE nombre = 'Fernando Méndez Lera' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-01-26 18:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 0, 2, FALSE, FALSE, FALSE),
+
+('1cda121d-f9fc-456a-bd3e-4ac08d3f10c7',
+ (SELECT id FROM jugadores WHERE nombre = 'Jorge González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-01-26 18:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 0, 1, FALSE, FALSE, TRUE),
+
+('4ef6fe06-b81a-4f47-aabe-4209bcff2a9f',
+ (SELECT id FROM jugadores WHERE nombre = 'Adrián Carvajal Sánchez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-02-02 18:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 1, 0, FALSE, FALSE, FALSE),
+
+('6b17a4e5-bef4-430b-860c-62288a9fa276',
+ (SELECT id FROM jugadores WHERE nombre = 'Fernando Méndez Lera' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-02-02 18:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 1, 0, FALSE, FALSE, FALSE),
+
+('0413dc3d-bfd6-45a6-9a2f-e89c758f8039',
+ (SELECT id FROM jugadores WHERE nombre = 'Mario Rodríguez Díaz' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-02-02 18:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 0, 0, FALSE, FALSE, FALSE),
+
+('8c5468a6-5564-489c-b0cb-e9dcf06e4536',
+ (SELECT id FROM jugadores WHERE nombre = 'Jorge González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-02-02 18:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 0, 1, FALSE, FALSE, FALSE),
+
+('64d8bb25-92fa-4b6b-bae7-00651ae1e5ff',
+ (SELECT id FROM jugadores WHERE nombre = 'Alberto González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-02-02 18:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 0, 0, FALSE, FALSE, FALSE),
+
+('6ab3df67-f8ae-4c46-bf4b-fd178905ff02',
+ (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-02-02 18:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 0, 0, FALSE, FALSE, FALSE),
+
+('3de32451-5a2c-4668-961e-1306c05b2750',
+ (SELECT id FROM jugadores WHERE nombre = 'Jorge Sánchez Rodríguez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-02-02 18:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 0, 1, FALSE, FALSE, FALSE),
+
+('d553a8cb-8ac3-4e09-9611-72aa9935e182',
+ (SELECT id FROM jugadores WHERE nombre = 'Alfonso Peris Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-02-02 18:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 0, 0, FALSE, FALSE, FALSE),
+
+('a1f70ab0-5bfa-43cd-b2e3-3f1b464fb3fa',
+ (SELECT id FROM jugadores WHERE nombre = 'Raúl García Rodrigo' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-02-02 18:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 0, 0, FALSE, FALSE, TRUE),
+
+('91894f8a-589e-4f4a-b09e-07ad9209e070',
+ (SELECT id FROM jugadores WHERE nombre = 'Fernando Méndez Lera' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-02-09 19:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 3, 1, FALSE, FALSE, FALSE),
+
+('b6d6f62a-fc8e-4424-8d0c-377746a94242',
+ (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-02-09 19:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 2, 1, FALSE, FALSE, FALSE),
+
+('e3e0cf91-6fc7-4715-a42f-93fc9b2a5122',
+ (SELECT id FROM jugadores WHERE nombre = 'Adrián Carvajal Sánchez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-02-09 19:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 1, 1, FALSE, FALSE, FALSE),
+
+('c101ce93-3582-4ed3-9051-91f3a6ae46a2',
+ (SELECT id FROM jugadores WHERE nombre = 'Alfonso Peris Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-02-09 19:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 1, 0, FALSE, FALSE, FALSE),
+
+('627e2d79-e88e-4724-8029-2bb7d86b3e6f',
+ (SELECT id FROM jugadores WHERE nombre = 'Raúl García Rodrigo' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-02-09 19:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 0, 0, FALSE, FALSE, TRUE),
+
+('cb462bc9-b3a2-4bcf-a028-e793a85f7cb7',
+ (SELECT id FROM jugadores WHERE nombre = 'Jorge González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-02-09 19:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 0, 2, FALSE, FALSE, FALSE),
+
+('2be4163c-e5d4-463e-ae1e-1e83f24fd7b9',
+ (SELECT id FROM jugadores WHERE nombre = 'Jorge Sánchez Rodríguez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-02-09 19:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 0, 0, FALSE, FALSE, FALSE),
+
+('cfe7df92-8dc5-4c2a-91fc-3c3d27dc11df',
+ (SELECT id FROM jugadores WHERE nombre = 'Mario Rodríguez Díaz' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-02-09 19:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 0, 1, FALSE, FALSE, FALSE),
+
+('63f796b4-1f4d-47bb-b2ea-7d9894d24a1f',
+ (SELECT id FROM jugadores WHERE nombre = 'Nacho Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-02-09 19:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 0, 0, FALSE, FALSE, FALSE),
+
+('f214b604-c40e-4127-a11a-c1c8ccdb66c3',
+ (SELECT id FROM jugadores WHERE nombre = 'Jorge Sánchez Rodríguez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-02-23 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 1, 1, FALSE, FALSE, FALSE),
+
+('b169320e-b220-4327-88ef-e50323dd633c',
+ (SELECT id FROM jugadores WHERE nombre = 'Fernando Méndez Lera' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-02-23 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 3, 2, FALSE, FALSE, FALSE),
+
+('62002c72-95ec-4c94-8939-e16fdc9601a0',
+ (SELECT id FROM jugadores WHERE nombre = 'Adrián Carvajal Sánchez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-02-23 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 3, 1, FALSE, FALSE, FALSE),
+
+('acdb1705-1558-4c9a-96c7-9bcb32cce2ae',
+ (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-02-23 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 1, 1, FALSE, FALSE, FALSE),
+
+('0a8df6ef-06db-4321-b5c8-c60dc274fd41',
+ (SELECT id FROM jugadores WHERE nombre = 'Mario Rodríguez Díaz' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-02-23 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 1, 0, FALSE, FALSE, FALSE),
+
+('f253eb64-2c92-4909-b43b-b6cd43e0f418',
+ (SELECT id FROM jugadores WHERE nombre = 'Raúl García Rodrigo' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-02-23 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 0, 0, FALSE, FALSE, TRUE),
+
+('47b4022c-0cb3-4d16-b67c-6792f5e7a538',
+ (SELECT id FROM jugadores WHERE nombre = 'Nacho Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-02-23 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 0, 1, FALSE, FALSE, FALSE),
+
+('0b708fe9-51f2-41bb-9703-9172731083d6',
+ (SELECT id FROM jugadores WHERE nombre = 'Adrián Carvajal Sánchez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-03-02 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 4, 0, FALSE, FALSE, FALSE),
+
+('ef80e357-9175-4740-b2ea-7f7a7e8a509e',
+ (SELECT id FROM jugadores WHERE nombre = 'Fernando Méndez Lera' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-03-02 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 1, 1, FALSE, FALSE, FALSE),
+
+('fd313bb7-d163-4d46-b7e4-8f9d3422c6fc',
+ (SELECT id FROM jugadores WHERE nombre = 'Raúl García Rodrigo' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-03-02 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 0, 0, FALSE, FALSE, TRUE),
+
+('cb69b4c7-e963-4074-96f6-33ddf62eb56d',
+ (SELECT id FROM jugadores WHERE nombre = 'Jorge González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-03-02 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 0, 1, FALSE, FALSE, FALSE),
+
+('82fdb364-4ae9-41f1-a21f-f236c9ff4821',
+ (SELECT id FROM jugadores WHERE nombre = 'Nacho Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-03-02 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 0, 1, FALSE, FALSE, FALSE),
+
+('66e58b40-7d8d-4637-8fc3-f844b0451f39',
+ (SELECT id FROM jugadores WHERE nombre = 'Mario Rodríguez Díaz' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-03-02 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 0, 1, FALSE, FALSE, FALSE),
+
+('2f53b29c-51d8-40fd-b239-f2c997ff0e08',
+ (SELECT id FROM jugadores WHERE nombre = 'Alberto González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-03-02 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
+ 0, 1, FALSE, FALSE, FALSE),
+
+ ('72e9622f-62de-4f13-a8f1-2f4a3c0f1a79',
+  (SELECT id FROM jugadores WHERE nombre = 'Adrián Carvajal Sánchez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+  (SELECT id FROM partidos WHERE fecha = '2025-03-09 16:00:00' AND lugar = 'La Granadilla'),
+  1, 0, FALSE, FALSE, FALSE),
+
+ ('79897dbb-9824-4c43-9139-2d44062fda88',
+  (SELECT id FROM jugadores WHERE nombre = 'Fernando Méndez Lera' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+  (SELECT id FROM partidos WHERE fecha = '2025-03-09 16:00:00' AND lugar = 'La Granadilla'),
+  1, 1, FALSE, FALSE, FALSE),
+
+ ('6d4b73da-13ee-4f26-96a2-1f1f2ac00a15',
+  (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+  (SELECT id FROM partidos WHERE fecha = '2025-03-09 16:00:00' AND lugar = 'La Granadilla'),
+  2, 0, FALSE, FALSE, FALSE),
+
+ ('92d2ff02-6a09-4635-8f4e-37f0fcce19e9',
+  (SELECT id FROM jugadores WHERE nombre = 'Jorge Sánchez Rodríguez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+  (SELECT id FROM partidos WHERE fecha = '2025-03-09 16:00:00' AND lugar = 'La Granadilla'),
+  1, 1, FALSE, FALSE, FALSE),
+
+ ('e2176cfd-8719-45d6-b98b-b6a0505a7a43',
+  (SELECT id FROM jugadores WHERE nombre = 'Raúl García Rodrigo' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+  (SELECT id FROM partidos WHERE fecha = '2025-03-09 16:00:00' AND lugar = 'La Granadilla'),
+  0, 0, FALSE, FALSE, TRUE),
+
+ ('8ee8e218-c264-49fa-8730-4e9a1b9e87ae',
+  (SELECT id FROM jugadores WHERE nombre = 'Mario Rodríguez Díaz' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+  (SELECT id FROM partidos WHERE fecha = '2025-03-09 16:00:00' AND lugar = 'La Granadilla'),
+  0, 1, FALSE, FALSE, FALSE),
+
+ ('39f3d5ff-3e17-4683-9d43-28dcf93c4c83',
+  (SELECT id FROM jugadores WHERE nombre = 'Nacho Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+  (SELECT id FROM partidos WHERE fecha = '2025-03-09 16:00:00' AND lugar = 'La Granadilla'),
+  0, 1, FALSE, FALSE, FALSE),
+
+('b5c1b54a-947c-4f78-a5d4-bf6523fc3065',
+ (SELECT id FROM jugadores WHERE nombre = 'Adrián Carvajal Sánchez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-03-16 16:00:00' AND lugar = 'P. Felipe – Pista Central'),
+ 1, 0, TRUE, TRUE, FALSE),
+
+('d540fcff-29f5-4a5f-84f5-e79ec6a20a13',
+ (SELECT id FROM jugadores WHERE nombre = 'Jorge González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-03-16 16:00:00' AND lugar = 'P. Felipe – Pista Central'),
+ 1, 0, FALSE, FALSE, FALSE),
+
+('fd1092db-f1cf-4709-8b5f-b80c1ce1a3b1',
+ (SELECT id FROM jugadores WHERE nombre = 'Jorge Sánchez Rodríguez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-03-16 16:00:00' AND lugar = 'P. Felipe – Pista Central'),
+ 0, 0, TRUE, TRUE, FALSE),
+
+('2a6c5a41-6a0b-4b3c-b370-66b6c62c8a96',
+ (SELECT id FROM jugadores WHERE nombre = 'Nacho Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-03-16 16:00:00' AND lugar = 'P. Felipe – Pista Central'),
+ 0, 0, TRUE, TRUE, FALSE),
+
+('8c6f52b7-1136-4c5b-93b4-86b83d347d8a',
+ (SELECT id FROM jugadores WHERE nombre = 'Raúl García Rodrigo' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-03-16 16:00:00' AND lugar = 'P. Felipe – Pista Central'),
+ 0, 0, FALSE, FALSE, TRUE),
+
+('63f063fd-7ed6-4d8a-8024-16c66ec3a922',
+ (SELECT id FROM jugadores WHERE nombre = 'Mario Rodríguez Díaz' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-03-16 16:00:00' AND lugar = 'P. Felipe – Pista Central'),
+ 0, 0, FALSE, FALSE, FALSE),
+
+('1ac93c02-c0cb-406f-a5ec-5f31e0d4ef0f',
+ (SELECT id FROM jugadores WHERE nombre = 'Alberto González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-03-16 16:00:00' AND lugar = 'P. Felipe – Pista Central'),
+ 0, 0, FALSE, FALSE, FALSE),
+
+('5a31809c-40d2-4ff3-9d0c-cdb4a238f099',
+ (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-03-30 16:00:00' AND lugar = 'P. Felipe – Pista Central'),
+ 1, 0, FALSE, FALSE, FALSE),
+
+('eae2ab21-8792-4a2a-b238-1275b20846d3',
+ (SELECT id FROM jugadores WHERE nombre = 'Fernando Méndez Lera' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-03-30 16:00:00' AND lugar = 'P. Felipe – Pista Central'),
+ 1, 0, FALSE, FALSE, FALSE),
+
+('5dc42638-5edb-435e-94cb-e43c6e42b97d',
+ (SELECT id FROM jugadores WHERE nombre = 'Raúl García Rodrigo' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-03-30 16:00:00' AND lugar = 'P. Felipe – Pista Central'),
+ 0, 0, FALSE, FALSE, TRUE),
+
+('e7efb8c7-d4f0-41ff-b005-2a055690fdf8',
+ (SELECT id FROM jugadores WHERE nombre = 'Jorge González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-03-30 16:00:00' AND lugar = 'P. Felipe – Pista Central'),
+ 0, 0, FALSE, FALSE, FALSE),
+
+('c60a4f42-0a76-4c35-808f-b1218ad6ffbb',
+ (SELECT id FROM jugadores WHERE nombre = 'Mario Rodríguez Díaz' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-03-30 16:00:00' AND lugar = 'P. Felipe – Pista Central'),
+ 0, 0, FALSE, FALSE, FALSE),
+
+('4507b775-f04a-4cb7-9b6a-204a4f9c6f64',
+ (SELECT id FROM jugadores WHERE nombre = 'Daniel Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-03-30 16:00:00' AND lugar = 'P. Felipe – Pista Central'),
+ 0, 0, FALSE, FALSE, FALSE),
+
+('e2f9d170-1e61-4370-99fa-f5240ea41390',
+ (SELECT id FROM jugadores WHERE nombre = 'Alberto González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-03-30 16:00:00' AND lugar = 'P. Felipe – Pista Central'),
+ 0, 0, FALSE, FALSE, FALSE),
+
+('4d1e8ba5-c4f7-408c-bc62-f40b265dfb94',
+ (SELECT id FROM jugadores WHERE nombre = 'Jorge González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-04-06 16:00:00' AND lugar = 'La Granadilla'),
+ 2, 2, FALSE, FALSE, TRUE),
+
+('7a19a355-efdc-4b63-84b4-254ff0bcf8e7',
+ (SELECT id FROM jugadores WHERE nombre = 'Nacho Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-04-06 16:00:00' AND lugar = 'La Granadilla'),
+ 1, 1, FALSE, FALSE, FALSE),
+
+('e74c099a-5db1-4c49-b6ea-4ea6d8b2f73f',
+ (SELECT id FROM jugadores WHERE nombre = 'Raúl García Rodrigo' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-04-06 16:00:00' AND lugar = 'La Granadilla'),
+ 1, 1, FALSE, FALSE, TRUE),
+
+('be019b11-1043-4c32-993c-0c8ef4c00982',
+ (SELECT id FROM jugadores WHERE nombre = 'Mario Rodríguez Díaz' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-04-06 16:00:00' AND lugar = 'La Granadilla'),
+ 0, 0, FALSE, FALSE, FALSE),
+
+('3c12c63e-bfc5-4fd2-b9eb-259e4e1b5d25',
+ (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-04-06 16:00:00' AND lugar = 'La Granadilla'),
+ 0, 0, FALSE, FALSE, FALSE),
+
+('9a8ab2a1-96e0-432e-bf30-49e7a5fe82ef',
+ (SELECT id FROM jugadores WHERE nombre = 'Alfonso Peris Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM partidos WHERE fecha = '2025-04-06 16:00:00' AND lugar = 'La Granadilla'),
+ 1, 0, FALSE, FALSE, FALSE)
 
 ON CONFLICT (jugador_id, partido_id) DO UPDATE SET
     goles = EXCLUDED.goles,

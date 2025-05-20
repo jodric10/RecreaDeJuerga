@@ -1,8 +1,8 @@
 package com.recreadejuerga.recrea.servicios;
 
-import com.recreadejuerga.recrea.dtos.jugadorparecido.JugadorParecidoDTO;
-import com.recreadejuerga.recrea.dtos.jugadorparecido.JugadorParecidoInsertarDTO;
-import com.recreadejuerga.recrea.dtos.jugadorparecido.JugadorParecidoModificarDTO;
+import com.recreadejuerga.recrea.dtos.jugadorParecido.JugadorParecidoDTO;
+import com.recreadejuerga.recrea.dtos.jugadorParecido.JugadorParecidoInsertarDTO;
+import com.recreadejuerga.recrea.dtos.jugadorParecido.JugadorParecidoModificarDTO;
 import com.recreadejuerga.recrea.entidades.Jugador;
 import com.recreadejuerga.recrea.entidades.JugadorParecido;
 import com.recreadejuerga.recrea.error.CamposDuplicadosException;

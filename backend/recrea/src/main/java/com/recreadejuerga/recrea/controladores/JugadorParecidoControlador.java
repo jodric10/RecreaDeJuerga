@@ -1,8 +1,8 @@
 package com.recreadejuerga.recrea.controladores;
 
-import com.recreadejuerga.recrea.dtos.jugadorparecido.JugadorParecidoDTO;
-import com.recreadejuerga.recrea.dtos.jugadorparecido.JugadorParecidoInsertarDTO;
-import com.recreadejuerga.recrea.dtos.jugadorparecido.JugadorParecidoModificarDTO;
+import com.recreadejuerga.recrea.dtos.jugadorParecido.JugadorParecidoDTO;
+import com.recreadejuerga.recrea.dtos.jugadorParecido.JugadorParecidoInsertarDTO;
+import com.recreadejuerga.recrea.dtos.jugadorParecido.JugadorParecidoModificarDTO;
 import com.recreadejuerga.recrea.servicios.JugadorParecidoServicio;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;

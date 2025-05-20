@@ -14,7 +14,7 @@ public class PartidoMapper {
         if (partido == null) return null;
         EquipoDTO equipoLocal=EquipoMapper.toEquipoDTO(partido.getEquipoLocal());
         EquipoDTO equipoVisitante=EquipoMapper.toEquipoDTO(partido.getEquipoVisitante());
-        JugadorSimpleDTO mvp=JugadorMapper.jugadorSimpleDTO(partido.getMvp());
+        JugadorSimpleDTO mvp=JugadorMapper.tojugadorSimpleDTO(partido.getMvp());
         return new PartidoDTO(
                 partido.getId(),
                 partido.getFecha(),

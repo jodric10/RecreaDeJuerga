@@ -1,4 +1,4 @@
-package com.recreadejuerga.recrea.dtos.jugadorparecido;
+package com.recreadejuerga.recrea.dtos.jugadorParecido;
 
 import lombok.*;
 
@@ -9,8 +9,8 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class JugadorParecidoSimpleDTO {
+public class JugadorParecidoDTO {
     private UUID id;
+    private UUID jugadorId;
     private String parecido;
 }
-

@@ -148,5 +148,27 @@ public class GlobalErrorControlador extends ResponseEntityExceptionHandler {
         return resultado;
     }
 
+    @ExceptionHandler(EstadisticasJugadorPartidoNoEncontradoException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ProblemDetail handlePartidoNoEncontrado(EstadisticasJugadorPartidoNoEncontradoException ex, WebRequest request){
+        ProblemDetail resultado= ProblemDetail.forStatusAndDetail(HttpStatus.NOT_FOUND, ex.getMessage());
+        resultado.setTitle("Estadísticas de los jugadores no encontradas");
+        resultado.setType(URI.create("https://api.recreadejuerga.com/errores/estadísticas-no-encontradas"));
+        resultado.setInstance(URI.create(request.getDescription(false).replace("uri=", "")));
+        return resultado;
+    }
+
+    @ExceptionHandler(EstadisticaJugadorPartidoYaExistenteException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ProblemDetail handlePartidoNoEncontrado(EstadisticaJugadorPartidoYaExistenteException ex, WebRequest request){
+        ProblemDetail resultado= ProblemDetail.forStatusAndDetail(HttpStatus.CONFLICT, ex.getMessage());
+        resultado.setTitle("Estadísticas del jugador ya existente");
+        resultado.setType(URI.create("https://api.recreadejuerga.com/errores/estadísticas-ya-existente"));
+        resultado.setInstance(URI.create(request.getDescription(false).replace("uri=", "")));
+        return resultado;
+    }
+
+
+
 
 }
