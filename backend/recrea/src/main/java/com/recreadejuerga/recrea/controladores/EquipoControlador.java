@@ -340,5 +340,4 @@ public class EquipoControlador {
         equipoServicio.eliminarEquipo(id);
         return ResponseEntity.noContent().build();
     }
-
 }
