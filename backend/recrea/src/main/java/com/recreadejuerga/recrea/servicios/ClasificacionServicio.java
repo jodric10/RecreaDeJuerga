@@ -43,7 +43,7 @@ public class ClasificacionServicio {
             repo.actualizarClasificacion(id, c.getPuntos(), c.getPartidosJugados(), c.getGanados(), c.getEmpatados(), c.getPerdidos(), c.getGolesAFavor(), c.getGolesContra(),diferenciaGoles, promedioTfTc);
             return repo.findById(id).map(ClasificacionMapper::toClasificacionDTO).orElseThrow(() -> new ClasificacionNoEncontradaException(id));
         } else {
-            throw new EquipoNoEncontradoException(id);
+            throw new ClasificacionNoEncontradaException(id);
         }
     }
 }

@@ -67,7 +67,7 @@ public class JugadorParecidoServicio {
                 throw new CamposDuplicadosException(Map.of("desconocido", "Violación de restricción de unicidad."));
             }
         }
-        throw new JugadorParecidoNoEncontradoException("Lo siento pero el parecido no fue encontrado");
+        throw new JugadorParecidoNoEncontradoException(parecido_id);
     }
 
 

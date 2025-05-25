@@ -1,7 +1,7 @@
 package com.recreadejuerga.recrea.mappers;
 
 import com.recreadejuerga.recrea.dtos.estadisticasJugadorPartido.EstadisticasJugadorPartidoDTO;
-import com.recreadejuerga.recrea.dtos.estadisticasJugadorPartido.EstadisticasJugadorPartidoFormularioDTO;
+import com.recreadejuerga.recrea.dtos.estadisticasJugadorPartido.EstadisticasJugadorPartidoInsertarDTO;
 import com.recreadejuerga.recrea.dtos.jugador.JugadorSimpleDTO;
 import com.recreadejuerga.recrea.entidades.EstadisticasJugadorPartido;
 import com.recreadejuerga.recrea.entidades.Jugador;
@@ -25,7 +25,7 @@ public class EstadisticasJugadorPartidoMapper {
     }
 
     public static EstadisticasJugadorPartido toEstadisticasJugadorPartido(
-            EstadisticasJugadorPartidoFormularioDTO dto,
+            EstadisticasJugadorPartidoInsertarDTO dto,
             Jugador jugador,
             Partido partido
     ) {
@@ -39,6 +39,8 @@ public class EstadisticasJugadorPartidoMapper {
                 .portero(dto.getPortero())
                 .build();
     }
+
+
 
 
 

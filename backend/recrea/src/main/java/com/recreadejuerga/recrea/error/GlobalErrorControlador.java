@@ -47,7 +47,6 @@ public class GlobalErrorControlador extends ResponseEntityExceptionHandler {
         return resultado;
     }
 
-
     @Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(
             MethodArgumentNotValidException ex,

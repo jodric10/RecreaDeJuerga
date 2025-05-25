@@ -12,7 +12,7 @@ public class ClasificacionNoEncontradaException extends RuntimeException {
     }
 
     public ClasificacionNoEncontradaException() {
-        super("La clasificación de la liga no fue encontrada");
+        super("No hay datos de clasificación disponibles");
     }
 
     public ClasificacionNoEncontradaException(UUID id) {
