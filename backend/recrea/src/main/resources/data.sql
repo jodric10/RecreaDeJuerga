@@ -47,7 +47,7 @@ INSERT INTO jugadores (
 ('f217f7a2-bb7e-4729-b0a8-6f5f90a58f17', 'Fernando Méndez Lera', 'Fer', 8, 'Ala', 'Izquierdo', 15, 8, 'Desborde, zurda, disparo', '2007-01-27', 'España',
  (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'http://example.com/foto_frontal4.png', 'http://example.com/foto_tarjeta4.png', 'http://example.com/foto_pose4.png'),
 
-('ac548370-00ff-4060-b4bb-284378c6c9d9', 'Alfonso Peris Pérez', 'Fonsi', 12, 'Pívot', 'Derecho', 4, 3, 'Compromiso, movilidad, físico', '2004-10-17', 'España',
+('ac548370-00ff-4060-b4bb-284378c6c9d9', 'Alfonso Perís Pérez', 'Fonsi', 12, 'Pívot', 'Derecho', 4, 3, 'Compromiso, movilidad, físico', '2004-10-17', 'España',
  (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'http://example.com/foto_frontal5.png', 'http://example.com/foto_tarjeta5.png', 'http://example.com/foto_pose5.png'),
 
 ('1e9a00be-308e-4a30-98a1-e7254ecb03fa', 'Mario Rodríguez Díaz', 'Mario', 21, 'Ala', 'Derecho', 2, 3, 'Calidad, sacrificio, apoyo', '2004-06-11', 'España',
@@ -67,51 +67,50 @@ ON CONFLICT (equipo_id, dorsal) DO UPDATE SET
   foto_tarjeta = EXCLUDED.foto_tarjeta,
   foto_pose = EXCLUDED.foto_pose;
 
-INSERT INTO jugadores_parecidos (jugador_id, parecido) VALUES
-((SELECT id FROM jugadores WHERE nombre = 'Jorge González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Milinković-Savić'),
-((SELECT id FROM jugadores WHERE nombre = 'Jorge González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'David Silva'),
-((SELECT id FROM jugadores WHERE nombre = 'Jorge González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Isco'),
+INSERT INTO jugadores_parecidos (id,jugador_id, parecido) VALUES
+('0a1d3d10-1234-4a1f-9b01-000000000001', (SELECT id FROM jugadores WHERE nombre = 'Jorge González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Milinković-Savić'),
+('0a1d3d10-1234-4a1f-9b01-000000000002', (SELECT id FROM jugadores WHERE nombre = 'Jorge González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'David Silva'),
+('0a1d3d10-1234-4a1f-9b01-000000000003', (SELECT id FROM jugadores WHERE nombre = 'Jorge González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Isco'),
 
-((SELECT id FROM jugadores WHERE nombre = 'Nacho Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Camavinga'),
-((SELECT id FROM jugadores WHERE nombre = 'Nacho Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Valverde'),
-((SELECT id FROM jugadores WHERE nombre = 'Nacho Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Saúl'),
+('0a1d3d10-1234-4a1f-9b01-000000000004', (SELECT id FROM jugadores WHERE nombre = 'Nacho Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Camavinga'),
+('0a1d3d10-1234-4a1f-9b01-000000000005', (SELECT id FROM jugadores WHERE nombre = 'Nacho Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Valverde'),
+('0a1d3d10-1234-4a1f-9b01-000000000006', (SELECT id FROM jugadores WHERE nombre = 'Nacho Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Saúl'),
 
-((SELECT id FROM jugadores WHERE nombre = 'Daniel Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Xabi Alonso'),
-((SELECT id FROM jugadores WHERE nombre = 'Daniel Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Busquets'),
-((SELECT id FROM jugadores WHERE nombre = 'Daniel Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Parejo'),
+('0a1d3d10-1234-4a1f-9b01-000000000007', (SELECT id FROM jugadores WHERE nombre = 'Daniel Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Xabi Alonso'),
+('0a1d3d10-1234-4a1f-9b01-000000000008', (SELECT id FROM jugadores WHERE nombre = 'Daniel Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Busquets'),
+('0a1d3d10-1234-4a1f-9b01-000000000009', (SELECT id FROM jugadores WHERE nombre = 'Daniel Manzano Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Parejo'),
 
-((SELECT id FROM jugadores WHERE nombre = 'Jorge Sánchez Rodríguez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Koulibaly'),
-((SELECT id FROM jugadores WHERE nombre = 'Jorge Sánchez Rodríguez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Alaba'),
-((SELECT id FROM jugadores WHERE nombre = 'Jorge Sánchez Rodríguez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Valverde'),
+('0a1d3d10-1234-4a1f-9b01-000000000010', (SELECT id FROM jugadores WHERE nombre = 'Jorge Sánchez Rodríguez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Koulibaly'),
+('0a1d3d10-1234-4a1f-9b01-000000000011', (SELECT id FROM jugadores WHERE nombre = 'Jorge Sánchez Rodríguez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Alaba'),
+('0a1d3d10-1234-4a1f-9b01-000000000012', (SELECT id FROM jugadores WHERE nombre = 'Jorge Sánchez Rodríguez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Valverde'),
 
-((SELECT id FROM jugadores WHERE nombre = 'Adrián Carvajal Sánchez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Luis Suárez'),
-((SELECT id FROM jugadores WHERE nombre = 'Adrián Carvajal Sánchez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Chicharito'),
-((SELECT id FROM jugadores WHERE nombre = 'Adrián Carvajal Sánchez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Carlos Vela'),
+('0a1d3d10-1234-4a1f-9b01-000000000013', (SELECT id FROM jugadores WHERE nombre = 'Adrián Carvajal Sánchez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Luis Suárez'),
+('0a1d3d10-1234-4a1f-9b01-000000000014', (SELECT id FROM jugadores WHERE nombre = 'Adrián Carvajal Sánchez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Chicharito'),
+('0a1d3d10-1234-4a1f-9b01-000000000015', (SELECT id FROM jugadores WHERE nombre = 'Adrián Carvajal Sánchez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Carlos Vela'),
 
-((SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Llorente'),
-((SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Valverde'),
-((SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'En-Nesyri'),
+('0a1d3d10-1234-4a1f-9b01-000000000016', (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Llorente'),
+('0a1d3d10-1234-4a1f-9b01-000000000017', (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Valverde'),
+('0a1d3d10-1234-4a1f-9b01-000000000018', (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'En-Nesyri'),
 
-((SELECT id FROM jugadores WHERE nombre = 'Alberto González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'David Silva'),
-((SELECT id FROM jugadores WHERE nombre = 'Alberto González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Kroos'),
-((SELECT id FROM jugadores WHERE nombre = 'Alberto González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Fabián Ruiz'),
+('0a1d3d10-1234-4a1f-9b01-000000000019', (SELECT id FROM jugadores WHERE nombre = 'Alberto González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'David Silva'),
+('0a1d3d10-1234-4a1f-9b01-000000000020', (SELECT id FROM jugadores WHERE nombre = 'Alberto González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Kroos'),
+('0a1d3d10-1234-4a1f-9b01-000000000021', (SELECT id FROM jugadores WHERE nombre = 'Alberto González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Fabián Ruiz'),
 
-((SELECT id FROM jugadores WHERE nombre = 'Raúl García Rodrigo' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Casillas'),
-((SELECT id FROM jugadores WHERE nombre = 'Raúl García Rodrigo' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Éderson'),
-((SELECT id FROM jugadores WHERE nombre = 'Raúl García Rodrigo' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Busquets'),
+('0a1d3d10-1234-4a1f-9b01-000000000022', (SELECT id FROM jugadores WHERE nombre = 'Raúl García Rodrigo' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Casillas'),
+('0a1d3d10-1234-4a1f-9b01-000000000023', (SELECT id FROM jugadores WHERE nombre = 'Raúl García Rodrigo' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Éderson'),
+('0a1d3d10-1234-4a1f-9b01-000000000024', (SELECT id FROM jugadores WHERE nombre = 'Raúl García Rodrigo' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Busquets'),
 
-((SELECT id FROM jugadores WHERE nombre = 'Fernando Méndez Lera' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Di María'),
-((SELECT id FROM jugadores WHERE nombre = 'Fernando Méndez Lera' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Asensio'),
-((SELECT id FROM jugadores WHERE nombre = 'Fernando Méndez Lera' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Mertens'),
+('0a1d3d10-1234-4a1f-9b01-000000000025', (SELECT id FROM jugadores WHERE nombre = 'Fernando Méndez Lera' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Di María'),
+('0a1d3d10-1234-4a1f-9b01-000000000026', (SELECT id FROM jugadores WHERE nombre = 'Fernando Méndez Lera' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Asensio'),
+('0a1d3d10-1234-4a1f-9b01-000000000027', (SELECT id FROM jugadores WHERE nombre = 'Fernando Méndez Lera' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Mertens'),
 
-((SELECT id FROM jugadores WHERE nombre = 'Alfonso Peris Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Diego Costa'),
-((SELECT id FROM jugadores WHERE nombre = 'Alfonso Peris Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Morata'),
-((SELECT id FROM jugadores WHERE nombre = 'Alfonso Peris Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Correa'),
+('0a1d3d10-1234-4a1f-9b01-000000000028', (SELECT id FROM jugadores WHERE nombre = 'Alfonso Perís Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Diego Costa'),
+('0a1d3d10-1234-4a1f-9b01-000000000029', (SELECT id FROM jugadores WHERE nombre = 'Alfonso Perís Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Morata'),
+('0a1d3d10-1234-4a1f-9b01-000000000030', (SELECT id FROM jugadores WHERE nombre = 'Alfonso Perís Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Correa'),
 
-((SELECT id FROM jugadores WHERE nombre = 'Mario Rodríguez Díaz' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Canales'),
-((SELECT id FROM jugadores WHERE nombre = 'Mario Rodríguez Díaz' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Fornals'),
-((SELECT id FROM jugadores WHERE nombre = 'Mario Rodríguez Díaz' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Rubén García')
-
+('0a1d3d10-1234-4a1f-9b01-000000000031', (SELECT id FROM jugadores WHERE nombre = 'Mario Rodríguez Díaz' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Canales'),
+('0a1d3d10-1234-4a1f-9b01-000000000032', (SELECT id FROM jugadores WHERE nombre = 'Mario Rodríguez Díaz' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Fornals'),
+('0a1d3d10-1234-4a1f-9b01-000000000033', (SELECT id FROM jugadores WHERE nombre = 'Mario Rodríguez Díaz' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Rubén García')
 ON CONFLICT (jugador_id, parecido) DO NOTHING;
 
 INSERT INTO partidos (id,fecha, lugar, estado, equipo_local, equipo_visitante, goles_local, goles_visitante, mvp_id) VALUES
@@ -309,7 +308,7 @@ INSERT INTO estadisticas_jugador_partido (
 ),
 (
     '3eaf0a96-7f1d-4423-bb76-442ee14261c9',
-    (SELECT id FROM jugadores WHERE nombre = 'Alfonso Peris Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+    (SELECT id FROM jugadores WHERE nombre = 'Alfonso Perís Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
     (SELECT id FROM partidos WHERE fecha = '2024-10-06 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
     0, 0, FALSE, FALSE, TRUE
 ),
@@ -346,7 +345,7 @@ INSERT INTO estadisticas_jugador_partido (
 ),
 (
     '9fcb31fa-11f7-490f-a0be-b5246f846fc1',
-    (SELECT id FROM jugadores WHERE nombre = 'Alfonso Peris Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+    (SELECT id FROM jugadores WHERE nombre = 'Alfonso Perís Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
     (SELECT id FROM partidos WHERE fecha = '2024-10-20 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
     1, 0, FALSE, FALSE, FALSE
 ),
@@ -397,7 +396,7 @@ INSERT INTO estadisticas_jugador_partido (
  1, 1, FALSE, FALSE, FALSE),
 
 ('3ec73ae3-07ac-4cc0-b26b-45a6bb7b4370',
- (SELECT id FROM jugadores WHERE nombre = 'Alfonso Peris Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM jugadores WHERE nombre = 'Alfonso Perís Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
  (SELECT id FROM partidos WHERE fecha = '2024-10-27 16:00:00' AND lugar = 'La Granadilla'),
  1, 0, FALSE, FALSE, FALSE),
 
@@ -452,7 +451,7 @@ INSERT INTO estadisticas_jugador_partido (
  0, 0, FALSE, FALSE, FALSE),
 
 ('3fa6742c-0b33-429a-8f7e-b442e775bead',
- (SELECT id FROM jugadores WHERE nombre = 'Alfonso Peris Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM jugadores WHERE nombre = 'Alfonso Perís Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
  (SELECT id FROM partidos WHERE fecha = '2024-11-10 16:00:00' AND lugar = 'P. Felipe – Pista Central'),
  0, 0, FALSE, FALSE, FALSE),
 
@@ -477,7 +476,7 @@ INSERT INTO estadisticas_jugador_partido (
  0, 0, FALSE, FALSE, FALSE),
 
 ('0a3f09a2-1819-4043-8650-c82ce6611d8f',
- (SELECT id FROM jugadores WHERE nombre = 'Alfonso Peris Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM jugadores WHERE nombre = 'Alfonso Perís Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
  (SELECT id FROM partidos WHERE fecha = '2024-11-24 16:00:00' AND lugar = 'P. Felipe – Pista Central'),
  0, 0, FALSE, FALSE, FALSE),
 
@@ -527,7 +526,7 @@ INSERT INTO estadisticas_jugador_partido (
  0, 1, FALSE, FALSE, FALSE),
 
 ('a29a5f46-f787-4c9e-98e6-08c2925c43bb',
- (SELECT id FROM jugadores WHERE nombre = 'Alfonso Peris Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM jugadores WHERE nombre = 'Alfonso Perís Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
  (SELECT id FROM partidos WHERE fecha = '2024-12-01 16:00:00' AND lugar = 'La Granadilla'),
  0, 0, FALSE, FALSE, FALSE),
 
@@ -577,7 +576,7 @@ INSERT INTO estadisticas_jugador_partido (
  1, 1, FALSE, FALSE, TRUE),
 
 ('b021a658-d93c-4d4f-85be-e1958ae76344',
- (SELECT id FROM jugadores WHERE nombre = 'Alfonso Peris Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM jugadores WHERE nombre = 'Alfonso Perís Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
  (SELECT id FROM partidos WHERE fecha = '2024-12-15 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
  0, 1, FALSE, FALSE, FALSE),
 
@@ -602,7 +601,7 @@ INSERT INTO estadisticas_jugador_partido (
  1, 0, FALSE, FALSE, FALSE),
 
 ('b8362ab6-206e-4fe8-8005-1fc457bf47b4',
- (SELECT id FROM jugadores WHERE nombre = 'Alfonso Peris Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM jugadores WHERE nombre = 'Alfonso Perís Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
  (SELECT id FROM partidos WHERE fecha = '2025-01-12 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
  0, 0, FALSE, FALSE, FALSE),
 
@@ -647,7 +646,7 @@ INSERT INTO estadisticas_jugador_partido (
  0, 1, FALSE, FALSE, TRUE),
 
 ('cbf2036a-6b7d-4499-a3b5-d4d8b1df3464',
- (SELECT id FROM jugadores WHERE nombre = 'Alfonso Peris Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM jugadores WHERE nombre = 'Alfonso Perís Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
  (SELECT id FROM partidos WHERE fecha = '2025-01-19 19:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
  0, 0, FALSE, FALSE, FALSE),
 
@@ -702,7 +701,7 @@ INSERT INTO estadisticas_jugador_partido (
  0, 0, FALSE, FALSE, FALSE),
 
 ('de8d8f80-36c0-4680-88c8-9a52cd250e5d',
- (SELECT id FROM jugadores WHERE nombre = 'Alfonso Peris Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM jugadores WHERE nombre = 'Alfonso Perís Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
  (SELECT id FROM partidos WHERE fecha = '2025-01-26 18:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
  0, 0, FALSE, FALSE, FALSE),
 
@@ -752,7 +751,7 @@ INSERT INTO estadisticas_jugador_partido (
  0, 1, FALSE, FALSE, FALSE),
 
 ('d553a8cb-8ac3-4e09-9611-72aa9935e182',
- (SELECT id FROM jugadores WHERE nombre = 'Alfonso Peris Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM jugadores WHERE nombre = 'Alfonso Perís Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
  (SELECT id FROM partidos WHERE fecha = '2025-02-02 18:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
  0, 0, FALSE, FALSE, FALSE),
 
@@ -777,7 +776,7 @@ INSERT INTO estadisticas_jugador_partido (
  1, 1, FALSE, FALSE, FALSE),
 
 ('c101ce93-3582-4ed3-9051-91f3a6ae46a2',
- (SELECT id FROM jugadores WHERE nombre = 'Alfonso Peris Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM jugadores WHERE nombre = 'Alfonso Perís Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
  (SELECT id FROM partidos WHERE fecha = '2025-02-09 19:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
  1, 0, FALSE, FALSE, FALSE),
 
@@ -1007,7 +1006,7 @@ INSERT INTO estadisticas_jugador_partido (
  0, 0, FALSE, FALSE, FALSE),
 
 ('9a8ab2a1-96e0-432e-bf30-49e7a5fe82ef',
- (SELECT id FROM jugadores WHERE nombre = 'Alfonso Peris Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM jugadores WHERE nombre = 'Alfonso Perís Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
  (SELECT id FROM partidos WHERE fecha = '2025-04-06 16:00:00' AND lugar = 'La Granadilla'),
  1, 0, FALSE, FALSE, FALSE)
 
