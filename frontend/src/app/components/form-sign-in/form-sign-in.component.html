@@ -1,7 +1,7 @@
 <div class="form-container sign-in">
   <form [formGroup]="formGroup" (submit)="submit()">
     <h1>Iniciar sesión</h1>
-    <span>Por favor, para inciar sesión introduzca usuario y contraseña</span>
+    <span>Introduzca usuario y contraseña para iniciar sesión</span>
     @if (errorMensage!= null) {
       <p class="form-error">{{errorMensage}}</p>
     }
