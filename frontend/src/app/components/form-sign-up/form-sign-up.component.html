@@ -1,0 +1,44 @@
+<div class="form-container sign-up">
+  <form [formGroup]="formGroup" (submit)="submit()">
+    <h1>Crear cuenta</h1>
+    <span>Por favor, introduzca sus datos personales gracias</span>
+    @if (errorMensage!= null) {
+      <p class="form-error">{{errorMensage}}</p>
+    }
+    @for (field of fields; track field.name) {
+    <input
+      [type]="field.type"
+      [formControlName]="field.name"
+      [placeholder]="field.placeholder"
+    />
+     @if (
+        formGroup.get(field.name)?.errors?.['required'] &&
+        formGroup.get(field.name)?.touched
+      ) {
+        <p class="form-error">
+          {{ field.name === 'password' ? 'La' : 'El' }}
+          {{ field.placeholder }} es obligatorio
+        </p>
+      }
+      @else if (
+        field.name === 'email' &&
+        formGroup.get(field.name)?.errors?.['email'] &&
+        formGroup.get(field.name)?.touched
+      ) {
+        <p class="form-error">El email no es válido</p>
+      }
+      @else if (
+        field.name === 'password' &&
+        formGroup.get(field.name)?.errors?.['minlength'] &&
+        formGroup.get(field.name)?.touched
+      ) {
+        <p class="form-error">
+          La {{ field.placeholder }} debe tener al menos
+          {{ formGroup.get(field.name)?.errors?.['minlength'].requiredLength }}
+          caracteres
+        </p>
+      }
+   }
+    <button [disabled]="!formGroup.valid">Sign Up</button>
+  </form>
+</div>

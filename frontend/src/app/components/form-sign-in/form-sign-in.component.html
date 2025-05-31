@@ -1,0 +1,37 @@
+<div class="form-container sign-in">
+  <form [formGroup]="formGroup" (submit)="submit()">
+    <h1>Iniciar sesión</h1>
+    <span>Por favor, para inciar sesión introduzca usuario y contraseña</span>
+    @if (errorMensage!= null) {
+      <p class="form-error">{{errorMensage}}</p>
+    }
+    @for (field of fields; track field.name) {
+    <input
+      [type]="field.type"
+      [formControlName]="field.name"
+      [placeholder]="field.placeholder"
+    />
+     @if (
+        formGroup.get(field.name)?.errors?.['required'] &&
+        formGroup.get(field.name)?.touched
+      ) {
+        <p class="form-error">
+          {{ field.name === 'password' ? 'La' : 'El' }}
+          {{ field.placeholder }} es obligatorio
+        </p>
+      }
+      @else if (
+        field.name === 'password' &&
+        formGroup.get(field.name)?.errors?.['minlength'] &&
+        formGroup.get(field.name)?.touched
+      ) {
+        <p class="form-error">
+          La {{ field.placeholder }} debe tener al menos
+          {{ formGroup.get(field.name)?.errors?.['minlength'].requiredLength }}
+          caracteres
+        </p>
+      }
+    }
+    <button [disabled]="!formGroup.valid">Sign In</button>
+  </form>
+</div>
