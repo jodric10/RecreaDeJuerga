@@ -1,5 +1,6 @@
 package com.recreadejuerga.recrea.seguridad;
 
+import com.recreadejuerga.recrea.error.UsuarioNoEncontradoException;
 import com.recreadejuerga.recrea.servicios.UsuarioServicio;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,8 +27,6 @@ public class UserDetailsServiceImpl implements UserDetailsService{
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         log.debug("loadUserByUsername {}", username);
-        return this.usuarioService.findByUsername(username).orElseThrow(
-                () -> new UsernameNotFoundException(username + " no encontrado")
-        );
+        return this.usuarioService.findByUsername(username);
     }
 }

@@ -167,6 +167,16 @@ public class GlobalErrorControlador extends ResponseEntityExceptionHandler {
         return resultado;
     }
 
+    @ExceptionHandler(UsuarioNoEncontradoException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ProblemDetail handlePartidoNoEncontrado(UsuarioNoEncontradoException ex, WebRequest request){
+        ProblemDetail resultado= ProblemDetail.forStatusAndDetail(HttpStatus.NOT_FOUND, ex.getMessage());
+        resultado.setTitle("Usuario no encontrado");
+        resultado.setType(URI.create("https://api.recreadejuerga.com/errores/usuario-no-encontrado"));
+        resultado.setInstance(URI.create(request.getDescription(false).replace("uri=", "")));
+        return resultado;
+    }
+
 
 
 

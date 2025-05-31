@@ -2,6 +2,7 @@ package com.recreadejuerga.recrea.servicios;
 
 import com.recreadejuerga.recrea.dtos.usuario.UserRegisterDTO;
 import com.recreadejuerga.recrea.entidades.Usuario;
+import com.recreadejuerga.recrea.error.UsuarioNoEncontradoException;
 import com.recreadejuerga.recrea.repositorios.UsuarioRepositorio;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -20,8 +21,8 @@ public class UsuarioServicio {
         this.passwordEncoder = passwordEncoder;
     }
 
-    public Optional<Usuario> findByUsername(String username) {
-        return this.repo.findByUsername(username);
+    public Usuario findByUsername(String username) {
+        return this.repo.findByUsername(username).orElseThrow(()->new UsuarioNoEncontradoException("El usuario con username "+ username+" no exite"));
     }
 
     public Usuario save(UserRegisterDTO userDTO) {
