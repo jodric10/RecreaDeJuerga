@@ -15,17 +15,23 @@ export const routes: Routes = [
       {
         path: 'jugadores',
         loadComponent: () =>
-          import('./pages/jugadores/jugadores.component').then((m) => m.JugadoresComponent),
+          import('./pages/jugadores/jugadores.component').then(
+            (m) => m.JugadoresComponent
+          ),
       },
       {
         path: 'partidos',
         loadComponent: () =>
-          import('./pages/partidos/partidos.component').then((m) => m.PartidosComponent),
+          import('./pages/partidos/partidos.component').then(
+            (m) => m.PartidosComponent
+          ),
       },
       {
         path: 'clasificacion',
         loadComponent: () =>
-          import('./pages/clasificacion/clasificacion.component').then((m) => m.ClasificacionComponent),
+          import('./pages/clasificacion/clasificacion.component').then(
+            (m) => m.ClasificacionComponent
+          ),
       },
       {
         path: 'admin',
@@ -41,5 +47,10 @@ export const routes: Routes = [
       import('./pages/log-in-sign-in/log-in-sign-in.component').then(
         (m) => m.LogInSignInComponent
       ),
+  },
+  {
+    path: '**',
+    redirectTo: '',
+    pathMatch: 'full',
   },
 ];
