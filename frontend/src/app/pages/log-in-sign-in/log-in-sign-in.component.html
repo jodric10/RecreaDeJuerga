@@ -1,6 +1,8 @@
 <div class="container" id="container" [ngClass]="{ active: !sign_in }">
-  <app-form-sign-in [formGroup]="SignIn" [fields]="Fields_signIn" (sign_inEvent)="onSubmitSignIn($event)" [errorMensage]="errorMessageSignIn"></app-form-sign-in>
-  <app-form-sign-up [formGroup]="SignUp" [fields]="Fields_signUp" (sign_upEvent)="onSubmitSignUp($event)" [errorMensage]="errorMessageSignUp"></app-form-sign-up>
+  <app-form-sign-in [formGroup]="SignIn" [fields]="Fields_signIn" (sign_inEvent)="onSubmitSignIn($event)">
+  </app-form-sign-in>
+  <app-form-sign-up [formGroup]="SignUp" [fields]="Fields_signUp" (sign_upEvent)="onSubmitSignUp($event)">
+  </app-form-sign-up>
   <div class="toggle-container">
     <div class="toggle">
       <div class="toggle-panel toggle-left">

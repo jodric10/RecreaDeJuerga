@@ -1,0 +1,23 @@
+<div id="toast-container">
+  @for (toast of toasts; track toast.id) {
+    <div
+      class="custom-toast"
+      [class.success]="toast.severity === 'success'"
+      [class.error]="toast.severity === 'error'"
+      [class.fade-out]="toast.fadeOut"
+    >
+      <span class="icon">
+        @if (toast.severity === 'success') {
+          <i class="fas fa-check"></i>
+        } @else {
+          <i class="fas fa-times-circle"></i>
+        }
+      </span>
+      <div>
+        <strong>{{ toast.summary }}</strong><br />
+        <span>{{ toast.detail }}</span>
+      </div>
+      <button class="close" (click)="removeToast(toast)">×</button>
+    </div>
+  }
+</div>
