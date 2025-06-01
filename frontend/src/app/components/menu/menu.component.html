@@ -1,28 +1,45 @@
 <div class="navigation">
   <ul>
-    <li class="active" style="--clr:#f44336">
-      <a href="#">
+    <li [ngClass]="{ active: router.url === '/' }" style="--clr: #f44336">
+      <a routerLink="/">
         <span class="icon"><i class="fas fa-home"></i></span>
         <span class="text">Home</span>
       </a>
     </li>
-    <li style="--clr:#ffa117">
-      <a href="#">
+    <li
+      [ngClass]="{ active: router.url === '/jugadores' }"
+      style="--clr: #ffa117"
+    >
+      <a routerLink="/jugadores">
         <span class="icon"><i class="fas fa-users"></i></span>
         <span class="text">Jugadores</span>
       </a>
     </li>
-    <li style="--clr:#0fc70f">
-      <a href="#">
+    <li
+      [ngClass]="{ active: router.url === '/partidos' }"
+      style="--clr: #0fc70f"
+    >
+      <a routerLink="/partidos">
         <span class="icon"><i class="fas fa-calendar-alt"></i></span>
         <span class="text">Partidos</span>
       </a>
     </li>
-    <li style="--clr:#2196f3">
-      <a href="#">
+    <li
+      [ngClass]="{ active: router.url === '/clasificacion' }"
+      style="--clr: #2196f3"
+    >
+      <a routerLink="/clasificacion">
         <span class="icon"><i class="fas fa-trophy"></i></span>
-        <span class="text">Clasificación</span>
+        <span class="text">Tabla</span>
       </a>
     </li>
+    @if (admin) {
+    <li [ngClass]="{ active: router.url === '/admin' }" style="--clr: #b145e9">
+      <a routerLink="/admin">
+        <span class="icon"><i class="fas fa-user-shield"></i></span>
+        <span class="text">Admin</span>
+      </a>
+    </li>
+    }
   </ul>
 </div>

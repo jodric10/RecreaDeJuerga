@@ -52,7 +52,7 @@
 
 .navigation ul li.active {
   background: var(--clr);
-  width: 110px;
+  width: 140px;
 }
 
 .navigation ul li.active:before {
