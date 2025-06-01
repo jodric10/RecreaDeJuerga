@@ -1,9 +1,10 @@
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, map, Observable, tap } from 'rxjs';
-import { AuthResponse } from '../models/Auth/AuthResponse';
-import { LoginRequest } from '../models/Auth/LoginRequest';
-import { RegisterRequest } from '../models/Auth/RegisterRequest';
+import { LoginRequest } from '../../models/Auth/LoginRequest';
+import { AuthResponse } from '../../models/Auth/AuthResponse';
+import { RegisterRequest } from '../../models/Auth/RegisterRequest';
+
 
 @Injectable({
   providedIn: 'root'
