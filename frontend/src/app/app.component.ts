@@ -4,6 +4,7 @@ import { ToastComponent } from './components/toast/toast.component';
 import { ToastMessage } from './models/toastMessage/toastMessage';
 import { ToastService } from './services/toastMessage/toast.service';
 import { filter } from 'rxjs';
+import { MenuComponent } from './components/menu/menu.component';
 
 @Component({
   selector: 'app-root',

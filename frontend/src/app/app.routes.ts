@@ -2,10 +2,17 @@ import { Routes } from '@angular/router';
 import { AuthGuard } from './helpers/guard/auth.guard';
 
 export const routes: Routes = [
-   {
+  {
     path: '',
     loadComponent: () =>
-      import('./pages/home/home.component').then((m) => m.HomeComponent),
+      import('./pages/layout/layout.component').then((m) => m.LayoutComponent),
+    children: [
+      {
+        path: '',
+        loadComponent: () =>
+          import('./pages/home/home.component').then((m) => m.HomeComponent),
+      },
+    ],
   },
   {
     path: 'auth',
