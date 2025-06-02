@@ -1,0 +1,4 @@
+export interface EquipoFormularioDTO {
+  nombre: string;
+  url_logo?: string;
+}
