@@ -10,7 +10,7 @@ import { RegisterRequest } from '../../models/Auth/RegisterRequest';
   providedIn: 'root'
 })
 export class AuthService {
-  private readonly api_url = 'http://localhost:8080';
+  private readonly api_url = 'http://localhost:8080/auth';
   private isLoggedIn: BehaviorSubject<boolean>= new BehaviorSubject<boolean>(false);
   public isLoggedIn$: Observable<boolean>= this.isLoggedIn.asObservable();
 
@@ -21,7 +21,7 @@ export class AuthService {
    }
 
    loginUser(login: LoginRequest): Observable<AuthResponse> {
-      return this.http.post<AuthResponse>(`${this.api_url}/auth/login`,login)
+      return this.http.post<AuthResponse>(`${this.api_url}/login`,login)
       .pipe(
         tap((response: AuthResponse)=>{
           localStorage.setItem('token', response.token);
@@ -31,7 +31,7 @@ export class AuthService {
    }
 
    registerUser(register: RegisterRequest): Observable<AuthResponse>{
-      return this.http.post<AuthResponse>(`${this.api_url}/auth/register`,register)
+      return this.http.post<AuthResponse>(`${this.api_url}/register`,register)
       .pipe(
         tap(()=>this.isLoggedIn.next(true))
       );
