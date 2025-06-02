@@ -23,6 +23,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/equipos")
+@CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
 @Tag(name = "Equipos", description = "Gestión básica de los equipos")
 public class EquipoControlador {
 

@@ -23,7 +23,8 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/Partidos")
+@RequestMapping("/partidos")
+@CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
 @Tag(name = "Partidos", description = "Gestión básica de los partidos")
 public class PartidoControlador {
 

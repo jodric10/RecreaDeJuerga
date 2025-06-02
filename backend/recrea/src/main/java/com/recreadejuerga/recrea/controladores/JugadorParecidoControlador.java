@@ -24,6 +24,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/jugadoresParecidos")
+@CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
 @Tag(name = "Jugadores parecidos", description = "Gestión básica de los parecidos de los jugadores")
 public class JugadorParecidoControlador {
 

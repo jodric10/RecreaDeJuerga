@@ -25,6 +25,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/jugadores")
+@CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
 @Tag(name = "Jugadores", description = "Gestión básica de los jugadores")
 public class JugadorControlador {
 

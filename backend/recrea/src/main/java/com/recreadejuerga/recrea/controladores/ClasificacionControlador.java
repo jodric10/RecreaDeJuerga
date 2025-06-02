@@ -23,6 +23,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/clasificacion")
+@CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
 @Tag(name = "Clasificación", description = "Gestión básica de la clasificación")
 public class ClasificacionControlador {
 

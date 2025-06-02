@@ -25,6 +25,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/estadisticas")
+@CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
 @Tag(name = "Estadísticas jugador-partido", description = "Operaciones CRUD sobre estadísticas de jugadores en partidos")
 public class EstadisticasJugadorPartidoControlador {
 
