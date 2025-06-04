@@ -32,6 +32,10 @@ public class EquipoServicio {
         return repo.findById(id).map(EquipoMapper::toEquipoDTO).orElseThrow(() -> new EquipoNoEncontradoException(id));
     }
 
+    public EquipoDTO getEquipoByNombre(String name){
+        return repo.buscarPorNombre(name).map(EquipoMapper::toEquipoDTO).orElseThrow(() -> new EquipoNoEncontradoException(name));
+    }
+
     public EquipoDTO insertarEquipo(EquipoFormularioDTO e) {
         if (repo.buscarPorNombre(e.getNombre()).isPresent())
             throw new EquipoYaExistenteException(e.getNombre());

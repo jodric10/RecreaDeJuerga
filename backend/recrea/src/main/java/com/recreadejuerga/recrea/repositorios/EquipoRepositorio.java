@@ -22,6 +22,8 @@ public interface EquipoRepositorio extends JpaRepository<Equipo, UUID> {
             """)
     Optional<Equipo> buscarPorNombre(@Param("nombre") String nombre);
 
+
+
     @Modifying
     @Transactional
     @Query("""

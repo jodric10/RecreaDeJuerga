@@ -4,8 +4,8 @@ import java.util.UUID;
 
 public class EquipoNoEncontradoException extends RuntimeException {
 
-    public EquipoNoEncontradoException(String message) {
-        super(message);
+    public EquipoNoEncontradoException(String nombre) {
+        super("No se ha encontrado el equipo "+ nombre);
     }
 
     public EquipoNoEncontradoException(){
