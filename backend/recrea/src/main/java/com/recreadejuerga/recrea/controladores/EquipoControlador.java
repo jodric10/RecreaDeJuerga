@@ -136,6 +136,56 @@ public class EquipoControlador {
     }
 
 
+
+    @Operation(
+            summary = "Obtener un equipo por nombre",
+            description = "Devuelve la información de un equipo dado su nombre exacto. Si no se encuentra, devuelve un error 404.",
+            tags = {"equipo", "consulta por nombre"}
+    )
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "Equipo encontrado correctamente",
+                    content = @Content(
+                            mediaType = "application/json",
+                            schema = @Schema(implementation = EquipoDTO.class),
+                            examples = @ExampleObject("""
+                                {
+                                  "id": "5fc89e34-a731-4b3b-8b79-c5c019ef4a55",
+                                  "nombre": "Recrea de Juerca",
+                                  "url_logo": "https://cdn.recrea.com/logos/juerca.png"
+                                }
+                        """)
+                    )
+            ),
+            @ApiResponse(
+                    responseCode = "404",
+                    description = "Equipo no encontrado",
+                    content = @Content(
+                            mediaType = "application/problem+json",
+                            schema = @Schema(implementation = ProblemDetail.class),
+                            examples = @ExampleObject("""
+                                {
+                                  "type": "https://api.recreadejuerga.com/errores/equipo-no-encontrado",
+                                  "title": "Equipo no encontrado",
+                                  "status": 404,
+                                  "detail": "No se encontró un equipo con el nombre: Recrea de Juerca",
+                                  "instance": "/equipos/Recrea%20de%20Juerca"
+                                }
+                        """)
+                    )
+            )
+    })
+    @GetMapping("/nombre/{nombreEquipo}")
+    public ResponseEntity<EquipoDTO> getEquipoByNombre(
+            @Parameter(description = "Nombre exacto del equipo (puede contener espacios)")
+            @PathVariable String nombreEquipo) {
+        return ResponseEntity.ok(equipoServicio.getEquipoByNombre(nombreEquipo));
+    }
+
+
+
+
     @Operation(
             summary = "Para crear un equipo en la base de datos",
             description = "Permite crear un equipo proporcionando un DTO. Devuelve error si el nombre ya existe o hay conflicto de integridad.",
