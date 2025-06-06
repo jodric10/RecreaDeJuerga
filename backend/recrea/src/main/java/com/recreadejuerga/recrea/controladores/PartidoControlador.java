@@ -92,12 +92,74 @@ public class PartidoControlador {
                     )
             )
     })
-    @GetMapping("/{equipo_id}")
+    @GetMapping("/equipo/{equipo_id}")
     public ResponseEntity<List<PartidoDTO>> getPartidosDeUnEquipo(
             @Parameter(description = "Identificador del equipo") @PathVariable UUID equipo_id) {
         List<PartidoDTO> partidosEquipo = partidoServicio.getPartidosDeUnEquipo(equipo_id);
         return ResponseEntity.ok(partidosEquipo);
     }
+
+    @Operation(
+            summary = "Obtener un partido por su ID",
+            description = "Devuelve un partido específico a partir de su identificador único.",
+            tags = {"partidos", "detalles"}
+    )
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "Partido encontrado correctamente",
+                    content = @Content(
+                            mediaType = "application/json",
+                            schema = @Schema(implementation = PartidoDTO.class),
+                            examples = @ExampleObject("""
+                {
+                  "id": 1,
+                  "fecha": "2025-06-20T21:00:00",
+                  "lugar": "Estadio Benito Villamarín",
+                  "estado": "Pendiente",
+                  "equipoLocal": {
+                    "id": "f1a8c0a2-d1ef-45b8-812b-6c9f6f8d3240",
+                    "nombre": "Real Betis",
+                    "url_logo": "https://example.com/logos/betis.png"
+                  },
+                  "equipoVisitante": {
+                    "id": "a4d4b5f1-1234-44d2-b567-89c123456789",
+                    "nombre": "Sevilla FC",
+                    "url_logo": "https://example.com/logos/sevilla.png"
+                  },
+                  "golesLocal": null,
+                  "golesVisitante": null,
+                  "mvp": null
+                }
+            """)
+                    )
+            ),
+            @ApiResponse(
+                    responseCode = "404",
+                    description = "No se encontró el partido con el ID proporcionado",
+                    content = @Content(
+                            mediaType = "application/problem+json",
+                            schema = @Schema(implementation = ProblemDetail.class),
+                            examples = @ExampleObject("""
+                {
+                  "type": "https://api.recreadejuerga.com/errores/partido-no-encontrado",
+                  "title": "Partido no encontrado",
+                  "status": 404,
+                  "detail": "No existe ningún partido con el ID 1",
+                  "instance": "/partidos/1"
+                }
+            """)
+                    )
+            )
+    })
+    @GetMapping("/{id}")
+    public ResponseEntity<PartidoDTO> getPartidoPorId(
+            @Parameter(description = "ID del partido a buscar") @PathVariable UUID id) {
+
+        PartidoDTO partido = partidoServicio.getPartidoById(id);
+        return ResponseEntity.ok(partido);
+    }
+
 
 
     @Operation(

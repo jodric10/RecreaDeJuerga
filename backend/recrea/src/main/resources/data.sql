@@ -1,17 +1,17 @@
 INSERT INTO equipos (id, nombre, url_logo) VALUES
-  ('d72d7c7e-1e1a-4e63-8e56-3c16b1f01201', 'Elespot Mandangon SP', 'http://example.com/logo1.png'),
-  ('a91e0f64-29e0-4c98-9f84-604d1a28d102', 'El Colectivo', 'http://example.com/logo2.png'),
-  ('8431d13a-bd3e-4dc0-8946-2efdb9898fa1', 'More Kapa FS', 'http://example.com/logo3.png'),
-  ('ec16775b-4411-49d1-a19b-d458d85f1801', 'Guajes', 'http://example.com/logo4.png'),
-  ('7a688bea-2027-4e9a-a90c-76fbd301f4b2', 'Recrea de Juerga', 'http://example.com/logo5.png'),
-  ('c27e21fc-ef6b-44a1-ae5a-c3b28539c0d3', 'Palillos a la Mar', 'http://example.com/logo6.png'),
-  ('b8d5213e-bebf-4d07-a3ee-43793194b964', 'Man Red', 'http://example.com/logo7.png'),
-  ('ea84a2a2-0176-4a3c-8926-52bda3081b4a', 'Golesalavés', 'http://example.com/logo8.png'),
-  ('bb4f1ee8-510e-45f9-a9f8-7d54e845ec10', 'Green Park United', 'http://example.com/logo9.png'),
-  ('e10f5b5c-00ae-41ad-a2c3-2f3a9cb28233', 'Comando Navacerrada', 'http://example.com/logo10.png'),
-  ('f3c4e948-b0a5-4294-8012-22f6f2de6e0f', 'Los Potros FC', 'http://example.com/logo11.png'),
-  ('e78d5c6e-003d-45c9-b991-d7c60ccfeabc', 'Maped', 'http://example.com/logo12.png'),
-  ('1f94515c-fc16-4c4f-b1dc-7c6f648ad7f2', 'Mambo FC', 'http://example.com/logo13.png')
+  ('d72d7c7e-1e1a-4e63-8e56-3c16b1f01201', 'Elespot Mandangon SP', 'assets/logos/elespot_mandangon.png'),
+  ('a91e0f64-29e0-4c98-9f84-604d1a28d102', 'El Colectivo', 'assets/logos/colectivo.png'),
+  ('8431d13a-bd3e-4dc0-8946-2efdb9898fa1', 'More Kapa FS', 'assets/logos/more_kapa.png'),
+  ('ec16775b-4411-49d1-a19b-d458d85f1801', 'Guajes', 'assets/logos/guajes.png'),
+  ('7a688bea-2027-4e9a-a90c-76fbd301f4b2', 'Recrea de Juerga', 'assets/logos/recrea_de_juerga.png'),
+  ('c27e21fc-ef6b-44a1-ae5a-c3b28539c0d3', 'Palillos a la Mar', 'assets/logos/palillos_a_la_mar.png'),
+  ('b8d5213e-bebf-4d07-a3ee-43793194b964', 'Man Red', 'assets/logos/man_red.png'),
+  ('ea84a2a2-0176-4a3c-8926-52bda3081b4a', 'Golesalavés', 'assets/logos/golesalaves.png'),
+  ('bb4f1ee8-510e-45f9-a9f8-7d54e845ec10', 'Green Park United', 'assets/logos/green_park.png'),
+  ('e10f5b5c-00ae-41ad-a2c3-2f3a9cb28233', 'Comando Navacerrada', 'assets/logos/comando_navacerrada.png'),
+  ('f3c4e948-b0a5-4294-8012-22f6f2de6e0f', 'Los Potros FC', 'assets/logos/potros.png'),
+  ('e78d5c6e-003d-45c9-b991-d7c60ccfeabc', 'Maped', 'assets/logos/maped.png'),
+  ('1f94515c-fc16-4c4f-b1dc-7c6f648ad7f2', 'Mambo FC', 'assets/logos/mambo.png')
 
 ON CONFLICT (nombre) DO UPDATE
 SET url_logo = EXCLUDED.url_logo;
@@ -35,7 +35,7 @@ INSERT INTO jugadores (
 ('e0e8f259-73ee-4005-9369-235c3f6c31c9', 'Adrián Carvajal Sánchez', 'Adri', 19, 'Pívot', 'Derecho', 23, 11, 'Físico, velocidad, remate', '2004-03-22', 'España',
  (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'http://example.com/foto_frontal5.png', 'http://example.com/foto_tarjeta5.png', 'http://example.com/foto_pose5.png'),
 
-('86c4cb1c-144c-4660-bb47-bdf440501ded', 'Santiago Alejandro Chaya', 'Santi', 14, 'Pívot', 'Derecho', 13, 8, 'Fuerza, resistencia, velocidad', '2004-08-18', 'España',
+('86c4cb1c-144c-4660-bb47-bdf440501ded', 'Santiago Alejandre Chaya', 'Santi', 14, 'Pívot', 'Derecho', 13, 8, 'Fuerza, resistencia, velocidad', '2004-08-18', 'España',
  (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'http://example.com/foto_frontal1.png', 'http://example.com/foto_tarjeta1.png', 'http://example.com/foto_pose1.png'),
 
 ('e2a9b4dc-0247-4526-98c5-a2020b2d5cf4', 'Alberto González Pérez', 'Alberoto', 5, 'Ala', 'Derecho', 2, 7, 'Inteligencia, apoyo, sacrificio', '1999-07-20', 'España',
@@ -88,9 +88,9 @@ INSERT INTO jugadores_parecidos (id,jugador_id, parecido) VALUES
 ('0a1d3d10-1234-4a1f-9b01-000000000014', (SELECT id FROM jugadores WHERE nombre = 'Adrián Carvajal Sánchez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Chicharito'),
 ('0a1d3d10-1234-4a1f-9b01-000000000015', (SELECT id FROM jugadores WHERE nombre = 'Adrián Carvajal Sánchez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Carlos Vela'),
 
-('0a1d3d10-1234-4a1f-9b01-000000000016', (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Llorente'),
-('0a1d3d10-1234-4a1f-9b01-000000000017', (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Valverde'),
-('0a1d3d10-1234-4a1f-9b01-000000000018', (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'En-Nesyri'),
+('0a1d3d10-1234-4a1f-9b01-000000000016', (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandre Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Llorente'),
+('0a1d3d10-1234-4a1f-9b01-000000000017', (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandre Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Valverde'),
+('0a1d3d10-1234-4a1f-9b01-000000000018', (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandre Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'En-Nesyri'),
 
 ('0a1d3d10-1234-4a1f-9b01-000000000019', (SELECT id FROM jugadores WHERE nombre = 'Alberto González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'David Silva'),
 ('0a1d3d10-1234-4a1f-9b01-000000000020', (SELECT id FROM jugadores WHERE nombre = 'Alberto González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Kroos'),
@@ -139,13 +139,13 @@ INSERT INTO partidos (id,fecha, lugar, estado, equipo_local, equipo_visitante, g
  5, 2,
  (SELECT id FROM jugadores WHERE nombre = 'Jorge González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'))),
 
-('22142dcb-09a3-4d11-b18d-68a5d63be5d2','2024-11-17 00:00:00', 'Descanso', 'Finalizado', NULL, NULL, NULL, NULL, NULL),
+('22142dcb-09a3-4d11-b18d-68a5d63be5d2','2024-11-17 00:00:00', 'Descanso', 'Finalizado',  (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), NULL, NULL, NULL, NULL),
 
 ('ca64e6c6-b226-44de-b2ec-8e245d0e4739','2024-11-24 16:00:00', 'P. Felipe – Pista Central', 'Finalizado',
  (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'),
  (SELECT id FROM equipos WHERE nombre = 'El Colectivo'),
  2, 3,
- (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'))),
+ (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandre Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'))),
 
 ('1b94f28a-ecf1-4d71-a6ee-481e4e548ab7','2024-12-01 16:00:00', 'La Granadilla', 'Finalizado',
  (SELECT id FROM equipos WHERE nombre = 'Los Potros FC'),
@@ -163,8 +163,8 @@ INSERT INTO partidos (id,fecha, lugar, estado, equipo_local, equipo_visitante, g
 ('b622c245-0a2d-4974-94e9-f7330fc72520','2025-01-12 17:00:00', 'B.P.GALDOS Pista Techada', 'Finalizado',
  (SELECT id FROM equipos WHERE nombre = 'Palillos a la Mar'),
  (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'),
- 5, 4,
- (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'))),
+ 4, 5,
+ (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandre Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'))),
 
 ('31236241-e4e3-4cd4-a2f1-f7a595b2eb63','2025-01-19 19:00:00', 'B.P.GALDOS Pista Techada', 'Finalizado',
  (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'),
@@ -214,13 +214,13 @@ INSERT INTO partidos (id,fecha, lugar, estado, equipo_local, equipo_visitante, g
  2, 3,
  (SELECT id FROM jugadores WHERE nombre = 'Jorge González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'))),
 
-('42e00ec4-680a-4df4-b4c3-8706fa5c1174','2025-03-23 00:00:00', 'Descanso', 'Finalizado', NULL, NULL, NULL, NULL, NULL),
+('42e00ec4-680a-4df4-b4c3-8706fa5c1174','2025-03-23 00:00:00', 'Descanso', 'Finalizado',  (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), NULL, NULL, NULL, NULL),
 
 ('f38068f2-5f86-4d90-a1ae-3f8f0e57011a','2025-03-30 16:00:00', 'P. Felipe – Pista Central', 'Finalizado',
  (SELECT id FROM equipos WHERE nombre = 'El Colectivo'),
  (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'),
  6, 2,
- (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'))),
+ (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandre Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'))),
 
 ('6f65314e-4430-4f25-901e-961ae84a75eb','2025-04-06 16:00:00', 'La Granadilla', 'Finalizado',
  (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'),
@@ -333,7 +333,7 @@ INSERT INTO estadisticas_jugador_partido (
 ),
 (
     '5e6dff27-0b8d-4ec9-93be-950226df0ed7',
-    (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+    (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandre Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
     (SELECT id FROM partidos WHERE fecha = '2024-10-20 20:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
     1, 1, FALSE, FALSE, FALSE
 ),
@@ -401,7 +401,7 @@ INSERT INTO estadisticas_jugador_partido (
  1, 0, FALSE, FALSE, FALSE),
 
 ('8441ab39-df33-464f-a5c3-53a7f87c4d4c',
- (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandre Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
  (SELECT id FROM partidos WHERE fecha = '2024-10-27 16:00:00' AND lugar = 'La Granadilla'),
  0, 0, FALSE, FALSE, FALSE),
 
@@ -461,7 +461,7 @@ INSERT INTO estadisticas_jugador_partido (
  0, 0, FALSE, FALSE, TRUE),
 
 ('24558760-8c5b-4ec7-b9c1-c7c3e6c1c430',
- (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandre Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
  (SELECT id FROM partidos WHERE fecha = '2024-11-24 16:00:00' AND lugar = 'P. Felipe – Pista Central'),
  2, 0, FALSE, FALSE, FALSE),
 
@@ -506,7 +506,7 @@ INSERT INTO estadisticas_jugador_partido (
  0, 1, FALSE, FALSE, FALSE),
 
 ('0fb67d86-7b63-4cb6-87c1-3fc79cdbe92b',
- (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandre Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
  (SELECT id FROM partidos WHERE fecha = '2024-12-01 16:00:00' AND lugar = 'La Granadilla'),
  1, 1, FALSE, FALSE, FALSE),
 
@@ -581,7 +581,7 @@ INSERT INTO estadisticas_jugador_partido (
  0, 1, FALSE, FALSE, FALSE),
 
 ('80c24e4a-75a3-43a5-842f-1d7b87cf50dc',
- (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandre Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
  (SELECT id FROM partidos WHERE fecha = '2025-01-12 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
  2, 0, FALSE, FALSE, FALSE),
 
@@ -666,7 +666,7 @@ INSERT INTO estadisticas_jugador_partido (
  0, 1, FALSE, FALSE, TRUE),
 
 ('ec158780-79b7-4e62-8c84-32cb319b18cf',
- (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandre Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
  (SELECT id FROM partidos WHERE fecha = '2025-01-19 19:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
  0, 0, FALSE, FALSE, FALSE),
 
@@ -681,7 +681,7 @@ INSERT INTO estadisticas_jugador_partido (
  1, 0, FALSE, FALSE, FALSE),
 
 ('409730a4-f062-4fe8-8c13-f4cf4c0ea053',
- (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandre Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
  (SELECT id FROM partidos WHERE fecha = '2025-01-26 18:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
  1, 1, FALSE, FALSE, FALSE),
 
@@ -741,7 +741,7 @@ INSERT INTO estadisticas_jugador_partido (
  0, 0, FALSE, FALSE, FALSE),
 
 ('6ab3df67-f8ae-4c46-bf4b-fd178905ff02',
- (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandre Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
  (SELECT id FROM partidos WHERE fecha = '2025-02-02 18:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
  0, 0, FALSE, FALSE, FALSE),
 
@@ -766,7 +766,7 @@ INSERT INTO estadisticas_jugador_partido (
  3, 1, FALSE, FALSE, FALSE),
 
 ('b6d6f62a-fc8e-4424-8d0c-377746a94242',
- (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandre Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
  (SELECT id FROM partidos WHERE fecha = '2025-02-09 19:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
  2, 1, FALSE, FALSE, FALSE),
 
@@ -821,7 +821,7 @@ INSERT INTO estadisticas_jugador_partido (
  3, 1, FALSE, FALSE, FALSE),
 
 ('acdb1705-1558-4c9a-96c7-9bcb32cce2ae',
- (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandre Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
  (SELECT id FROM partidos WHERE fecha = '2025-02-23 17:00:00' AND lugar = 'B.P.GALDOS Pista Techada'),
  1, 1, FALSE, FALSE, FALSE),
 
@@ -886,7 +886,7 @@ INSERT INTO estadisticas_jugador_partido (
   1, 1, FALSE, FALSE, FALSE),
 
  ('6d4b73da-13ee-4f26-96a2-1f1f2ac00a15',
-  (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+  (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandre Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
   (SELECT id FROM partidos WHERE fecha = '2025-03-09 16:00:00' AND lugar = 'La Granadilla'),
   2, 0, FALSE, FALSE, FALSE),
 
@@ -946,7 +946,7 @@ INSERT INTO estadisticas_jugador_partido (
  0, 0, FALSE, FALSE, FALSE),
 
 ('5a31809c-40d2-4ff3-9d0c-cdb4a238f099',
- (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandre Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
  (SELECT id FROM partidos WHERE fecha = '2025-03-30 16:00:00' AND lugar = 'P. Felipe – Pista Central'),
  1, 0, FALSE, FALSE, FALSE),
 
@@ -1001,7 +1001,7 @@ INSERT INTO estadisticas_jugador_partido (
  0, 0, FALSE, FALSE, FALSE),
 
 ('3c12c63e-bfc5-4fd2-b9eb-259e4e1b5d25',
- (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandro Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
+ (SELECT id FROM jugadores WHERE nombre = 'Santiago Alejandre Chaya' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')),
  (SELECT id FROM partidos WHERE fecha = '2025-04-06 16:00:00' AND lugar = 'La Granadilla'),
  0, 0, FALSE, FALSE, FALSE),
 

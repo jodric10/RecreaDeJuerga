@@ -7,6 +7,7 @@ import com.recreadejuerga.recrea.entidades.Equipo;
 import com.recreadejuerga.recrea.entidades.Jugador;
 import com.recreadejuerga.recrea.entidades.Partido;
 import com.recreadejuerga.recrea.error.*;
+import com.recreadejuerga.recrea.mappers.JugadorMapper;
 import com.recreadejuerga.recrea.mappers.PartidoMapper;
 import com.recreadejuerga.recrea.repositorios.EquipoRepositorio;
 import com.recreadejuerga.recrea.repositorios.JugadorRepositorio;
@@ -41,6 +42,10 @@ public class PartidoServicio {
             throw new PartidoNoEncontradoException(nombreEquipo);
         }
         return partidos.stream().map(PartidoMapper::toPartidoDTO).toList();
+    }
+
+    public PartidoDTO getPartidoById(UUID partido_id){
+        return repo.findById(partido_id).map(PartidoMapper::toPartidoDTO).orElseThrow(() -> new PartidoNoEncontradoException(partido_id));
     }
 
     public PartidoDTO insertarPartido(PartidoFormularioDTO dto) {

@@ -16,7 +16,6 @@ CREATE TABLE IF NOT EXISTS equipos (
   id         UUID        PRIMARY KEY,
   nombre     VARCHAR(100) NOT NULL,
   url_logo   TEXT,
-  descripcion TEXT,
   CONSTRAINT uk_equipo_nombre UNIQUE (nombre)
 );
 
