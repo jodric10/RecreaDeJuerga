@@ -2,7 +2,7 @@ import { JugadorSimpleDTO } from '../jugador/jugadorSimple';
 
 export interface EstadisticasJugadorPartidoDTO {
   id: string;
-  partidoId: string;
+  partido: string;
   jugador: JugadorSimpleDTO;
   goles: number;
   asistencias: number;

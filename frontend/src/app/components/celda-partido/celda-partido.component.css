@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Rajdhani:wght@500&display=swap");
+
+.celda-partido {
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  padding: 12px;
+  width: 260px;
+  min-height: 150px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  font-family: "Segoe UI", sans-serif;
+  position: relative;
+  overflow: hidden;
+  background-color: white;
+  transition: transform 0.2s, box-shadow 0.2s, outline 0.2s;
+}
+
+.celda-partido.finalizado:hover {
+  cursor: pointer;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  outline: 2px solid black;
+  outline-offset: -2px;
+}
+
+.celda-partido.pendiente:hover,
+.celda-partido.descanso:hover {
+  cursor: default;
+  transform: none;
+  outline: none;
+}
+
+.celda-partido.victoria {
+  background-color: rgba(16, 185, 129, 0.15);
+}
+.celda-partido.derrota {
+  background-color: rgba(220, 38, 38, 0.2);
+}
+.celda-partido.empate {
+  background-color: rgba(251, 191, 36, 0.15);
+}
+.celda-partido.pendiente {
+  background-color: white;
+}
+.celda-partido.descanso {
+  background-color: #000;
+  color: white;
+}
+
+.indicador {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  z-index: 1;
+}
+.indicador.victoria {
+  background-color: #10b981;
+}
+.indicador.derrota {
+  background-color: #dc2626;
+}
+.indicador.empate {
+  background-color: #f59e0b;
+}
+
+.jornada {
+  font-size: 14px;
+  font-weight: 700;
+  color: inherit;
+  margin-bottom: 4px;
+}
+.fecha {
+  font-size: 12px;
+  font-weight: 700;
+  color: inherit;
+  margin-top: 6px;
+}
+.descanso-texto {
+  font-size: 20px;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 4px 0;
+}
+.logo-unico {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 8px 0;
+}
+.fila-resultado {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 8px;
+  margin-bottom: 6px;
+}
+.equipo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+.goles {
+  font-family: "Anton", sans-serif;
+  font-size: 18px;
+  color: #000;
+}
+.vs {
+  font-family: "Anton", sans-serif;
+  font-size: 26px;
+  color: #000;
+  line-height: 1;
+}
+.detalles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4px;
+  gap: 1px;
+}
+.estado,
+.lugar {
+  font-size: 12px;
+  font-weight: 700;
+  color: #000;
+}

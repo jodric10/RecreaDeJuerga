@@ -1,4 +1,4 @@
-import { NgClass } from '@angular/common';
+import { CommonModule, NgClass } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CamposForm } from '../../models/CamposForm';
@@ -14,7 +14,7 @@ import { ToastService } from '../../services/toastMessage/toast.service';
 @Component({
   selector: 'app-log-in-sign-in',
   standalone: true,
-  imports: [NgClass, FormSignInComponent, FormSignUpComponent],
+  imports: [CommonModule, FormSignInComponent, FormSignUpComponent],
   templateUrl: './log-in-sign-in.component.html',
   styleUrl: './log-in-sign-in.component.css',
 })

@@ -1,0 +1,82 @@
+@if (partido.lugar === 'Descanso') {
+<div class="celda-partido descanso">
+  <div class="jornada">Jornada {{ index + 1 }}</div>
+
+  <div class="descanso-texto">Descanso</div>
+
+  <div class="logo-unico">
+    <img
+      class="logo"
+      [src]="partido.equipoLocal.url_logo"
+      [alt]="partido.equipoLocal.nombre"
+    />
+  </div>
+
+  @if (partido.fecha) {
+  <div class="fecha">
+    {{ partido.fecha | date : "EEE, d/M" | capitalizarFecha }}
+  </div>
+  }
+</div>
+} @else {
+<div
+  class="celda-partido {{ resultadoClase() }} {{ partido.estado === 'Finalizado' ? 'finalizado' : 'pendiente' }}"
+  (click)="partido.estado === 'Finalizado' && estadisticas(partido)"
+>
+  <div class="jornada">Jornada {{ index + 1 }}</div>
+
+  @if (partido.estado === 'Finalizado') {
+  <div class="indicador {{ resultadoClase() }}">
+    {{ resultadoEquipo }}
+  </div>
+  }
+
+  <div class="fila-resultado">
+    @if (partido.estado === 'Finalizado') {
+    <div class="equipo">
+      <img
+        class="logo"
+        [src]="partido.equipoLocal.url_logo"
+        [alt]="partido.equipoLocal.nombre"
+      />
+      <div class="goles">{{ partido.golesLocal }}</div>
+    </div>
+    <div class="vs">-</div>
+    <div class="equipo">
+      <div class="goles">{{ partido.golesVisitante }}</div>
+      <img
+        class="logo"
+        [src]="partido.equipoVisitante.url_logo"
+        [alt]="partido.equipoVisitante.nombre"
+      />
+    </div>
+    } @else {
+    <div class="equipo">
+      <img
+        class="logo"
+        [src]="partido.equipoLocal.url_logo"
+        [alt]="partido.equipoLocal.nombre"
+      />
+    </div>
+    <div class="vs">VS</div>
+    <div class="equipo">
+      <img
+        class="logo"
+        [src]="partido.equipoVisitante.url_logo"
+        [alt]="partido.equipoVisitante.nombre"
+      />
+    </div>
+    }
+  </div>
+
+  <div class="detalles">
+    <div class="estado">{{ partido.estado }}</div>
+    @if (partido.fecha) {
+    <div class="fecha">
+      {{ partido.fecha | date : "EEE, d/M" | capitalizarFecha }}
+    </div>
+    }
+    <div class="lugar">{{ partido.lugar }}</div>
+  </div>
+</div>
+}

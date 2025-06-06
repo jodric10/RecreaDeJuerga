@@ -1,0 +1,135 @@
+.titulo-clasificacion {
+  text-align: center;
+  margin: 24px 0 12px;
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+.titulo-clasificacion h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: #222;
+}
+
+.titulo-clasificacion p {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.tabla-wrapper {
+  max-width: 82vw;
+  height: auto;
+  margin: 0 auto 32px;
+  padding-bottom: 20px;
+  overflow-x: auto;
+  border-radius: 16px;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.tabla-clasificacion {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+.tabla-clasificacion thead {
+  background-color: #f5f6f7;
+}
+
+.tabla-clasificacion th {
+  padding: 12px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+  color: #333;
+  background-color: #f2f2f2;
+  transition: background-color 0.2s, color 0.2s;
+  user-select: none;
+}
+
+.tabla-clasificacion th.ordenable {
+  cursor: pointer;
+}
+
+.tabla-clasificacion th.ordenable:hover {
+  background-color: #f200ffb9;
+  color: #000;
+}
+
+.tabla-clasificacion th.activa {
+  background-color: #333;
+  color: #fff;
+}
+
+.tabla-clasificacion td {
+  padding: 12px 8px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: #111;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.equipo-cell {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  padding-left: 12px;
+}
+
+.equipo-cell img {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+.oro {
+  background-color: #fff8dc;
+}
+
+.plata {
+  background-color: #e8e8e8;
+}
+
+.bronce {
+  background-color: #fcefe1;
+}
+
+.oro td:first-child {
+  color: #c9a500;
+  font-weight: bold;
+}
+
+.plata td:first-child {
+  color: #a7a7a7;
+  font-weight: bold;
+}
+
+.bronce td:first-child {
+  color: #d48c4c;
+  font-weight: bold;
+}
+
+.descendido {
+  background-color: #ffe5e5;
+}
+
+.descendido td:first-child {
+  color: #d10000;
+  font-weight: bold;
+}
+
+.tabla-clasificacion tbody tr:hover {
+  background-color: inherit;
+}
+
+th span {
+  margin-left: 6px;
+  font-size: 12px;
+  color: inherit;
+}

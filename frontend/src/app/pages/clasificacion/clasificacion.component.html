@@ -1,1 +1,144 @@
-<p>clasificacion works!</p>
+<div class="titulo-clasificacion">
+  <h2>Clasificación de la Liga Municipal de Majadahonda</h2>
+  <p>Fútbol Sala 3ª División Grupo C &nbsp;•&nbsp; Temporada 24/25</p>
+</div>
+
+<div class="tabla-wrapper">
+  <table class="tabla-clasificacion">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Equipo</th>
+
+        <th
+          class="ordenable"
+          [ngClass]="{ activa: sortKey === 'puntos' }"
+          (click)="ordenarPor('puntos')"
+        >
+          Ptos
+          @if (sortKey === 'puntos') {
+            <span>{{ sortAsc ? '↑' : '↓' }}</span>
+          }
+        </th>
+
+        <th
+          class="ordenable"
+          [ngClass]="{ activa: sortKey === 'partidosJugados' }"
+          (click)="ordenarPor('partidosJugados')"
+        >
+          Jug
+          @if (sortKey === 'partidosJugados') {
+            <span>{{ sortAsc ? '↑' : '↓' }}</span>
+          }
+        </th>
+
+        <th
+          class="ordenable"
+          [ngClass]="{ activa: sortKey === 'ganados' }"
+          (click)="ordenarPor('ganados')"
+        >
+          Gan
+          @if (sortKey === 'ganados') {
+            <span>{{ sortAsc ? '↑' : '↓' }}</span>
+          }
+        </th>
+
+        <th
+          class="ordenable"
+          [ngClass]="{ activa: sortKey === 'empatados' }"
+          (click)="ordenarPor('empatados')"
+        >
+          Emp
+          @if (sortKey === 'empatados') {
+            <span>{{ sortAsc ? '↑' : '↓' }}</span>
+          }
+        </th>
+
+        <th
+          class="ordenable"
+          [ngClass]="{ activa: sortKey === 'perdidos' }"
+          (click)="ordenarPor('perdidos')"
+        >
+          Per
+          @if (sortKey === 'perdidos') {
+            <span>{{ sortAsc ? '↑' : '↓' }}</span>
+          }
+        </th>
+
+        <th
+          class="ordenable"
+          [ngClass]="{ activa: sortKey === 'golesAFavor' }"
+          (click)="ordenarPor('golesAFavor')"
+        >
+          TF
+          @if (sortKey === 'golesAFavor') {
+            <span>{{ sortAsc ? '↑' : '↓' }}</span>
+          }
+        </th>
+
+        <th
+          class="ordenable"
+          [ngClass]="{ activa: sortKey === 'golesContra' }"
+          (click)="ordenarPor('golesContra')"
+        >
+          TC
+          @if (sortKey === 'golesContra') {
+            <span>{{ sortAsc ? '↑' : '↓' }}</span>
+          }
+        </th>
+
+        <th
+          class="ordenable"
+          [ngClass]="{ activa: sortKey === 'diferenciaGoles' }"
+          (click)="ordenarPor('diferenciaGoles')"
+        >
+          TF-TC
+          @if (sortKey === 'diferenciaGoles') {
+            <span>{{ sortAsc ? '↑' : '↓' }}</span>
+          }
+        </th>
+
+        <th
+          class="ordenable"
+          [ngClass]="{ activa: sortKey === 'promedioTfTc' }"
+          (click)="ordenarPor('promedioTfTc')"
+        >
+          TF/TC
+          @if (sortKey === 'promedioTfTc') {
+            <span>{{ sortAsc ? '↑' : '↓' }}</span>
+          }
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      @for (fila of clasificacion; let i = $index; track i) {
+        <tr
+          [ngClass]="{
+            oro: i === 0,
+            plata: i === 1,
+            bronce: i === 2,
+            descendido: i === (clasificacion!.length - 1) || i === (clasificacion!.length - 2)
+          }"
+        >
+          <td>{{ i + 1 }}</td>
+
+          <td class="equipo-cell">
+            <img [src]="fila.equipo.url_logo" alt="logo" />
+            <span>{{ fila.equipo.nombre }}</span>
+          </td>
+
+          <td>{{ fila.puntos }}</td>
+          <td>{{ fila.partidosJugados }}</td>
+          <td>{{ fila.ganados }}</td>
+          <td>{{ fila.empatados }}</td>
+          <td>{{ fila.perdidos }}</td>
+          <td>{{ fila.golesAFavor }}</td>
+          <td>{{ fila.golesContra }}</td>
+          <td>{{ fila.diferenciaGoles }}</td>
+          <td>{{ fila.promedioTfTc }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

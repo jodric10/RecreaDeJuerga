@@ -13,14 +13,14 @@ export const routes: Routes = [
           import('./pages/home/home.component').then((m) => m.HomeComponent),
       },
       {
-        path: 'jugadores',
+        path: ':nombreEquipo/jugadores',
         loadComponent: () =>
           import('./pages/jugadores/jugadores.component').then(
             (m) => m.JugadoresComponent
           ),
       },
       {
-        path: 'partidos',
+        path: ':nombreEquipo/partidos',
         loadComponent: () =>
           import('./pages/partidos/partidos.component').then(
             (m) => m.PartidosComponent
@@ -38,6 +38,13 @@ export const routes: Routes = [
         canActivate: [AuthGuard],
         loadComponent: () =>
           import('./pages/admin/admin.component').then((m) => m.AdminComponent),
+      },
+      {
+        path: ':nombreEquipo/partidos/estadisticas/:partidoId',
+        loadComponent: () =>
+          import('./pages/estadisticas/estadisticas.component').then(
+            (m) => m.EstadisticasComponent
+          ),
       },
     ],
   },

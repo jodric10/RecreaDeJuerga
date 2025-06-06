@@ -1,0 +1,45 @@
+<div class="countdown-container">
+  <h2>CUENTA ATRÁS PARA EL PRÓXIMO PARTIDO...</h2>
+
+  @if (!eventStarted) {
+    <div class="timer-boxes">
+
+      <div class="time-box">
+        <div class="flip-vertical" [class.animate]="flip.days">
+          <div class="current">{{ days }}</div>
+          <div class="next">{{ days }}</div>
+        </div>
+        <span>DÍAS</span>
+      </div>
+
+      <div class="time-box">
+        <div class="flip-vertical" [class.animate]="flip.hours">
+          <div class="current">{{ hours < 10 ? '0' + hours : hours }}</div>
+          <div class="next">{{ hours < 10 ? '0' + hours : hours }}</div>
+        </div>
+        <span>HORAS</span>
+      </div>
+
+      <div class="time-box">
+        <div class="flip-vertical" [class.animate]="flip.minutes">
+          <div class="current">{{ minutes < 10 ? '0' + minutes : minutes }}</div>
+          <div class="next">{{ minutes < 10 ? '0' + minutes : minutes }}</div>
+        </div>
+        <span>MINUTOS</span>
+      </div>
+
+      <div class="time-box">
+        <div class="flip-vertical" [class.animate]="flip.seconds">
+          <div class="current">{{ seconds < 10 ? '0' + seconds : seconds }}</div>
+          <div class="next">{{ seconds < 10 ? '0' + seconds : seconds }}</div>
+        </div>
+        <span>SEGUNDOS</span>
+      </div>
+
+    </div>
+  } @else {
+    <div class="event-started">
+      ¡El evento ha comenzado!
+    </div>
+  }
+</div>

@@ -10,20 +10,15 @@ import { EquipoFormularioDTO } from '../../models/equipo/equipoFormulario';
 export class EquipoService {
   private readonly api_url = 'http://localhost:8080/equipos';
 
-  private equiposSubject = new ReplaySubject<EquipoDTO[]>(1);
-  public equipos$ = this.equiposSubject.asObservable();
-
   constructor(private http: HttpClient) {}
 
-  cargarEquipos(): void {
-     this.http.get<EquipoDTO[]>(this.api_url).subscribe((equipos: EquipoDTO[])=>{
-      this.equiposSubject.next(equipos);
-    });
+  getTodosLosEquipos(): Observable<EquipoDTO[]> {
+    return this.http.get<EquipoDTO[]>(this.api_url);
   }
 
-   getEquipoPorNombre(nombre: string): Observable<EquipoDTO | undefined> {
-    return this.equipos$.pipe(
-      map((equipos: EquipoDTO[]) => equipos.find(e => e.nombre === nombre))
+  getEquipoPorNombre(nombre: string): Observable<EquipoDTO> {
+    return this.http.get<EquipoDTO>(
+      `${this.api_url}/nombre/${encodeURIComponent(nombre)}`
     );
   }
 

@@ -1,0 +1,127 @@
+.partido-detalle {
+  background-color: #1e1e1e;
+  color: white;
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  height: 100vh;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.liga {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.encabezado {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.logo-equipo img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.logo-equipo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.nombre-equipo {
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
+}
+
+.resultado-central {
+  text-align: center;
+  flex: 1;
+}
+
+.estado-superior {
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.marcador {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.guion {
+  margin: 0 0.5rem;
+}
+
+.info-inferior {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.tabla-estadisticas {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: white;
+  color: #000;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.tabla-estadisticas thead {
+  background-color: #f3f4f6;
+}
+
+.tabla-estadisticas th,
+.tabla-estadisticas td {
+  padding: 0.75rem;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.tabla-estadisticas td:first-child {
+  width: 50px;
+  padding: 0.5rem;
+}
+
+.tabla-estadisticas td:nth-child(2) {
+  text-align: left;
+  padding-left: 1rem;
+  width: 35%;
+}
+
+.tabla-estadisticas tbody tr:nth-child(even) {
+  background-color: #f4f4f5;
+}
+
+.mvp-row {
+  background-color: #fff8cc !important;
+}
+
+.mvp-icon {
+  color: #facc15;
+  margin-right: 0.2rem;
+}
+
+.portero-icon {
+  color: #60a5fa;
+  margin-left: 0.2rem;
+}
+
+.amarillo {
+  color: #facc15;
+}
+
+.rojo {
+  color: #dc2626;
+}

@@ -1,0 +1,71 @@
+<div class="partido-detalle">
+  <div class="liga">Liga Municipal de Majadahonda 24/25</div>
+
+  <div class="encabezado">
+    <div class="logo-equipo">
+      <img
+        [src]="datosPartido?.equipoLocal?.url_logo"
+        [alt]="datosPartido?.equipoLocal?.nombre"
+      />
+      <div class="nombre-equipo">{{ datosPartido?.equipoLocal?.nombre }}</div>
+    </div>
+
+    <div class="resultado-central">
+      <div class="estado-superior">{{ datosPartido?.estado }}</div>
+      <div class="marcador">
+        <span>{{ datosPartido?.golesLocal }}</span>
+        <span class="guion">-</span>
+        <span>{{ datosPartido?.golesVisitante }}</span>
+      </div>
+      <div class="info-inferior">
+        <div>
+          {{ datosPartido?.fecha | date : "EEE, d/M" | capitalizarFecha }}
+        </div>
+        <div>{{ datosPartido?.lugar }}</div>
+      </div>
+    </div>
+
+    <div class="logo-equipo">
+      <img
+        [src]="datosPartido?.equipoVisitante?.url_logo"
+        [alt]="datosPartido?.equipoVisitante?.nombre"
+      />
+      <div class="nombre-equipo">
+        {{ datosPartido?.equipoVisitante?.nombre }}
+      </div>
+    </div>
+  </div>
+
+  <table class="tabla-estadisticas">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Jugador</th>
+        <th>#</th>
+        <th><i class="fa-solid fa-futbol"></i></th>
+        <th><i class="fa-solid fa-handshake"></i></th>
+        <th><i class="fa-solid fa-square amarillo"></i></th>
+        <th><i class="fa-solid fa-square rojo"></i></th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (est of estadisticasJugadores; track est.id) {
+      <tr [ngClass]="{ 'mvp-row': est.jugador.id === datosPartido?.mvp?.id }">
+        <td>
+          @if (est.jugador.id === datosPartido?.mvp?.id) {
+          <i class="fa-solid fa-star mvp-icon"></i>
+          } @if (est.portero) {
+          <i class="fa-solid fa-hand-back-fist portero-icon"></i>
+          }
+        </td>
+        <td>{{ est.jugador.nombre }}</td>
+        <td>{{ est.jugador.dorsal }}</td>
+        <td>{{ est.goles }}</td>
+        <td>{{ est.asistencias }}</td>
+        <td>{{ est.amarilla ? "1" : "0" }}</td>
+        <td>{{ est.roja ? "1" : "0" }}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

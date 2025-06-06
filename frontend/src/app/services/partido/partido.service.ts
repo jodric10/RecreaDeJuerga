@@ -12,8 +12,12 @@ export class PartidoService {
 
   constructor(private http: HttpClient) {}
 
+  getPartidosById(partidoId: string): Observable<PartidoDTO> {
+    return this.http.get<PartidoDTO>(`${this.api_url}/${partidoId}`);
+  }
+
   getPartidosDeUnEquipo(equipoId: string): Observable<PartidoDTO[]> {
-    return this.http.get<PartidoDTO[]>(`${this.api_url}/${equipoId}`);
+    return this.http.get<PartidoDTO[]>(`${this.api_url}/equipo/${equipoId}`);
   }
 
   altaPartido(datosFormulario: PartidoFormularioDTO): Observable<PartidoDTO> {

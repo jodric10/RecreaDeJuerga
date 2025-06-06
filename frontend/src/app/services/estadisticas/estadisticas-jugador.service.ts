@@ -9,7 +9,7 @@ import { EstadisticasJugadorPartidoInsertarDTO } from '../../models/estadisticas
   providedIn: 'root',
 })
 export class EstadisticasJugadorService {
-  private readonly api_url = 'http://localhost:8080//api/estadisticas';
+  private readonly api_url = 'http://localhost:8080/api/estadisticas';
 
   constructor(private http: HttpClient) {}
 

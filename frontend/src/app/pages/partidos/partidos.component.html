@@ -1,1 +1,10 @@
-<p>partidos works!</p>
+<h1 class="titulo-calendario">Calendario del {{ equipo?.nombre }} 2024/2025</h1>
+<p class="subtitulo-calendario">
+  Temporada oficial - Liga Municipal de Majadahonda
+</p>
+<hr class="linea-decorativa" />
+<div class="partidos-grid">
+  @for (partido of partidosEquipo; track $index) {
+  <app-celda-partido [partido]="partido" [index]="$index"></app-celda-partido>
+  }
+</div>

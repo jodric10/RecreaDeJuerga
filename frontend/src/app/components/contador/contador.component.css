@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+.countdown-container {
+  padding: 30px;
+  text-align: center;
+  font-family: 'Anton', sans-serif;
+  border-radius: 12px;
+  max-width: 900px;
+  margin: auto;
+}
+
+h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #000;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.timer-boxes {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.time-box {
+  background-color: #1e1e1e;
+  color: #fff;
+  width: 100px;
+  height: 100px;
+  border-radius: 6px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transform: skew(-5deg);
+  padding: 10px 0;
+}
+
+.time-box span {
+  font-size: 12px;
+  color: #ccc;
+  transform: skew(5deg);
+  text-transform: uppercase;
+  font-weight: normal;
+  margin-bottom: 5px;
+}
+
+.flip-vertical {
+  position: relative;
+  height: 60px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flip-vertical .current,
+.flip-vertical .next {
+  font-size: 48px;
+  line-height: 60px;
+  height: 60px;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Anton', sans-serif;
+  color: white;
+  position: absolute;
+  left: 0;
+}
+
+.flip-vertical .next {
+  top: -100%;
+  opacity: 0;
+}
+
+.flip-vertical.animate .current {
+  animation: moveDown 0.45s ease-in forwards;
+}
+
+.flip-vertical.animate .next {
+  animation: moveIn 0.45s ease-in forwards;
+}
+
+@keyframes moveDown {
+  0% {
+    top: 0%;
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes moveIn {
+  0% {
+    top: -100%;
+    opacity: 0;
+  }
+  100% {
+    top: 0%;
+    opacity: 1;
+  }
+}
+
+.event-started {
+  font-size: 24px;
+  color: #2e7d32;
+  font-weight: bold;
+  margin-top: 20px;
+}
