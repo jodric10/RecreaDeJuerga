@@ -1,41 +1,41 @@
 <div class="navigation">
   <ul>
-    <li [ngClass]="{ active: router.url === '/' }" style="--clr: #f44336">
-      <a routerLink="/">
+    <li [ngClass]="{ active: router.url === '/app' }" style="--clr: #f44336">
+      <a routerLink="/app">
         <span class="icon"><i class="fas fa-home"></i></span>
         <span class="text">Home</span>
       </a>
     </li>
     <li
-      [ngClass]="{ active: router.url === '/Recrea_de_Juerga/jugadores' }"
+      [ngClass]="{ active: router.url === '/app/Recrea_de_Juerga/jugadores' }"
       style="--clr: #ffa117"
     >
-      <a routerLink="/Recrea_de_Juerga/jugadores">
+      <a routerLink="/app/Recrea_de_Juerga/jugadores">
         <span class="icon"><i class="fas fa-users"></i></span>
         <span class="text">Jugadores</span>
       </a>
     </li>
     <li
-      [ngClass]="{ active: router.url === '/Recrea_de_Juerga/partidos' }"
+      [ngClass]="{ active: router.url === '/app/Recrea_de_Juerga/partidos' }"
       style="--clr: #0fc70f"
     >
-      <a routerLink="/Recrea_de_Juerga/partidos">
+      <a routerLink="/app/Recrea_de_Juerga/partidos">
         <span class="icon"><i class="fas fa-calendar-alt"></i></span>
         <span class="text">Partidos</span>
       </a>
     </li>
     <li
-      [ngClass]="{ active: router.url === '/clasificacion' }"
+      [ngClass]="{ active: router.url === '/app/clasificacion' }"
       style="--clr: #2196f3"
     >
-      <a routerLink="/clasificacion">
+      <a routerLink="/app/clasificacion">
         <span class="icon"><i class="fas fa-trophy"></i></span>
         <span class="text">Tabla</span>
       </a>
     </li>
     @if (admin) {
-    <li [ngClass]="{ active: router.url === '/admin' }" style="--clr: #b145e9">
-      <a routerLink="/admin">
+    <li [ngClass]="{ active: router.url === '/app/admin' }" style="--clr: #b145e9">
+      <a routerLink="/app/admin">
         <span class="icon"><i class="fas fa-user-shield"></i></span>
         <span class="text">Admin</span>
       </a>

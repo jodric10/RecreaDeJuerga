@@ -1,4 +1,4 @@
-import { EquipoDTO } from '../equipo/equipo';
+import { EquipoSimpleDTO } from '../equipo/equipoSimple';
 import { JugadorSimpleDTO } from '../jugador/jugadorSimple';
 
 export interface PartidoDTO {
@@ -6,8 +6,8 @@ export interface PartidoDTO {
   fecha: string;              
   lugar: string;
   estado: string;
-  equipoLocal: EquipoDTO;
-  equipoVisitante: EquipoDTO;
+  equipoLocal: EquipoSimpleDTO;
+  equipoVisitante: EquipoSimpleDTO;
   golesLocal: number;
   golesVisitante: number;
   mvp: JugadorSimpleDTO;

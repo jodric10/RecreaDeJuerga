@@ -1,2 +1,28 @@
-<app-contador></app-contador>
+<h1 class="titulo-home">Recrea de Juerga</h1>
+
+<section class="seccion-equipo">
+  <app-tarjeta-equipo [info_equipo]="equipo"></app-tarjeta-equipo>
+</section>
+
+<section class="seccion-contador">
+  <app-contador></app-contador>
+</section>
+
+<section class="seccion-valores">
+  <h2 class="titulo-valores">Nuestros Valores</h2>
+  <div class="valores-flex">
+    @for (valor of valores_equipo; track valor.titulo) {
+    <app-tarjeta-valor [valor]="valor"></app-tarjeta-valor>
+    }
+  </div>
+</section>
+
+<section class="seccion-carrusel">
+  <h2 class="titulo-carrusel">Nuestros Jugadores</h2>
+  <div>
+     <app-cromo></app-cromo>
+  </div>
+
+</section>
+
 <app-footer></app-footer>

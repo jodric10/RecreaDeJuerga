@@ -6,7 +6,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
   styleUrls: ['./contador.component.css']
 })
 export class ContadorComponent implements OnInit, OnDestroy {
-  targetDate: Date = new Date('2025-06-08T19:00:00');
+  targetDate: Date = new Date('2025-06-25T22:00:00');
   intervalId: any;
 
   days: number = 0;
