@@ -1,6 +1,7 @@
 package com.recreadejuerga.recrea.dtos.jugador;
 
 import com.recreadejuerga.recrea.dtos.equipo.EquipoDTO;
+import com.recreadejuerga.recrea.dtos.equipo.EquipoSimpleDTO;
 import com.recreadejuerga.recrea.dtos.jugadorParecido.JugadorParecidoSimpleDTO;
 import lombok.*;
 
@@ -28,5 +29,5 @@ public class JugadorDTO {
     private String fotoTarjeta;
     private String fotoPose;
     private List<JugadorParecidoSimpleDTO> parecidos;
-    private EquipoDTO equipo;
+    private EquipoSimpleDTO equipo;
 }

@@ -9,11 +9,8 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class EquipoDTO {
+public class EquipoSimpleDTO {
     private UUID id;
     private String nombre;
     private String url_logo;
-    private String eslogan;
-    private String descripcion;
-    private String url_equipo;
 }

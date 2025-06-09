@@ -24,7 +24,7 @@ public class JugadorMapper {
                 jugador.getFotoTarjeta(),
                 jugador.getFotoPose(),
                 jugador.getParecidos().stream().map(JugadorParecidoMapper::toJugadorParecidoSimpleDTO).toList(),
-                EquipoMapper.toEquipoDTO(jugador.getEquipo())
+                EquipoMapper.toSimpleEquipoDTO(jugador.getEquipo())
         );
     }
 

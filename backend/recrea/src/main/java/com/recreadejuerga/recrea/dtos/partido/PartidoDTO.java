@@ -1,6 +1,7 @@
 package com.recreadejuerga.recrea.dtos.partido;
 
 import com.recreadejuerga.recrea.dtos.equipo.EquipoDTO;
+import com.recreadejuerga.recrea.dtos.equipo.EquipoSimpleDTO;
 import com.recreadejuerga.recrea.dtos.jugador.JugadorDTO;
 import com.recreadejuerga.recrea.dtos.jugador.JugadorSimpleDTO;
 import lombok.*;
@@ -19,8 +20,8 @@ public class PartidoDTO {
     private LocalDateTime fecha;
     private String lugar;
     private String estado;
-    private EquipoDTO equipoLocal;
-    private EquipoDTO equipoVisitante;
+    private EquipoSimpleDTO equipoLocal;
+    private EquipoSimpleDTO equipoVisitante;
     private Integer golesLocal;
     private Integer golesVisitante;
     private JugadorSimpleDTO mvp;

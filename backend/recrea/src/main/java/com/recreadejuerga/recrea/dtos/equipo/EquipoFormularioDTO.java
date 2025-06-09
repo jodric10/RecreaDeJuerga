@@ -15,4 +15,11 @@ public class EquipoFormularioDTO {
 
     @URL(message = "Debe ser una URL válida")
     private String url_logo;
+
+    private String eslogan;
+
+    private String descripcion;
+
+    @URL(message = "Debe ser una URL válida")
+    private String url_equipo;
 }
