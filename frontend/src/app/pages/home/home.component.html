@@ -19,10 +19,18 @@
 
 <section class="seccion-carrusel">
   <h2 class="titulo-carrusel">Nuestros Jugadores</h2>
-  <div>
-     <app-cromo></app-cromo>
-  </div>
 
+  <swiper-container
+    effect="cards"
+    grabCursor="true"
+    class="swiper-centered"
+    cards-effect-slide-shadows="false"
+  >
+    @for (jugador of jugadores; track jugador.dorsal) {
+    <swiper-slide>
+      <app-cromo [jugador]="jugador"></app-cromo>
+    </swiper-slide>
+    }
+  </swiper-container>
 </section>
-
 <app-footer></app-footer>

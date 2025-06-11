@@ -13,9 +13,9 @@ export interface JugadorDTO {
   asistenciasTotales: number;
   fortalezas: string;
   fechaNacimiento: string;
-  fotoFrontal: string;
-  fotoTarjeta: string;
+  cromo: string;
   fotoPose: string;
+  num_coleccionable: number;
   parecidos: JugadorParecidoSimpleDTO[];
   equipo: EquipoSimpleDTO;
 }

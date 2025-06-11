@@ -7,13 +7,6 @@
   font-family: "Poppins", sans-serif;
 }
 
-:host {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  min-height: 100vh;
-}
-
 footer {
   position: relative;
   width: 100%;

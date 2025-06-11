@@ -1,7 +1,6 @@
-import { Component, HostListener, inject, OnInit } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastService } from '../../services/toastMessage/toast.service';
-import { ToastMessage } from '../../models/toastMessage/toastMessage';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { EquipoService } from '../../services/equipo/equipo.service';
 import { ContadorComponent } from '../../components/contador/contador.component';
@@ -11,7 +10,16 @@ import { take } from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http';
 import { ValorEquipo } from '../../models/valorEquipo';
 import { TarjetaValorComponent } from '../../components/tarjeta-valor/tarjeta-valor.component';
-import { CromoComponent } from "../../components/cromo/cromo.component";
+import { CromoComponent } from '../../components/cromo/cromo.component';
+import { JugadorDTO } from '../../models/jugador/jugador';
+import { JugadorService } from '../../services/jugador/jugador.service';
+import { register } from 'swiper/element/bundle';
+import SwiperCore from 'swiper';
+import { EffectCards } from 'swiper/modules';
+
+register();
+
+SwiperCore.use([EffectCards]);
 
 @Component({
   selector: 'app-home',
@@ -21,17 +29,20 @@ import { CromoComponent } from "../../components/cromo/cromo.component";
     ContadorComponent,
     TarjetaEquipoComponent,
     TarjetaValorComponent,
-    CromoComponent
-],
+    CromoComponent,
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
 export class HomeComponent implements OnInit {
   private equipoService = inject(EquipoService);
+  private jugadorService = inject(JugadorService);
   private route = inject(ActivatedRoute);
   private toastService = inject(ToastService);
   equipo!: EquipoDTO | undefined;
   nombreEquipo: string = 'Recrea de Juerga';
+  jugadores: JugadorDTO[] = [];
   valores_equipo: ValorEquipo[] = [
     {
       titulo: 'Compromiso',
@@ -66,6 +77,24 @@ export class HomeComponent implements OnInit {
       .subscribe({
         next: (equipo: EquipoDTO) => {
           this.equipo = equipo;
+          this.jugadorService
+            .getJugadoresDeUnEquipo(this.equipo.id)
+            .pipe(take(1))
+            .subscribe({
+              next: (jugadores: JugadorDTO[]) => {
+                this.jugadores = jugadores.filter(
+                  (jugador: JugadorDTO) => jugador.cromo != null
+                );
+              },
+              error: (err: HttpErrorResponse) => {
+                this.toastService.show({
+                  severity: 'error',
+                  summary: 'Error al obtener el equipo',
+                  detail:
+                    err.error?.detail || 'Ha ocurrido un error inesperado.',
+                });
+              },
+            });
         },
         error: (err: HttpErrorResponse) => {
           this.toastService.show({
