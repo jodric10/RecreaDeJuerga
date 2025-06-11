@@ -19,7 +19,7 @@ public class ClasificacionMapper {
                 clasificacion.getGolesContra(),
                 clasificacion.getDiferenciaGoles(),
                 clasificacion.getPromedioTfTc(),
-                EquipoMapper.toEquipoDTO(clasificacion.getEquipo())
+                EquipoMapper.toSimpleEquipoDTO(clasificacion.getEquipo())
         );
     }
 }

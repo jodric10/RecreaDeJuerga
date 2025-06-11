@@ -1,0 +1,15 @@
+<div class="tarjeta-container">
+  <div class="tarjeta-texto">
+    <h2 class="titulo">¿Qué tipo de equipo somos?</h2>
+    <p class="eslogan">{{ info_equipo?.eslogan }}</p>
+    <p class="descripcion">
+      {{ info_equipo?.descripcion }}
+    </p>
+  </div>
+
+  <div class="tarjeta-imagen">
+    <div class="imagen-circular">
+      <img [src]="info_equipo?.url_equipo" alt="Imagen del equipo" />
+    </div>
+  </div>
+</div>

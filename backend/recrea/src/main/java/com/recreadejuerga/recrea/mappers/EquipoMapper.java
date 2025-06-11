@@ -9,9 +9,13 @@ public class EquipoMapper {
 
     public static EquipoDTO toEquipoDTO(Equipo equipo){
         if (equipo == null) return null;
-        return new EquipoDTO(equipo.getId(),equipo.getNombre(),equipo.getUrl_logo());
+        return new EquipoDTO(equipo.getId(),equipo.getNombre(),equipo.getUrl_logo(), equipo.getEslogan(),equipo.getDescripcion(),equipo.getUrl_equipo());
     }
 
+    public static EquipoSimpleDTO toSimpleEquipoDTO(Equipo equipo){
+        if (equipo == null) return null;
+        return new EquipoSimpleDTO(equipo.getId(),equipo.getNombre(),equipo.getUrl_logo());
+    }
 
     public static Equipo toEquipo(EquipoFormularioDTO insertar_equipo){
         Equipo equipo= Equipo.builder().nombre(insertar_equipo.getNombre()).url_logo(insertar_equipo.getUrl_logo()).build();

@@ -39,9 +39,9 @@ public class JugadorFormularioDTO {
     @NotNull(message = "Debe especificarse un equipo")
     private UUID equipoId;
 
-    private String fotoFrontal;
-
-    private String fotoTarjeta;
+    private String cromo;
 
     private String fotoPose;
+
+    private Integer num_coleccionable=0;
 }

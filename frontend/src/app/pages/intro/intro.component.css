@@ -1,0 +1,27 @@
+.arcade-scroll-wrapper {
+  height: 200vh;
+  background: #000;
+  overflow: hidden;
+  position: relative;
+
+  .arcade-img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center 35%;
+    transform-origin: 50% 35%; 
+    transition: transform 0.3s ease, opacity 0.5s ease;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  &.hide-arcade {
+    .arcade-img {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+}

@@ -13,4 +13,7 @@ public class EquipoDTO {
     private UUID id;
     private String nombre;
     private String url_logo;
+    private String eslogan;
+    private String descripcion;
+    private String url_equipo;
 }

@@ -14,13 +14,15 @@
 
   @if (partido.fecha) {
   <div class="fecha">
-    {{ partido.fecha | date : "EEE, d/M" | capitalizarFecha }}
+    {{ partido.fecha | date : "EEE, d/M " | capitalizarFecha }}
   </div>
   }
 </div>
 } @else {
 <div
-  class="celda-partido {{ resultadoClase() }} {{ partido.estado === 'Finalizado' ? 'finalizado' : 'pendiente' }}"
+  class="celda-partido {{ resultadoClase() }} {{
+    partido.estado === 'Finalizado' ? 'finalizado' : 'pendiente'
+  }}"
   (click)="partido.estado === 'Finalizado' && estadisticas(partido)"
 >
   <div class="jornada">Jornada {{ index + 1 }}</div>
@@ -73,7 +75,7 @@
     <div class="estado">{{ partido.estado }}</div>
     @if (partido.fecha) {
     <div class="fecha">
-      {{ partido.fecha | date : "EEE, d/M" | capitalizarFecha }}
+      {{ partido.fecha | date : "EEE, d/M - HH:mm" | capitalizarFecha }}
     </div>
     }
     <div class="lugar">{{ partido.lugar }}</div>

@@ -1,6 +1,7 @@
 package com.recreadejuerga.recrea.dtos.clasificacion;
 
 import com.recreadejuerga.recrea.dtos.equipo.EquipoDTO;
+import com.recreadejuerga.recrea.dtos.equipo.EquipoSimpleDTO;
 import lombok.*;
 
 import java.math.BigDecimal;
@@ -22,5 +23,5 @@ public class ClasificacionDTO {
     private Integer golesContra;
     private Integer diferenciaGoles;
     private BigDecimal promedioTfTc;
-    private EquipoDTO equipo;
+    private EquipoSimpleDTO equipo;
 }

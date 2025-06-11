@@ -68,7 +68,7 @@ public class JugadorServicio {
         String nombreEquipo= EquipoServicio.getEquipo(jugador.getEquipoId()).getNombre();
         if (repo.existsById(id)) {
             try {
-                repo.actualizarJugador(id,jugador.getNombre(),jugador.getApodo(),jugador.getDorsal(),jugador.getPosicion(),jugador.getPieDominante(),jugador.getGolesTotales(),jugador.getAsistenciasTotales(),jugador.getFortalezas(),jugador.getFechaNacimiento(),jugador.getEquipoId(),jugador.getFotoFrontal(),jugador.getFotoTarjeta(),jugador.getFotoPose());
+                repo.actualizarJugador(id,jugador.getNombre(),jugador.getApodo(),jugador.getDorsal(),jugador.getPosicion(),jugador.getPieDominante(),jugador.getGolesTotales(),jugador.getAsistenciasTotales(),jugador.getFortalezas(),jugador.getFechaNacimiento(),jugador.getEquipoId(),jugador.getCromo(),jugador.getFotoPose(),jugador.getNum_coleccionable());
                 return repo.findById(id).map(JugadorMapper::toJugadorDTO).orElseThrow(() -> new JugadorNoEncontradoException(id));
             } catch (DataIntegrityViolationException ex) {
                 Throwable causa = ex.getRootCause();

@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
+
+.titulo-home,
+.titulo-valores,
+.titulo-carrusel {
+  font-family: "Bungee", sans-serif;
+  font-size: 5rem;
+  text-align: center;
+  margin: 3rem auto;
+  background: linear-gradient(to right, #001d6e, #1f3b99, #ffffff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.valores-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.titulo-valores,
+.titulo-carrusel {
+  font-size: 3rem;
+}
+
+.seccion-equipo,
+.seccion-contador,
+.seccion-valores {
+  margin-bottom: 4rem;
+}
+
+.seccion-carrusel {
+  margin-bottom: 12rem;
+}
+
+
+.swiper-centered {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: visible !important;
+}
+
+.swiper-centered swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: visible !important;
+  z-index: 1;
+  position: relative;
+}
+
+.swiper-centered swiper-slide:hover {
+  z-index: 10;
+}

@@ -1,0 +1,91 @@
+.tarjeta-container {
+  max-width: 950px;
+  margin: 2rem auto;
+  display: flex;
+  background: linear-gradient(135deg, #1f3b99, #ffffff);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 0 20px rgba(0, 0, 50, 0.1);
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #d0d8ff;
+}
+
+.tarjeta-texto {
+  flex: 1.5;
+  z-index: 1;
+}
+
+.titulo {
+  margin-bottom: 1rem;
+  font-size: 1.9rem;
+  font-weight: bold;
+  font-family: 'Merriweather', serif;
+  color: #fefefe;
+}
+
+.eslogan {
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  color: #ffd166;
+  font-weight: 500;
+}
+
+.descripcion {
+  line-height: 1.6;
+  color: #f0f0f0;
+}
+
+.tarjeta-imagen {
+  flex: 1.2;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagen-circular {
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 6px solid #7aa9ff;
+  outline: 5px dashed #c7dbff;
+  outline-offset: 6px;
+  box-shadow: 0 0 15px rgba(40, 90, 255, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagen-circular img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .tarjeta-container {
+    flex-direction: column;
+    text-align: center;
+    max-width: 90%;
+    padding: 1.5rem;
+  }
+
+  .tarjeta-texto {
+    flex: unset;
+  }
+
+  .tarjeta-imagen {
+    flex: unset;
+    margin-top: 1.5rem;
+  }
+
+  .imagen-circular {
+    width: 280px;
+    height: 280px;
+  }
+}

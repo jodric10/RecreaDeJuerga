@@ -36,6 +36,16 @@ public class Equipo {
     @Column(name = "url_logo", columnDefinition = "TEXT")
     private String  url_logo;
 
+    @Column(name = "eslogan", length = 50)
+    private String  eslogan;
+
+    @Column(name = "descripcion", columnDefinition = "TEXT")
+    private String  descripcion;
+
+    @Column(name = "url_equipo", columnDefinition = "TEXT")
+    private String  url_equipo;
+
+
     @OneToMany(mappedBy = "equipoLocal", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Partido> partidosComoLocal = new ArrayList<>();
 

@@ -1,4 +1,4 @@
-import { EquipoDTO } from '../equipo/equipo';
+import { EquipoSimpleDTO } from '../equipo/equipoSimple';
 import { JugadorParecidoSimpleDTO } from '../parecido/jugadorParecidoSimple';
 
 
@@ -13,9 +13,9 @@ export interface JugadorDTO {
   asistenciasTotales: number;
   fortalezas: string;
   fechaNacimiento: string;
-  fotoFrontal: string;
-  fotoTarjeta: string;
+  cromo: string;
   fotoPose: string;
+  num_coleccionable: number;
   parecidos: JugadorParecidoSimpleDTO[];
-  equipo: EquipoDTO;
+  equipo: EquipoSimpleDTO;
 }

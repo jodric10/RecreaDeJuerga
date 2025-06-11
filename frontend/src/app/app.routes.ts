@@ -5,6 +5,11 @@ export const routes: Routes = [
   {
     path: '',
     loadComponent: () =>
+      import('./pages/intro/intro.component').then((m) => m.IntroComponent),
+  },
+  {
+    path: 'app',
+    loadComponent: () =>
       import('./pages/layout/layout.component').then((m) => m.LayoutComponent),
     children: [
       {

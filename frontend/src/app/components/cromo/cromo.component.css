@@ -1,0 +1,53 @@
+article {
+  display: inline-block;
+  position: relative;
+  border-radius: 8px;
+}
+
+.cromo {
+  display: block;
+  width: 215px;
+  height: 310px;
+  object-fit: cover;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  transition: 
+    transform 0.4s ease,
+    filter 0.4s ease;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+article::before {
+  content: "";
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 0; height: 0;
+  background: rgba(255, 215, 0, 0.4);
+  border-radius: 50%;
+  filter: blur(20px);
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease;
+  z-index: 0;
+}
+
+@keyframes glowBorder {
+  0%, 100% {
+    box-shadow: 0 0 8px gold, 0 0 16px rgba(255,215,0,0.6);
+  }
+  50% {
+    box-shadow: 0 0 16px gold, 0 0 32px rgba(255,215,0,0.8);
+  }
+}
+
+article:hover .cromo {
+  transform: scale(1.08) translateY(-6px) rotate(-1deg);
+  filter: brightness(1.1) saturate(1.2);
+  animation: glowBorder 1.2s infinite ease-in-out;
+}
+
+article:hover::before {
+  width: 120%;
+  height: 140%;
+}

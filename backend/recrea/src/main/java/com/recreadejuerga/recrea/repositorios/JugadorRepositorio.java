@@ -20,6 +20,7 @@ public interface JugadorRepositorio extends JpaRepository<Jugador, UUID> {
             SELECT j
             FROM Jugador j
             WHERE j.equipo.id = :equipo_id
+            ORDER BY j.num_coleccionable ASC
             """)
     List<Jugador> getJugadoresByEquipo(@Param("equipo_id") UUID equipo_id);
 
@@ -44,9 +45,9 @@ public interface JugadorRepositorio extends JpaRepository<Jugador, UUID> {
         j.fortalezas = :fortalezas,
         j.fechaNacimiento = :fechaNacimiento,
         j.equipo.id = :equipo_id,
-        j.fotoFrontal = :fotoFrontal,
-        j.fotoTarjeta = :fotoTarjeta,
-        j.fotoPose = :fotoPose
+        j.cromo = :cromo,
+        j.fotoPose = :fotoPose,
+        j.num_coleccionable= :num_coleccionable
     WHERE j.id = :id
 """)
     void actualizarJugador(
@@ -61,10 +62,10 @@ public interface JugadorRepositorio extends JpaRepository<Jugador, UUID> {
             @Param("fortalezas") String fortalezas,
             @Param("fechaNacimiento") LocalDate fechaNacimiento,
             @Param("equipo_id") UUID equipo_id,
-            @Param("fotoFrontal") String fotoFrontal,
-            @Param("fotoTarjeta") String fotoTarjeta,
-            @Param("fotoPose") String fotoPose
-    );
+            @Param("cromo") String cromo,
+            @Param("fotoPose") String fotoPose,
+            @Param("num_coleccionable") Integer num_coleccionable
+            );
 
     @Modifying
     @Transactional

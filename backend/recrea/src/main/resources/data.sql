@@ -1,57 +1,59 @@
-INSERT INTO equipos (id, nombre, url_logo) VALUES
-  ('d72d7c7e-1e1a-4e63-8e56-3c16b1f01201', 'Elespot Mandangon SP', 'assets/logos/elespot_mandangon.png'),
-  ('a91e0f64-29e0-4c98-9f84-604d1a28d102', 'El Colectivo', 'assets/logos/colectivo.png'),
-  ('8431d13a-bd3e-4dc0-8946-2efdb9898fa1', 'More Kapa FS', 'assets/logos/more_kapa.png'),
-  ('ec16775b-4411-49d1-a19b-d458d85f1801', 'Guajes', 'assets/logos/guajes.png'),
-  ('7a688bea-2027-4e9a-a90c-76fbd301f4b2', 'Recrea de Juerga', 'assets/logos/recrea_de_juerga.png'),
-  ('c27e21fc-ef6b-44a1-ae5a-c3b28539c0d3', 'Palillos a la Mar', 'assets/logos/palillos_a_la_mar.png'),
-  ('b8d5213e-bebf-4d07-a3ee-43793194b964', 'Man Red', 'assets/logos/man_red.png'),
-  ('ea84a2a2-0176-4a3c-8926-52bda3081b4a', 'Golesalavés', 'assets/logos/golesalaves.png'),
-  ('bb4f1ee8-510e-45f9-a9f8-7d54e845ec10', 'Green Park United', 'assets/logos/green_park.png'),
-  ('e10f5b5c-00ae-41ad-a2c3-2f3a9cb28233', 'Comando Navacerrada', 'assets/logos/comando_navacerrada.png'),
-  ('f3c4e948-b0a5-4294-8012-22f6f2de6e0f', 'Los Potros FC', 'assets/logos/potros.png'),
-  ('e78d5c6e-003d-45c9-b991-d7c60ccfeabc', 'Maped', 'assets/logos/maped.png'),
-  ('1f94515c-fc16-4c4f-b1dc-7c6f648ad7f2', 'Mambo FC', 'assets/logos/mambo.png')
-
+INSERT INTO equipos (id, nombre, url_logo, eslogan, descripcion, url_equipo) VALUES
+  ('d72d7c7e-1e1a-4e63-8e56-3c16b1f01201', 'Elespot Mandangon SP', 'assets/logos/elespot_mandangon.png', NULL, NULL, NULL),
+  ('a91e0f64-29e0-4c98-9f84-604d1a28d102', 'El Colectivo', 'assets/logos/colectivo.png', NULL, NULL, NULL),
+  ('8431d13a-bd3e-4dc0-8946-2efdb9898fa1', 'More Kapa FS', 'assets/logos/more_kapa.png', NULL, NULL, NULL),
+  ('ec16775b-4411-49d1-a19b-d458d85f1801', 'Guajes', 'assets/logos/guajes.png', NULL, NULL, NULL),
+  ('7a688bea-2027-4e9a-a90c-76fbd301f4b2', 'Recrea de Juerga', 'assets/logos/recrea_de_juerga.png', 'Jugamos como bebemos: sin miedo y hasta el final', 'Somos un equipo que se apoya en todo momento, con compromiso y entrega total. Dejamos el alma en cada partido, creyendo hasta el final sin importar las circunstancias. Ya sea bajo el sol, la lluvia, la niebla o el viento, siempre estamos listos para jugar al fútbol, porque es lo que nos une. En el Recrea de Juerga jugamos para ganar, sí, pero también para competir con respeto y deportividad. Nos adaptamos a cualquier estilo: jugando bonito, replegados, con garra o con golpes, lo importante es dejarlo todo por el equipo. El Recrea de Juerga acaba de nacer, pero ya late con historia. Y lo que sentimos por este escudo no se explica... se demuestra.', 'assets/img/recreaDeJuerga.png'),
+  ('c27e21fc-ef6b-44a1-ae5a-c3b28539c0d3', 'Palillos a la Mar', 'assets/logos/palillos_a_la_mar.png', NULL, NULL, NULL),
+  ('b8d5213e-bebf-4d07-a3ee-43793194b964', 'Man Red', 'assets/logos/man_red.png', NULL, NULL, NULL),
+  ('ea84a2a2-0176-4a3c-8926-52bda3081b4a', 'Golesalavés', 'assets/logos/golesalaves.png', NULL, NULL, NULL),
+  ('bb4f1ee8-510e-45f9-a9f8-7d54e845ec10', 'Green Park United', 'assets/logos/green_park.png', NULL, NULL, NULL),
+  ('e10f5b5c-00ae-41ad-a2c3-2f3a9cb28233', 'Comando Navacerrada', 'assets/logos/comando_navacerrada.png', NULL, NULL, NULL),
+  ('f3c4e948-b0a5-4294-8012-22f6f2de6e0f', 'Los Potros FC', 'assets/logos/potros.png', NULL, NULL, NULL),
+  ('e78d5c6e-003d-45c9-b991-d7c60ccfeabc', 'Maped', 'assets/logos/maped.png', NULL, NULL, NULL),
+  ('1f94515c-fc16-4c4f-b1dc-7c6f648ad7f2', 'Mambo FC', 'assets/logos/mambo.png', NULL, NULL, NULL)
 ON CONFLICT (nombre) DO UPDATE
-SET url_logo = EXCLUDED.url_logo;
+SET url_logo = EXCLUDED.url_logo,
+    eslogan = EXCLUDED.eslogan,
+    descripcion = EXCLUDED.descripcion,
+    url_equipo = EXCLUDED.url_equipo;
 
 INSERT INTO jugadores (
     id, nombre, apodo, dorsal, posicion, pie_dominante, goles_totales, asistencias_totales,
-    fortalezas, fecha_nacimiento,nacionalidad, equipo_id, foto_frontal, foto_tarjeta, foto_pose
+    fortalezas, fecha_nacimiento,nacionalidad, equipo_id,cromo, foto_pose, num_coleccionable
 ) VALUES
 ('ecf8164a-2220-46fe-affb-7679a03f3a6d', 'Jorge González Pérez', 'González', 11, 'Ala', 'Derecho', 9, 15, 'Calidad, control, pase, arranque', '2004-05-03', 'España',
- (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'http://example.com/foto_frontal1.png', 'http://example.com/foto_tarjeta1.png', 'http://example.com/foto_pose1.png'),
+ (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), null, 'http://example.com/foto_pose1.png', null),
 
 ('522fb925-c88d-4680-84d8-1dfacfd0c70b', 'Nacho Manzano Pérez', 'Manzano', 17, 'Ala', 'Derecho', 4, 7, 'Pulmón, visión, box to box', '2004-09-17', 'España',
- (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'http://example.com/foto_frontal2.png', 'http://example.com/foto_tarjeta2.png', 'http://example.com/foto_pose2.png'),
+ (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), null, 'http://example.com/foto_pose2.png', null),
 
 ('34fb45a0-93db-4fc8-b5fe-77cd67600cee', 'Daniel Manzano Pérez', 'Dani', 35, 'Cierre', 'Derecho', 2, 5, 'Visión, pase, control', '2007-08-09', 'España',
- (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'http://example.com/foto_frontal3.png', 'http://example.com/foto_tarjeta3.png', 'http://example.com/foto_pose3.png'),
+ (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'assets/cromos/dani.png','http://example.com/foto_pose3.png',1),
 
 ('a3e96069-e2ea-4029-b23d-ae6b856f942d', 'Jorge Sánchez Rodríguez', 'Kalibuchi', 2, 'Cierre', 'Izquierdo', 4, 5, 'Golpeo potente, defensa, asociación', '2004-09-17', 'España',
- (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'http://example.com/foto_frontal4.png', 'http://example.com/foto_tarjeta4.png', 'http://example.com/foto_pose4.png'),
+ (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'assets/cromos/kali.png','http://example.com/foto_pose4.png', 2),
 
 ('e0e8f259-73ee-4005-9369-235c3f6c31c9', 'Adrián Carvajal Sánchez', 'Adri', 19, 'Pívot', 'Derecho', 23, 11, 'Físico, velocidad, remate', '2004-03-22', 'España',
- (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'http://example.com/foto_frontal5.png', 'http://example.com/foto_tarjeta5.png', 'http://example.com/foto_pose5.png'),
+ (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), null,'http://example.com/foto_pose5.png',null),
 
-('86c4cb1c-144c-4660-bb47-bdf440501ded', 'Santiago Alejandre Chaya', 'Santi', 14, 'Pívot', 'Derecho', 13, 8, 'Fuerza, resistencia, velocidad', '2004-08-18', 'España',
- (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'http://example.com/foto_frontal1.png', 'http://example.com/foto_tarjeta1.png', 'http://example.com/foto_pose1.png'),
+('86c4cb1c-144c-4660-bb47-bdf440501ded', 'Santiago Alejandre Chaya', 'Santi', 14, 'Ala', 'Derecho', 13, 8, 'Fuerza, resistencia, velocidad', '2004-08-18', 'España',
+ (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'assets/cromos/chaya.png','http://example.com/foto_pose1.png',3),
 
 ('e2a9b4dc-0247-4526-98c5-a2020b2d5cf4', 'Alberto González Pérez', 'Alberoto', 5, 'Ala', 'Derecho', 2, 7, 'Inteligencia, apoyo, sacrificio', '1999-07-20', 'España',
- (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'http://example.com/foto_frontal2.png', 'http://example.com/foto_tarjeta2.png', 'http://example.com/foto_pose2.png'),
+ (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), null, 'http://example.com/foto_pose2.png', null),
 
 ('b1ec4c9f-79f7-4c84-a9b3-8e2c6631f8a0', 'Raúl García Rodrigo', 'Ra', 1, 'Portero', 'Derecho', 3, 3, 'Reflejos, colocación, visión', '2004-12-04', 'España',
- (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'http://example.com/foto_frontal3.png', 'http://example.com/foto_tarjeta3.png', 'http://example.com/foto_pose3.png'),
+ (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), null,'http://example.com/foto_pose3.png', null),
 
 ('f217f7a2-bb7e-4729-b0a8-6f5f90a58f17', 'Fernando Méndez Lera', 'Fer', 8, 'Ala', 'Izquierdo', 15, 8, 'Desborde, zurda, disparo', '2007-01-27', 'España',
- (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'http://example.com/foto_frontal4.png', 'http://example.com/foto_tarjeta4.png', 'http://example.com/foto_pose4.png'),
+ (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'assets/cromos/fer.png', 'http://example.com/foto_pose4.png',6),
 
 ('ac548370-00ff-4060-b4bb-284378c6c9d9', 'Alfonso Perís Pérez', 'Fonsi', 12, 'Pívot', 'Derecho', 4, 3, 'Compromiso, movilidad, físico', '2004-10-17', 'España',
- (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'http://example.com/foto_frontal5.png', 'http://example.com/foto_tarjeta5.png', 'http://example.com/foto_pose5.png'),
+ (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'assets/cromos/fonsi.png', 'http://example.com/foto_pose5.png', 4),
 
-('1e9a00be-308e-4a30-98a1-e7254ecb03fa', 'Mario Rodríguez Díaz', 'Mario', 21, 'Ala', 'Derecho', 2, 3, 'Calidad, sacrificio, apoyo', '2004-06-11', 'España',
- (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'http://example.com/foto_frontal6.png', 'http://example.com/foto_tarjeta6.png', 'http://example.com/foto_pose6.png')
+('1e9a00be-308e-4a30-98a1-e7254ecb03fa', 'Mario Rodríguez Díaz', 'Mario', 20, 'Ala', 'Derecho', 2, 3, 'Calidad, sacrificio, apoyo', '2004-06-11', 'España',
+ (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'assets/cromos/mario.png', 'http://example.com/foto_pose6.png',5)
 
 ON CONFLICT (equipo_id, dorsal) DO UPDATE SET
   nombre = EXCLUDED.nombre,
@@ -63,9 +65,9 @@ ON CONFLICT (equipo_id, dorsal) DO UPDATE SET
   fortalezas = EXCLUDED.fortalezas,
   fecha_nacimiento = EXCLUDED.fecha_nacimiento,
   nacionalidad= EXCLUDED.nacionalidad,
-  foto_frontal = EXCLUDED.foto_frontal,
-  foto_tarjeta = EXCLUDED.foto_tarjeta,
-  foto_pose = EXCLUDED.foto_pose;
+  cromo = EXCLUDED.cromo,
+  foto_pose = EXCLUDED.foto_pose,
+  num_coleccionable= EXCLUDED.num_coleccionable;
 
 INSERT INTO jugadores_parecidos (id,jugador_id, parecido) VALUES
 ('0a1d3d10-1234-4a1f-9b01-000000000001', (SELECT id FROM jugadores WHERE nombre = 'Jorge González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Milinković-Savić'),

@@ -199,12 +199,15 @@ public class EquipoControlador {
                             mediaType = "application/json",
                             schema = @Schema(implementation = EquipoDTO.class),
                             examples = @ExampleObject("""
-                                        {
-                                          "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-                                          "nombre": "Real Madrid FC",
-                                          "url_logo": "http://example.com/logo1.png"
-                                        }
-                                    """)
+                                {
+                                  "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                                  "nombre": "Real Madrid FC",
+                                  "url_logo": "http://example.com/logo1.png",
+                                  "eslogan": "Nunca dejes de creer.",
+                                  "descripcion": "El club más laureado del mundo. Historia, grandeza y una mentalidad ganadora que no entiende de imposibles. Porque aquí se lucha hasta el final.",
+                                  "url_equipo": "http://example.com/foto_equipo.png"
+                                }
+                            """)
                     )
             ),
             @ApiResponse(
@@ -215,26 +218,26 @@ public class EquipoControlador {
                             schema = @Schema(implementation = ProblemDetail.class),
                             examples = {
                                     @ExampleObject(name = "Equipo ya existente", value = """
-                                                {
-                                                  "type": "https://api.recreadejuerga.com/errores/equipo-ya-existente",
-                                                  "title": "Equipo ya existente",
-                                                  "status": 409,
-                                                  "detail": "Ya existe un equipo con el nombre 'Real Madrid FC'",
-                                                  "instance": "/equipos/alta"
-                                                }
-                                            """),
+                                        {
+                                          "type": "https://api.recreadejuerga.com/errores/equipo-ya-existente",
+                                          "title": "Equipo ya existente",
+                                          "status": 409,
+                                          "detail": "Ya existe un equipo con el nombre 'Real Madrid FC'",
+                                          "instance": "/equipos/alta"
+                                        }
+                                    """),
                                     @ExampleObject(name = "Campo duplicado", value = """
-                                                {
-                                                  "type": "https://api.recreadejuerga.com/errores/campos-duplicados",
-                                                  "title": "Campos duplicados",
-                                                  "status": 409,
-                                                  "detail": "Ya existe un equipo con ese nombre (Real Madrid FC)",
-                                                  "instance": "/equipos/alta",
-                                                  "campos": {
-                                                    "nombre": "Ya existe un equipo con ese nombre (Real Madrid FC)"
-                                                  }
-                                                }
-                                            """)
+                                        {
+                                          "type": "https://api.recreadejuerga.com/errores/campos-duplicados",
+                                          "title": "Campos duplicados",
+                                          "status": 409,
+                                          "detail": "Ya existe un equipo con ese nombre (Real Madrid FC)",
+                                          "instance": "/equipos/alta",
+                                          "campos": {
+                                            "nombre": "Ya existe un equipo con ese nombre (Real Madrid FC)"
+                                          }
+                                        }
+                                    """)
                             }
                     )
             )
@@ -248,15 +251,21 @@ public class EquipoControlador {
                             mediaType = "application/json",
                             schema = @Schema(implementation = EquipoFormularioDTO.class),
                             examples = @ExampleObject("""
-                                        {
-                                          "nombre": "Real Madrid FC",
-                                          "url_logo": "http://example.com/logo1.png"
-                                        }
-                                    """)
+                                {
+                                  "nombre": "Real Madrid FC",
+                                  "url_logo": "http://example.com/logo1.png",
+                                  "eslogan": "Nunca dejes de creer.",
+                                  "descripcion": "El club más laureado del mundo. Historia, grandeza y una mentalidad ganadora que no entiende de imposibles. Porque aquí se lucha hasta el final.",
+                                  "url_equipo": "http://example.com/foto_equipo.png"
+                                }
+                            """)
                     )
-            ) @Valid @RequestBody EquipoFormularioDTO equipo) {
+            )
+            @Valid @RequestBody EquipoFormularioDTO equipo
+    ) {
         return ResponseEntity.status(HttpStatus.CREATED).body(equipoServicio.insertarEquipo(equipo));
     }
+
 
 
     @Operation(
@@ -271,20 +280,16 @@ public class EquipoControlador {
                     content = @Content(
                             mediaType = "application/json",
                             schema = @Schema(implementation = EquipoDTO.class),
-                            examples = {
-                                    @ExampleObject("""
-                                                {
-                                                  "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-                                                  "nombre": "Real Madrid FC",
-                                                  "url_logo": "http://example.com/logo1.png",
-                                                  "clasificacion": {
-                                                    "posicion": 1,
-                                                    "puntos": 80,
-                                                    "partidosJugados": 35
-                                                  }
-                                                }
-                                            """)
-                            }
+                            examples = @ExampleObject("""
+                                {
+                                  "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                                  "nombre": "Real Madrid FC",
+                                  "url_logo": "http://example.com/logo1.png",
+                                  "eslogan": "Nunca dejes de creer.",
+                                  "descripcion": "El club más laureado del mundo. Historia, grandeza y una mentalidad ganadora que no entiende de imposibles. Porque aquí se lucha hasta el final.",
+                                  "url_equipo": "http://example.com/foto_equipo.png"
+                                }
+                            """)
                     )
             ),
             @ApiResponse(
@@ -293,17 +298,15 @@ public class EquipoControlador {
                     content = @Content(
                             mediaType = "application/problem+json",
                             schema = @Schema(implementation = ProblemDetail.class),
-                            examples = {
-                                    @ExampleObject("""
-                                                {
-                                                  "type": "https://api.recreadejuerga.com/errores/equipo-no-encontrado",
-                                                  "title": "Equipo no encontrado",
-                                                  "status": 404,
-                                                  "detail": "No se encontró un equipo con el ID: 3fa85f64-5717-4562-b3fc-2c963f66afa6",
-                                                  "instance": "/equipos/3fa85f64-5717-4562-b3fc-2c963f66afa6"
-                                                }
-                                            """)
-                            }
+                            examples = @ExampleObject("""
+                                {
+                                  "type": "https://api.recreadejuerga.com/errores/equipo-no-encontrado",
+                                  "title": "Equipo no encontrado",
+                                  "status": 404,
+                                  "detail": "No se encontró un equipo con el ID: 3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                                  "instance": "/equipos/3fa85f64-5717-4562-b3fc-2c963f66afa6"
+                                }
+                            """)
                     )
             ),
             @ApiResponse(
@@ -312,20 +315,18 @@ public class EquipoControlador {
                     content = @Content(
                             mediaType = "application/problem+json",
                             schema = @Schema(implementation = ProblemDetail.class),
-                            examples = {
-                                    @ExampleObject("""
-                                                {
-                                                  "type": "https://api.recreadejuerga.com/errores/campos-duplicados",
-                                                  "title": "Campos duplicados",
-                                                  "status": 409,
-                                                  "detail": "Ya existe un equipo con ese nombre (Real Madrid FC)",
-                                                  "instance": "/equipos/3fa85f64-5717-4562-b3fc-2c963f66afa6",
-                                                  "campos": {
-                                                    "nombre": "Este nombre ya está en uso"
-                                                  }
-                                                }
-                                            """)
-                            }
+                            examples = @ExampleObject("""
+                                {
+                                  "type": "https://api.recreadejuerga.com/errores/campos-duplicados",
+                                  "title": "Campos duplicados",
+                                  "status": 409,
+                                  "detail": "Ya existe un equipo con ese nombre (Real Madrid FC)",
+                                  "instance": "/equipos/3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                                  "campos": {
+                                    "nombre": "Este nombre ya está en uso"
+                                  }
+                                }
+                            """)
                     )
             )
     })
@@ -337,14 +338,15 @@ public class EquipoControlador {
                     content = @Content(
                             mediaType = "application/json",
                             schema = @Schema(implementation = EquipoFormularioDTO.class),
-                            examples = {
-                                    @ExampleObject("""
-                                                {
-                                                  "nombre": "Real Madrid FC",
-                                                  "url_logo": "http://example.com/logo1.png"
-                                                }
-                                            """)
-                            }
+                            examples = @ExampleObject("""
+                                {
+                                  "nombre": "Real Madrid FC",
+                                  "url_logo": "http://example.com/logo1.png",
+                                  "eslogan": "Nunca dejes de creer.",
+                                  "descripcion": "El club más laureado del mundo. Historia, grandeza y una mentalidad ganadora que no entiende de imposibles. Porque aquí se lucha hasta el final.",
+                                  "url_equipo": "http://example.com/foto_equipo.png"
+                                }
+                            """)
                     )
             )
             @Valid @RequestBody EquipoFormularioDTO equipo,
@@ -353,6 +355,7 @@ public class EquipoControlador {
         EquipoDTO actualizado = equipoServicio.modificarEquipo(equipo, id);
         return ResponseEntity.ok(actualizado);
     }
+
 
 
     @Operation(

@@ -20,11 +20,11 @@ public class JugadorMapper {
                 jugador.getAsistenciasTotales(),
                 jugador.getFortalezas(),
                 jugador.getFechaNacimiento(),
-                jugador.getFotoFrontal(),
-                jugador.getFotoTarjeta(),
+                jugador.getCromo(),
                 jugador.getFotoPose(),
+                jugador.getNum_coleccionable(),
                 jugador.getParecidos().stream().map(JugadorParecidoMapper::toJugadorParecidoSimpleDTO).toList(),
-                EquipoMapper.toEquipoDTO(jugador.getEquipo())
+                EquipoMapper.toSimpleEquipoDTO(jugador.getEquipo())
         );
     }
 
@@ -50,9 +50,9 @@ public class JugadorMapper {
                 .asistenciasTotales(insertar_jugador.getAsistenciasTotales())
                 .fortalezas(insertar_jugador.getFortalezas())
                 .fechaNacimiento(insertar_jugador.getFechaNacimiento())
-                .fotoFrontal(insertar_jugador.getFotoFrontal())
-                .fotoTarjeta(insertar_jugador.getFotoTarjeta())
+                .cromo(insertar_jugador.getCromo())
                 .fotoPose(insertar_jugador.getFotoPose())
+                .num_coleccionable(insertar_jugador.getNum_coleccionable())
                 .build();
     }
 }

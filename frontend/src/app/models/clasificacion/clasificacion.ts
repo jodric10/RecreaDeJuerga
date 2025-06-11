@@ -1,4 +1,4 @@
-import { EquipoDTO } from "../equipo/equipo";
+import { EquipoSimpleDTO } from "../equipo/equipoSimple";
 
 export interface ClasificacionDTO {
   id: string;
@@ -11,5 +11,5 @@ export interface ClasificacionDTO {
   golesContra: number;
   diferenciaGoles: number;
   promedioTfTc: number;
-  equipo: EquipoDTO;
+  equipo: EquipoSimpleDTO;
 }

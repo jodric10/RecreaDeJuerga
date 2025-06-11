@@ -91,7 +91,7 @@ export class LogInSignInComponent implements OnInit {
 
     this.authService.loginUser(loginDto).subscribe({
       next: () => {
-        this.router.navigate(['/'], {
+        this.router.navigate(['/app'], {
           state: {
             toast: {
               severity: 'success',
@@ -117,7 +117,7 @@ export class LogInSignInComponent implements OnInit {
 
   this.authService.registerUser(registerDTO).subscribe({
     next: () => {
-      this.router.navigate(['/'], {
+      this.router.navigate(['/app'], {
         state: {
           toast: {
             severity: 'success',

@@ -1,6 +1,7 @@
 package com.recreadejuerga.recrea.mappers;
 
 import com.recreadejuerga.recrea.dtos.equipo.EquipoDTO;
+import com.recreadejuerga.recrea.dtos.equipo.EquipoSimpleDTO;
 import com.recreadejuerga.recrea.dtos.jugador.JugadorSimpleDTO;
 import com.recreadejuerga.recrea.dtos.partido.PartidoDTO;
 import com.recreadejuerga.recrea.dtos.partido.PartidoFormularioDTO;
@@ -12,8 +13,8 @@ public class PartidoMapper {
 
     public static PartidoDTO toPartidoDTO(Partido partido){
         if (partido == null) return null;
-        EquipoDTO equipoLocal=EquipoMapper.toEquipoDTO(partido.getEquipoLocal());
-        EquipoDTO equipoVisitante=EquipoMapper.toEquipoDTO(partido.getEquipoVisitante());
+        EquipoSimpleDTO equipoLocal=EquipoMapper.toSimpleEquipoDTO(partido.getEquipoLocal());
+        EquipoSimpleDTO equipoVisitante=EquipoMapper.toSimpleEquipoDTO(partido.getEquipoVisitante());
         JugadorSimpleDTO mvp=JugadorMapper.tojugadorSimpleDTO(partido.getMvp());
         return new PartidoDTO(
                 partido.getId(),
