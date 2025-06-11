@@ -25,9 +25,9 @@ public class JugadorDTO {
     private Integer asistenciasTotales;
     private String fortalezas;
     private LocalDate fechaNacimiento;
-    private String fotoFrontal;
-    private String fotoTarjeta;
+    private String cromo;
     private String fotoPose;
+    private Integer num_coleccionable;
     private List<JugadorParecidoSimpleDTO> parecidos;
     private EquipoSimpleDTO equipo;
 }

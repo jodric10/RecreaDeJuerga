@@ -20,40 +20,40 @@ SET url_logo = EXCLUDED.url_logo,
 
 INSERT INTO jugadores (
     id, nombre, apodo, dorsal, posicion, pie_dominante, goles_totales, asistencias_totales,
-    fortalezas, fecha_nacimiento,nacionalidad, equipo_id, foto_frontal, foto_tarjeta, foto_pose
+    fortalezas, fecha_nacimiento,nacionalidad, equipo_id,cromo, foto_pose, num_coleccionable
 ) VALUES
 ('ecf8164a-2220-46fe-affb-7679a03f3a6d', 'Jorge González Pérez', 'González', 11, 'Ala', 'Derecho', 9, 15, 'Calidad, control, pase, arranque', '2004-05-03', 'España',
- (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'assets/cromos/gonzalez.png', 'assets/hover/gonzalez.png', 'http://example.com/foto_pose1.png'),
+ (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), null, 'http://example.com/foto_pose1.png', null),
 
 ('522fb925-c88d-4680-84d8-1dfacfd0c70b', 'Nacho Manzano Pérez', 'Manzano', 17, 'Ala', 'Derecho', 4, 7, 'Pulmón, visión, box to box', '2004-09-17', 'España',
- (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'assets/cromos/manzano.png', 'assets/hover/manzano.png', 'http://example.com/foto_pose2.png'),
+ (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), null, 'http://example.com/foto_pose2.png', null),
 
 ('34fb45a0-93db-4fc8-b5fe-77cd67600cee', 'Daniel Manzano Pérez', 'Dani', 35, 'Cierre', 'Derecho', 2, 5, 'Visión, pase, control', '2007-08-09', 'España',
- (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'assets/cromos/dani.png', 'assets/hover/dani.png', 'http://example.com/foto_pose3.png'),
+ (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'assets/cromos/dani.png','http://example.com/foto_pose3.png',1),
 
 ('a3e96069-e2ea-4029-b23d-ae6b856f942d', 'Jorge Sánchez Rodríguez', 'Kalibuchi', 2, 'Cierre', 'Izquierdo', 4, 5, 'Golpeo potente, defensa, asociación', '2004-09-17', 'España',
- (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'assets/cromos/kali.png', 'assets/hover/kali.png', 'http://example.com/foto_pose4.png'),
+ (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'assets/cromos/kali.png','http://example.com/foto_pose4.png', 2),
 
 ('e0e8f259-73ee-4005-9369-235c3f6c31c9', 'Adrián Carvajal Sánchez', 'Adri', 19, 'Pívot', 'Derecho', 23, 11, 'Físico, velocidad, remate', '2004-03-22', 'España',
- (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'assets/cromos/adri.png', 'assets/hover/adri.png', 'http://example.com/foto_pose5.png'),
+ (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), null,'http://example.com/foto_pose5.png',null),
 
-('86c4cb1c-144c-4660-bb47-bdf440501ded', 'Santiago Alejandre Chaya', 'Santi', 14, 'Pívot', 'Derecho', 13, 8, 'Fuerza, resistencia, velocidad', '2004-08-18', 'España',
- (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'assets/cromos/chaya.png', 'assets/hover/chaya.png', 'http://example.com/foto_pose1.png'),
+('86c4cb1c-144c-4660-bb47-bdf440501ded', 'Santiago Alejandre Chaya', 'Santi', 14, 'Ala', 'Derecho', 13, 8, 'Fuerza, resistencia, velocidad', '2004-08-18', 'España',
+ (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'assets/cromos/chaya.png','http://example.com/foto_pose1.png',3),
 
 ('e2a9b4dc-0247-4526-98c5-a2020b2d5cf4', 'Alberto González Pérez', 'Alberoto', 5, 'Ala', 'Derecho', 2, 7, 'Inteligencia, apoyo, sacrificio', '1999-07-20', 'España',
- (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'assets/cromos/alberto.png', 'assets/cromos/alberto.png', 'http://example.com/foto_pose2.png'),
+ (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), null, 'http://example.com/foto_pose2.png', null),
 
 ('b1ec4c9f-79f7-4c84-a9b3-8e2c6631f8a0', 'Raúl García Rodrigo', 'Ra', 1, 'Portero', 'Derecho', 3, 3, 'Reflejos, colocación, visión', '2004-12-04', 'España',
- (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'assets/cromos/raul.png', 'assets/hover/raul.png', 'http://example.com/foto_pose3.png'),
+ (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), null,'http://example.com/foto_pose3.png', null),
 
 ('f217f7a2-bb7e-4729-b0a8-6f5f90a58f17', 'Fernando Méndez Lera', 'Fer', 8, 'Ala', 'Izquierdo', 15, 8, 'Desborde, zurda, disparo', '2007-01-27', 'España',
- (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'assets/cromos/fer.png', 'assets/hover/fer.png', 'http://example.com/foto_pose4.png'),
+ (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'assets/cromos/fer.png', 'http://example.com/foto_pose4.png',6),
 
 ('ac548370-00ff-4060-b4bb-284378c6c9d9', 'Alfonso Perís Pérez', 'Fonsi', 12, 'Pívot', 'Derecho', 4, 3, 'Compromiso, movilidad, físico', '2004-10-17', 'España',
- (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'assets/cromos/fonsi.png', 'assets/hover/fonsi.png', 'http://example.com/foto_pose5.png'),
+ (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'assets/cromos/fonsi.png', 'http://example.com/foto_pose5.png', 4),
 
 ('1e9a00be-308e-4a30-98a1-e7254ecb03fa', 'Mario Rodríguez Díaz', 'Mario', 20, 'Ala', 'Derecho', 2, 3, 'Calidad, sacrificio, apoyo', '2004-06-11', 'España',
- (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'assets/cromos/mario.png', 'assets/hover/mario.png', 'http://example.com/foto_pose6.png')
+ (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'assets/cromos/mario.png', 'http://example.com/foto_pose6.png',5)
 
 ON CONFLICT (equipo_id, dorsal) DO UPDATE SET
   nombre = EXCLUDED.nombre,
@@ -65,9 +65,9 @@ ON CONFLICT (equipo_id, dorsal) DO UPDATE SET
   fortalezas = EXCLUDED.fortalezas,
   fecha_nacimiento = EXCLUDED.fecha_nacimiento,
   nacionalidad= EXCLUDED.nacionalidad,
-  foto_frontal = EXCLUDED.foto_frontal,
-  foto_tarjeta = EXCLUDED.foto_tarjeta,
-  foto_pose = EXCLUDED.foto_pose;
+  cromo = EXCLUDED.cromo,
+  foto_pose = EXCLUDED.foto_pose,
+  num_coleccionable= EXCLUDED.num_coleccionable;
 
 INSERT INTO jugadores_parecidos (id,jugador_id, parecido) VALUES
 ('0a1d3d10-1234-4a1f-9b01-000000000001', (SELECT id FROM jugadores WHERE nombre = 'Jorge González Pérez' AND equipo_id = (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga')), 'Milinković-Savić'),

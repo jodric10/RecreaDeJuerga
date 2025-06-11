@@ -35,9 +35,9 @@ CREATE TABLE IF NOT EXISTS jugadores (
   fecha_nacimiento     DATE,
   nacionalidad         VARCHAR(50),
   equipo_id            UUID      NOT NULL REFERENCES equipos(id) ON DELETE CASCADE,
-  foto_frontal         TEXT,
-  foto_tarjeta         TEXT,
+  cromo                TEXT,
   foto_pose            TEXT,
+  num_coleccionable    INT,
   CONSTRAINT uk_jugador_equipo_dorsal UNIQUE(equipo_id, dorsal)
 );
 

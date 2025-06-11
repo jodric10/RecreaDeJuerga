@@ -66,13 +66,12 @@ public class  Jugador {
         @OneToMany(mappedBy = "mvp",cascade = CascadeType.ALL, orphanRemoval = true)
         private List<Partido> partidosComoMvp= new ArrayList<>();
 
-        @Column(name = "foto_frontal", columnDefinition = "TEXT")
-        private String fotoFrontal;
-
-        @Column(name = "foto_tarjeta", columnDefinition = "TEXT")
-        private String fotoTarjeta;
+        @Column(name = "cromo", columnDefinition = "TEXT")
+        private String cromo;
 
         @Column(name = "foto_pose", columnDefinition = "TEXT")
         private String fotoPose;
 
+        @Column(name = "num_coleccionable")
+        private Integer num_coleccionable = 0;
 }
