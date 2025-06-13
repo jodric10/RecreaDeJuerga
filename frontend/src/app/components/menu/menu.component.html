@@ -6,8 +6,9 @@
         <span class="text">Home</span>
       </a>
     </li>
+
     <li
-      [ngClass]="{ active: router.url === '/app/Recrea_de_Juerga/jugadores' }"
+      [ngClass]="{ active: router.url.startsWith('/app/Recrea_de_Juerga/jugadores') }"
       style="--clr: #ffa117"
     >
       <a routerLink="/app/Recrea_de_Juerga/jugadores">
@@ -15,8 +16,9 @@
         <span class="text">Jugadores</span>
       </a>
     </li>
+
     <li
-      [ngClass]="{ active: router.url === '/app/Recrea_de_Juerga/partidos' }"
+      [ngClass]="{ active: router.url.startsWith('/app/Recrea_de_Juerga/partidos') }"
       style="--clr: #0fc70f"
     >
       <a routerLink="/app/Recrea_de_Juerga/partidos">
@@ -24,8 +26,9 @@
         <span class="text">Partidos</span>
       </a>
     </li>
+
     <li
-      [ngClass]="{ active: router.url === '/app/clasificacion' }"
+      [ngClass]="{ active: router.url.startsWith('/app/clasificacion') }"
       style="--clr: #2196f3"
     >
       <a routerLink="/app/clasificacion">
@@ -33,8 +36,12 @@
         <span class="text">Tabla</span>
       </a>
     </li>
+
     @if (admin) {
-    <li [ngClass]="{ active: router.url === '/app/admin' }" style="--clr: #b145e9">
+    <li
+      [ngClass]="{ active: router.url.startsWith('/app/admin') }"
+      style="--clr: #b145e9"
+    >
       <a routerLink="/app/admin">
         <span class="icon"><i class="fas fa-user-shield"></i></span>
         <span class="text">Admin</span>

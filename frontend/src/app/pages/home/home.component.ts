@@ -1,4 +1,9 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, inject, OnInit } from '@angular/core';
+import {
+  Component,
+  CUSTOM_ELEMENTS_SCHEMA,
+  inject,
+  OnInit,
+} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastService } from '../../services/toastMessage/toast.service';
 import { FooterComponent } from '../../components/footer/footer.component';
@@ -38,7 +43,7 @@ SwiperCore.use([EffectCards]);
 export class HomeComponent implements OnInit {
   private equipoService = inject(EquipoService);
   private jugadorService = inject(JugadorService);
-  private route = inject(ActivatedRoute);
+  private router = inject(Router);
   private toastService = inject(ToastService);
   equipo!: EquipoDTO | undefined;
   nombreEquipo: string = 'Recrea de Juerga';
@@ -104,5 +109,10 @@ export class HomeComponent implements OnInit {
           });
         },
       });
+  }
+
+  detallesJugador(id: String) {
+    const equipoUrl = this.nombreEquipo.replace(/ /g, '_');
+    this.router.navigate(['app', equipoUrl, 'jugadores', id]);
   }
 }

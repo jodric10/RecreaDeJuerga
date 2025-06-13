@@ -29,16 +29,16 @@ INSERT INTO jugadores (
  (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), null, 'http://example.com/foto_pose2.png', null),
 
 ('34fb45a0-93db-4fc8-b5fe-77cd67600cee', 'Daniel Manzano Pérez', 'Dani', 35, 'Cierre', 'Derecho', 2, 5, 'Visión, pase, control', '2007-08-09', 'España',
- (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'assets/cromos/dani.png','http://example.com/foto_pose3.png',1),
+ (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'assets/cromos/dani.png','assets/poses/dani.png',1),
 
 ('a3e96069-e2ea-4029-b23d-ae6b856f942d', 'Jorge Sánchez Rodríguez', 'Kalibuchi', 2, 'Cierre', 'Izquierdo', 4, 5, 'Golpeo potente, defensa, asociación', '2004-09-17', 'España',
- (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'assets/cromos/kali.png','http://example.com/foto_pose4.png', 2),
+ (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'assets/cromos/kali.png','assets/poses/kali.png', 2),
 
 ('e0e8f259-73ee-4005-9369-235c3f6c31c9', 'Adrián Carvajal Sánchez', 'Adri', 19, 'Pívot', 'Derecho', 23, 11, 'Físico, velocidad, remate', '2004-03-22', 'España',
  (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), null,'http://example.com/foto_pose5.png',null),
 
 ('86c4cb1c-144c-4660-bb47-bdf440501ded', 'Santiago Alejandre Chaya', 'Santi', 14, 'Ala', 'Derecho', 13, 8, 'Fuerza, resistencia, velocidad', '2004-08-18', 'España',
- (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'assets/cromos/chaya.png','http://example.com/foto_pose1.png',3),
+ (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'assets/cromos/chaya.png','assets/poses/chaya.png',3),
 
 ('e2a9b4dc-0247-4526-98c5-a2020b2d5cf4', 'Alberto González Pérez', 'Alberoto', 5, 'Ala', 'Derecho', 2, 7, 'Inteligencia, apoyo, sacrificio', '1999-07-20', 'España',
  (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), null, 'http://example.com/foto_pose2.png', null),
@@ -47,13 +47,13 @@ INSERT INTO jugadores (
  (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), null,'http://example.com/foto_pose3.png', null),
 
 ('f217f7a2-bb7e-4729-b0a8-6f5f90a58f17', 'Fernando Méndez Lera', 'Fer', 8, 'Ala', 'Izquierdo', 15, 8, 'Desborde, zurda, disparo', '2007-01-27', 'España',
- (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'assets/cromos/fer.png', 'http://example.com/foto_pose4.png',6),
+ (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'assets/cromos/fer.png', 'assets/poses/fer.png',6),
 
 ('ac548370-00ff-4060-b4bb-284378c6c9d9', 'Alfonso Perís Pérez', 'Fonsi', 12, 'Pívot', 'Derecho', 4, 3, 'Compromiso, movilidad, físico', '2004-10-17', 'España',
- (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'assets/cromos/fonsi.png', 'http://example.com/foto_pose5.png', 4),
+ (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'assets/cromos/fonsi.png', 'assets/poses/fonsi.png', 4),
 
 ('1e9a00be-308e-4a30-98a1-e7254ecb03fa', 'Mario Rodríguez Díaz', 'Mario', 20, 'Ala', 'Derecho', 2, 3, 'Calidad, sacrificio, apoyo', '2004-06-11', 'España',
- (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'assets/cromos/mario.png', 'http://example.com/foto_pose6.png',5)
+ (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'assets/cromos/mario.png', 'assets/poses/mario.png',5)
 
 ON CONFLICT (equipo_id, dorsal) DO UPDATE SET
   nombre = EXCLUDED.nombre,
