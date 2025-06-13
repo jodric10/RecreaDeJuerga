@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+/* Layout general */
+.jugadores-wrapper {
+  display: flex;
+  height: 100vh;
+  padding: 1rem;
+  gap: 1.5rem;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.jugador-detalle {
+  flex: 1;
+  position: relative;
+  padding: 0;
+  background: transparent;
+  overflow: hidden;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+
+
+/* Carrusel de cromos */
+.jugadores-carrusel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  align-items: center;
+}
+
+/* Título */
+.titulo-carrusel {
+  font-family: "Anton", sans-serif;
+  font-size: 2.3rem;
+  color: #111;
+  text-align: center;
+  margin: auto;
+  animation: fadeIn 0.8s ease-in-out;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Swiper ajustes */
+swiper-container {
+  width: 100%;
+  height: fit-content !important;
+  min-height: 650px;
+}
+
+swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto !important;
+  overflow: visible !important;
+}
+
+/* Cuadrícula 2x2 */
+.slide-grid {
+  display: grid;
+  grid-template-columns: repeat(2, min-content);
+  row-gap: 14rem;
+  column-gap: 6rem;
+  justify-content: center;
+  align-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.cromo {
+  width: 130px;
+  height: 100px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cromo:hover {
+  border-color: #ffd700; /* borde dorado */
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.4); /* brillo suave */
+  cursor: pointer;
+}
+
+/* Estados */
+.cromo.seleccionado {
+  border-color: #ff4081;
+  box-shadow: 0 0 8px rgba(255, 64, 129, 0.3);
+}
+
+.cromo.no-seleccionado {
+  filter: grayscale(100%) brightness(0.7);
+  opacity: 0.6;
+}
+
+/* Flechas Swiper */
+swiper-container::part(button-prev),
+swiper-container::part(button-next) {
+  color: #ff4081;
+  font-size: 22px;
+  z-index: 10;
+}
+
+/* Animación entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .jugadores-wrapper {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .slide-grid {
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+    padding: 1.5rem;
+  }
+
+  .cromo {
+    width: 100px;
+    height: 150px;
+  }
+
+  .titulo-carrusel {
+    font-size: 1.6rem;
+  }
+}

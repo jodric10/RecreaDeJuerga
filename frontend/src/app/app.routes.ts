@@ -23,6 +23,20 @@ export const routes: Routes = [
           import('./pages/jugadores/jugadores.component').then(
             (m) => m.JugadoresComponent
           ),
+        children: [
+          {
+            path: '',
+            redirectTo: '34fb45a0-93db-4fc8-b5fe-77cd67600cee',
+            pathMatch: 'full',
+          },
+          {
+            path: ':jugadorId',
+            loadComponent: () =>
+              import('./pages/detalles-jugador/detalles-jugador.component').then(
+                (m) => m.DetallesJugadorComponent
+              ),
+          },
+        ],
       },
       {
         path: ':nombreEquipo/partidos',

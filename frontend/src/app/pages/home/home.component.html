@@ -28,7 +28,7 @@
   >
     @for (jugador of jugadores; track jugador.dorsal) {
     <swiper-slide>
-      <app-cromo [jugador]="jugador"></app-cromo>
+      <app-cromo [jugador]="jugador" (idJugador)="detallesJugador($event)"></app-cromo>
     </swiper-slide>
     }
   </swiper-container>

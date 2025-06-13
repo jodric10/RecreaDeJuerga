@@ -1,0 +1,32 @@
+@if (jugador && !cargando) {
+  <div class="jugador-detalle">
+    <header class="jugador-header">
+      <h1 class="jugador-nombre">{{ jugador.nombre }}</h1>
+      <div class="jugador-sub">
+        <span class="apodo">({{ jugador.apodo }})</span>
+        <span class="dorsal">#{{ jugador.dorsal }}</span>
+      </div>
+    </header>
+
+    <div class="jugador-informacion">
+      <div class="info-box">📍 <strong>Posición:</strong> {{ jugador.posicion }}</div>
+      <div class="info-box">🦵 <strong>Pierna:</strong> {{ jugador.pieDominante }}</div>
+      <div class="info-box">⚽ <strong>Goles:</strong> {{ jugador.golesTotales }}</div>
+      <div class="info-box">🎯 <strong>Asistencias:</strong> {{ jugador.asistenciasTotales }}</div>
+      <div class="info-box inline-text">💪 <strong>Fortalezas:</strong> {{ jugador.fortalezas }}</div>
+      <div class="info-box">🎂 <strong>Nacimiento:</strong> {{ jugador.fechaNacimiento | date: 'd MMM y' }}</div>
+      <div class="info-box inline-text">🧠 <strong>Parecidos:</strong> {{ parecidos }}</div>
+    </div>
+
+    <div class="jugador-imagen"
+     [ngClass]="{
+       'margen-fer': jugador.fotoPose === 'assets/poses/fer.png',
+       'margen-santi': jugador.fotoPose === 'assets/poses/chaya.png'
+     }">
+    <img [src]="jugador.fotoPose" alt="Foto del jugador" />
+  </div>
+
+  </div>
+} @else {
+  <p class="cargando">Cargando jugador...</p>
+}

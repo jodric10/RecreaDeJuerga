@@ -1,1 +1,33 @@
-<p>jugadores works!</p>
+<div class="jugadores-wrapper">
+  <div class="jugador-detalle">
+    <router-outlet></router-outlet>
+  </div>
+
+  <div class="jugadores-carrusel">
+    <h3 class="titulo-carrusel">Selecciona tu jugador</h3>
+    <swiper-container
+      slides-per-view="1"
+      navigation="true"
+      loop="false"
+    >
+      @for (slide of dividirEnPaginas(jugadores, 4); track slide[0]?.id) {
+      <swiper-slide>
+        <div class="slide-grid">
+          @for (jugador of slide; track jugador.id) {
+          <div
+            class="cromo"
+            [ngClass]="{
+              seleccionado: jugadorSeleccionado?.id === jugador.id,
+              'no-seleccionado': jugadorSeleccionado?.id !== jugador.id
+            }"
+            (click)="detallesJugador(jugador.id)"
+          >
+            <app-cromo [jugador]="jugador"></app-cromo>
+          </div>
+          }
+        </div>
+      </swiper-slide>
+      }
+    </swiper-container>
+  </div>
+</div>
