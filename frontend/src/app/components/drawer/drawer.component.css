@@ -1,0 +1,57 @@
+.drawer-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+}
+
+.drawer-panel {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  background-color: #ffffff;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+  padding: 20px;
+  overflow-y: auto;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+  transition: border-color 0.3s ease;
+}
+
+.drawer-panel.left {
+  left: 0;
+  transform: translateX(-100%);
+  animation-name: slideInLeft;
+}
+
+.drawer-panel.right {
+  right: 0;
+  transform: translateX(100%);
+  animation-name: slideInRight;
+}
+
+@keyframes slideInLeft {
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  to {
+    transform: translateX(0);
+  }
+}
+
+.cerrar-btn {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}

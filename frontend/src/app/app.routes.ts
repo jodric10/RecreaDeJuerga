@@ -32,9 +32,9 @@ export const routes: Routes = [
           {
             path: ':jugadorId',
             loadComponent: () =>
-              import('./pages/detalles-jugador/detalles-jugador.component').then(
-                (m) => m.DetallesJugadorComponent
-              ),
+              import(
+                './pages/detalles-jugador/detalles-jugador.component'
+              ).then((m) => m.DetallesJugadorComponent),
           },
         ],
       },
@@ -57,6 +57,46 @@ export const routes: Routes = [
         canActivate: [AuthGuard],
         loadComponent: () =>
           import('./pages/admin/admin.component').then((m) => m.AdminComponent),
+      },
+      {
+        path: 'admin/:nombreEquipo/menu',
+        loadComponent: () =>
+          import('./pages/menu/menu.component').then((m) => m.MenuComponent),
+      },
+      {
+        path: 'admin/:nombreEquipo/menu/jugadores',
+        loadComponent: () =>
+          import('./pages/jugadores-admin/jugadores-admin.component').then(
+            (m) => m.JugadoresAdminComponent
+          ),
+      },
+      {
+        path: 'admin/:nombreEquipo/menu/jugadores/:jugadorId/parecidos',
+        loadComponent: () =>
+          import('./pages/parecidos-admin/parecidos-admin.component').then(
+            (m) => m.ParecidosAdminComponent
+          ),
+      },
+      {
+        path: 'admin/:nombreEquipo/menu/clasificacion',
+        loadComponent: () =>
+          import(
+            './pages/clasificacion-admin/clasificacion-admin.component'
+          ).then((m) => m.ClasificacionAdminComponent),
+      },
+      {
+        path: 'admin/:nombreEquipo/menu/partidos',
+        loadComponent: () =>
+          import('./pages/partidos-admin/partidos-admin.component').then(
+            (m) => m.PartidosAdminComponent
+          ),
+      },
+      {
+        path: 'admin/:nombreEquipo/menu/partidos/:partidoId/estadisticas-jugadores',
+        loadComponent: () =>
+          import(
+            './pages/estadisticas-jugadores-admin/estadisticas-jugadores-admin.component'
+          ).then((m) => m.EstadisticasJugadoresAdminComponent),
       },
       {
         path: ':nombreEquipo/partidos/estadisticas/:partidoId',

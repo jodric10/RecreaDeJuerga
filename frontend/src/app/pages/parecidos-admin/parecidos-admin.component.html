@@ -1,0 +1,60 @@
+<div class="jugadores-panel">
+  <div class="panel-header">
+    PARECIDOS DE {{ jugador?.nombre?.toUpperCase() }}
+  </div>
+
+  <div class="panel-subheader">Total de parecidos: {{ parecidos.length }}</div>
+
+  <div class="panel-list">
+    @for (parecido of parecidos; track parecido.id) {
+    <div class="jugador-item">
+      <div class="jugador-dorsal">#{{ $index + 1 }}</div>
+      <div class="jugador-nombre">{{ parecido.parecido }}</div>
+      <div class="jugador-acciones">
+        <button (click)="editarParecido(parecido)">
+          <i class="fa fa-pen"></i>
+        </button>
+        <button (click)="eliminarParecido(parecido.id)">
+          <i class="fa fa-trash"></i>
+        </button>
+      </div>
+    </div>
+    }
+  </div>
+
+  <div class="panel-footer">
+    <span class="boton-a" (click)="mostrarDrawer = true">A</span> Añadir
+    Parecido <span class="boton-b" (click)="volver()">B</span> Volver
+  </div>
+
+  @if (mostrarDrawer) {
+  <app-drawer (cerrar)="mostrarDrawer = false" [width]="'600px'">
+    <h2>{{ editando ? "Editar Parecido" : "Agregar Parecido" }}</h2>
+    <form
+      [formGroup]="formularioParecido!"
+      class="form-equipo"
+      (submit)="onSubmit()"
+    >
+      <label class="form-label">Nombre del parecido:</label>
+      <input class="form-input" formControlName="parecido" />
+      @if (formularioParecido?.get('parecido')?.touched &&
+      formularioParecido?.get('parecido')?.errors?.['required']) {
+      <p class="form-error">El campo es obligatorio.</p>
+      }
+
+      <div class="botones">
+        <button type="button" class="form-btn" (click)="resetearFormulario()">
+          Limpiar
+        </button>
+        <button
+          type="submit"
+          class="form-btn"
+          [disabled]="!formularioParecido!.valid"
+        >
+          Confirmar
+        </button>
+      </div>
+    </form>
+  </app-drawer>
+  }
+</div>

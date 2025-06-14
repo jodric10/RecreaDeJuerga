@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.form-clasificacion {
+  max-width: 600px;
+  margin: 40px auto;
+  background-color: #fefae0;
+  border-radius: 12px;
+  padding: 20px 24px;
+  box-shadow: 2px 2px 6px #555;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+  box-sizing: border-box;
+}
+
+.titulo-formulario {
+  text-align: center;
+  background-color: #0079c1;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  margin-bottom: 20px;
+  box-shadow: 1px 1px 2px #222;
+}
+
+.form-clasificacion label {
+  display: block;
+  margin-top: 16px;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.form-clasificacion input {
+  width: 100%;
+  padding: 8px;
+  font-size: 12px;
+  font-family: 'Courier New', monospace;
+  border: 2px solid #0079c1;
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow: inset 1px 1px 0 #ccc;
+  box-sizing: border-box;
+}
+
+.form-clasificacion input.ng-invalid.ng-touched {
+  border-color: #dc3545;
+  background-color: #ffe6e6;
+}
+
+.form-error {
+  color: #dc3545;
+  font-size: 9px;
+  margin-top: 4px;
+  font-family: monospace;
+}
+
+.botones-formulario {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.boton {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: black;
+  padding: 4px 8px;
+  transition: transform 0.2s;
+}
+
+.boton:hover:not(:disabled) {
+  transform: scale(1.05);
+}
+
+.boton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  filter: grayscale(100%);
+  transform: none;
+}
+
+.tecla {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 24px;
+  font-size: 12px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.boton-a .tecla {
+  background-color: black;
+}
+
+.boton-b .tecla {
+  background-color: black;
+}
+
+.boton-y .tecla {
+  background-color: black;
+}
+
+.boton-a:hover .tecla {
+  background-color: #007bff;
+}
+
+.boton-b:hover .tecla {
+  background-color: #dc3545;
+}
+
+.boton-y:hover .tecla {
+  background-color: #ffc107;
+}
+
+.boton:disabled .tecla {
+  background-color: #777;
+  color: #ccc;
+}

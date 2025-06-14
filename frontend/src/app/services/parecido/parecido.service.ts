@@ -2,8 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { JugadorParecidoDTO } from '../../models/parecido/jugadorParecido';
 import { Observable } from 'rxjs';
-import { JugadorParecidoInsertarDTO } from '../../models/parecido/jugadorParecidoInsertar';
-import { JugadorParecidoModificarDTO } from '../../models/parecido/jugadorParecidoModificar';
+import { JugadorParecidoFormularioDTO } from '../../models/parecido/jugadorParecidoFormulario';
 
 @Injectable({
   providedIn: 'root',
@@ -17,11 +16,11 @@ export class ParecidoService {
     return this.http.get<JugadorParecidoDTO[]>(`${this.api_url}/${jugadorId}`);
   }
 
-  altaParecido(datosFormulario: JugadorParecidoInsertarDTO): Observable<JugadorParecidoDTO> {
-    return this.http.post<JugadorParecidoDTO>(`${this.api_url}/alta`, datosFormulario);
+  altaParecido(datosFormulario: JugadorParecidoFormularioDTO,jugadorId: string): Observable<JugadorParecidoDTO> {
+    return this.http.post<JugadorParecidoDTO>(`${this.api_url}/alta/${jugadorId}`, datosFormulario);
   }
 
-  editarJugador(parecidoId: string, datosFormulario: JugadorParecidoModificarDTO): Observable<JugadorParecidoDTO> {
+  editarParecido(parecidoId: string, datosFormulario: JugadorParecidoFormularioDTO): Observable<JugadorParecidoDTO> {
     return this.http.put<JugadorParecidoDTO>(`${this.api_url}/${parecidoId}`, datosFormulario);
   }
 

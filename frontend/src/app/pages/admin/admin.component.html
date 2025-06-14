@@ -1,1 +1,94 @@
-<p>admin works!</p>
+<div class="tienda-container">
+  <div class="tienda-header">
+    <h2 class="tienda-title">Tienda de Equipos</h2>
+    <button class="agregar-btn" (click)="mostrarDrawer = true">
+      Agregar Equipo
+    </button>
+  </div>
+
+  <div class="equipo-grid">
+    @for (equipo of equipos; track equipo.id) {
+    <div class="equipo-romboide" (click)="equipoSeleccionado(equipo)">
+      <div class="icono-basura" (click)="eliminarEquipo(equipo, $event)">
+        <i class="fa fa-trash"></i>
+      </div>
+      <div class="romboide-content">
+        <img
+          [src]="equipo.url_logo"
+          [alt]="equipo.nombre"
+          class="equipo-logo"
+        />
+        <span class="equipo-nombre">
+          {{ equipo.nombre }}
+          <button class="editar-btn" (click)="editarEquipo(equipo, $event)">
+            <i class="fa fa-pen"></i>
+          </button>
+        </span>
+      </div>
+    </div>
+    }
+  </div>
+
+  @if (mostrarDrawer) {
+  <app-drawer (cerrar)="mostrarDrawer = false" [width]="'600px'">
+    <h2>{{ editando ? "Editar Equipo" : "Agregar Equipo" }}</h2>
+    <form
+      [formGroup]="formularioEquipo!"
+      class="form-equipo"
+      (submit)="onSubmit()"
+    >
+      <label for="nombre" class="form-label">Nombre:</label>
+      <input
+        type="text"
+        id="nombre"
+        formControlName="nombre"
+        class="form-input"
+      />
+      @if (formularioEquipo!.get('nombre')?.invalid &&
+      formularioEquipo!.get('nombre')?.touched) {
+      <p class="form-error">El nombre del equipo debe ser obligatorio</p>
+      }
+      <label for="url_logo">Url del logo:</label>
+      <input
+        type="text"
+        id="url_logo"
+        formControlName="url_logo"
+        class="form-input"
+      />
+      <label for="eslogan">Eslogan:</label>
+      <input
+        type="text"
+        id="eslogan"
+        formControlName="eslogan"
+        class="form-input"
+      />
+      <label for="descripcion">Descripción:</label>
+      <textarea
+        id="descripcion"
+        formControlName="descripcion"
+        class="form-textarea"
+        maxlength="700"
+      ></textarea>
+      <label for="url_equipo">Url del equipo:</label>
+      <input
+        type="text"
+        id="url_equipo"
+        formControlName="url_equipo"
+        class="form-input"
+      />
+      <div class="botones">
+        <button type="button" class="form-btn" (click)="resetearFormulario()">
+          Limpiar
+        </button>
+        <button
+          type="submit"
+          class="form-btn"
+          [disabled]="!formularioEquipo!.valid"
+        >
+          Confirmar
+        </button>
+      </div>
+    </form>
+  </app-drawer>
+  }
+</div>

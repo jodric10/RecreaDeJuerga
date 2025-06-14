@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, map, Observable, take, tap } from 'rxjs';
+import { BehaviorSubject, map, Observable, of, take, tap } from 'rxjs';
 import { ClasificacionDTO } from '../../models/clasificacion/clasificacion';
 import { ClasificacionEditarDTO } from '../../models/clasificacion/clasificacionFormulario';
 
@@ -22,18 +22,28 @@ export class ClasificacionService {
       .get<ClasificacionDTO[]>(this.api_url)
       .subscribe((clasificacion) => {
         this.clasificacionSubject.next(clasificacion);
-        console.log(clasificacion);
       });
   }
 
   getClasificacionPorEquipo(
     nombreEquipo: string
-  ): Observable<ClasificacionDTO | undefined> {
-    return this.clasificacion$.pipe(
-      map((clasificacion: ClasificacionDTO[]) =>
-        clasificacion.find((e) => e.equipo.nombre === nombreEquipo)
-      )
-    );
+  ): Observable<ClasificacionDTO> {
+    const clasificacion = this.clasificacionSubject.getValue();
+
+    if (clasificacion && clasificacion.length > 0) {
+      const encontrado = clasificacion.find(
+        (e) => e.equipo.nombre === nombreEquipo
+      );
+      return of(encontrado!);
+    } else {
+      return this.http.get<ClasificacionDTO>(
+        `${this.api_url}/equipo/${encodeURIComponent(nombreEquipo)}`
+      );
+    }
+  }
+
+  clearClasificacionCache(): void {
+    this.clasificacionSubject.next([]);
   }
 
   editarClasificacionEquipo(

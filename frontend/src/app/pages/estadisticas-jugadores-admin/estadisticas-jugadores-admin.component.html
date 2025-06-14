@@ -1,0 +1,95 @@
+<div class="jugadores-panel">
+  <div class="panel-header">
+    ESTADÍSTICAS DE {{ partido?.equipoLocal?.nombre?.toUpperCase() }} VS
+    {{ partido?.equipoVisitante?.nombre?.toUpperCase() }}
+  </div>
+
+  <div class="panel-subheader">
+    Jugadores {{ estadisticasJugadoresPartido.length }} / {{ estadisticasJugadoresPartido.length }}
+  </div>
+
+  <div class="panel-list">
+    @for (estadistica of estadisticasJugadoresPartido; track estadistica.id) {
+      <div class="jugador-item">
+        <div class="jugador-dorsal">#{{ estadistica.jugador.dorsal }}</div>
+        <div class="jugador-nombre">{{ estadistica.jugador.nombre }}</div>
+        <div class="jugador-acciones">
+          <button (click)="editarEstadisticaDelJugador(estadistica)">
+            <i class="fa fa-pen"></i>
+          </button>
+          <button class="icono-basura" (click)="eliminarEstadisticaDeJugador(estadistica)">
+            <i class="fa fa-trash"></i>
+          </button>
+        </div>
+      </div>
+    }
+  </div>
+
+  <div class="panel-footer">
+    <div class="boton-footer">
+      <span class="boton-a" (click)="mostrarDrawer = true">A</span>
+      <span class="boton-texto">Añadir Jugador</span>
+    </div>
+    <div class="boton-footer">
+      <span class="boton-b" (click)="volver()">B</span>
+      <span class="boton-texto">Atrás</span>
+    </div>
+  </div>
+
+  @if (mostrarDrawer) {
+    <app-drawer (cerrar)="mostrarDrawer = false" [width]="'700px'">
+      <h2>{{ editando ? "Editar Estadística" : "Agregar Estadística" }}</h2>
+
+      <form
+        [formGroup]="editando ? formularioActualizarEstadisticas! : formularioInsertarEstadisticas!"
+        class="formulario-jugador"
+        (submit)="onSubmit()"
+      >
+        @if (!editando) {
+          <label class="form-label">ID del Jugador:</label>
+          <input class="form-input" formControlName="jugadorId" />
+
+          <label class="form-label">ID del Partido:</label>
+          <input class="form-input" formControlName="partidoId" />
+        }
+
+        <label class="form-label">Goles:</label>
+        <input type="number" class="form-input" formControlName="goles" />
+
+        <label class="form-label">Asistencias:</label>
+        <input type="number" class="form-input" formControlName="asistencias" />
+
+        <label class="form-label">Amarilla:</label>
+        <div class="radio-group">
+          <label><input type="radio" [value]="true" formControlName="amarilla" /> Sí</label>
+          <label><input type="radio" [value]="false" formControlName="amarilla" /> No</label>
+        </div>
+
+        <label class="form-label">Roja:</label>
+        <div class="radio-group">
+          <label><input type="radio" [value]="true" formControlName="roja" /> Sí</label>
+          <label><input type="radio" [value]="false" formControlName="roja" /> No</label>
+        </div>
+
+        <label class="form-label">¿Portero?:</label>
+        <div class="radio-group">
+          <label><input type="radio" [value]="true" formControlName="portero" /> Sí</label>
+          <label><input type="radio" [value]="false" formControlName="portero" /> No</label>
+        </div>
+
+        <div class="botones">
+          <button type="button" class="form-btn" (click)="resetearFormulario(editando)">
+            Limpiar
+          </button>
+          <button
+            type="submit"
+            class="form-btn"
+            [disabled]="!(editando ? formularioActualizarEstadisticas!.valid : formularioInsertarEstadisticas!.valid)"
+          >
+            Confirmar
+          </button>
+        </div>
+      </form>
+    </app-drawer>
+  }
+</div>

@@ -1,14 +1,20 @@
 import { Injectable } from '@angular/core';
-import { map, Observable, ReplaySubject } from 'rxjs';
+import { BehaviorSubject, map, Observable, ReplaySubject } from 'rxjs';
 import { EquipoDTO } from '../../models/equipo/equipo';
 import { HttpClient } from '@angular/common/http';
 import { EquipoFormularioDTO } from '../../models/equipo/equipoFormulario';
+import { EquipoSimpleDTO } from '../../models/equipo/equipoSimple';
 
 @Injectable({
   providedIn: 'root',
 })
 export class EquipoService {
   private readonly api_url = 'http://localhost:8080/equipos';
+
+  private equipoSeleccionadoSubject = new BehaviorSubject<EquipoDTO | null>(
+    null
+  );
+  equipoSeleccionado$ = this.equipoSeleccionadoSubject.asObservable();
 
   constructor(private http: HttpClient) {}
 
@@ -42,5 +48,9 @@ export class EquipoService {
 
   eliminarEquipo(equipoId: string): Observable<any> {
     return this.http.delete(`${this.api_url}/${equipoId}`);
+  }
+
+  setEquipoSeleccionado(equipo: EquipoDTO | null): void {
+    this.equipoSeleccionadoSubject.next(equipo);
   }
 }

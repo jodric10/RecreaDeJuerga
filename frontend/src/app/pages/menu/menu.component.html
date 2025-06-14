@@ -1,0 +1,17 @@
+<div class="menu-layout">
+  <header class="menu-header">
+    <h1 class="menu-title">{{ equipo?.nombre?.toUpperCase() }}</h1>
+  </header>
+
+  <div class="menu-subtitle">Elige cualquiera de las opciones.</div>
+
+  <main class="menu-options">
+    <button class="menu-btn" (click)="navegarA('jugadores')">Jugadores</button>
+    <button class="menu-btn" (click)="navegarA('clasificacion')">Clasificación</button>
+    <button class="menu-btn partidos" (click)="navegarA('partidos')">Partidos</button>
+  </main>
+
+  <footer class="menu-footer">
+    <div class="boton-b" (click)="volver()">B</div>
+  </footer>
+</div>

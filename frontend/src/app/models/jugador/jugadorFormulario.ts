@@ -9,7 +9,7 @@ export interface JugadorFormularioDTO {
   fortalezas?: string;
   fechaNacimiento?: string;   
   equipoId: string;        
-  fotoFrontal?: string;
-  fotoTarjeta?: string;
+  cromo?: string;
   fotoPose?: string;
+  num_coleccionable?: string;
 }

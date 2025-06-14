@@ -24,7 +24,7 @@ export class PartidoService {
     return this.http.post<PartidoDTO>(`${this.api_url}/alta`, datosFormulario);
   }
 
-  editarJugador(
+  editarPartido(
     partidoId: string,
     datosFormulario: PartidoFormularioDTO
   ): Observable<PartidoDTO> {

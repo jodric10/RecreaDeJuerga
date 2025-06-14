@@ -1,0 +1,59 @@
+<form [formGroup]="formularioClasificacion!" (submit)="onSubmit()" class="form-clasificacion">
+
+  <h2 class="titulo-formulario">Editar Clasificación de Recrea de Juerga</h2>
+
+  <label for="puntos">Puntos:</label>
+  <input type="number" id="puntos" formControlName="puntos" />
+  @if (formularioClasificacion?.get('puntos')?.touched && formularioClasificacion?.get('puntos')?.invalid) {
+    <p class="form-error">Puntos es obligatorio y debe ser 0 o mayor</p>
+  }
+
+  <label for="partidosJugados">Partidos Jugados:</label>
+  <input type="number" id="partidosJugados" formControlName="partidosJugados" />
+  @if (formularioClasificacion?.get('partidosJugados')?.touched && formularioClasificacion?.get('partidosJugados')?.invalid) {
+    <p class="form-error">Campo obligatorio y debe ser 0 o mayor</p>
+  }
+
+  <label for="ganados">Ganados:</label>
+  <input type="number" id="ganados" formControlName="ganados" />
+  @if (formularioClasificacion?.get('ganados')?.touched && formularioClasificacion?.get('ganados')?.invalid) {
+    <p class="form-error">Campo obligatorio y debe ser 0 o mayor</p>
+  }
+
+  <label for="empatados">Empatados:</label>
+  <input type="number" id="empatados" formControlName="empatados" />
+  @if (formularioClasificacion?.get('empatados')?.touched && formularioClasificacion?.get('empatados')?.invalid) {
+    <p class="form-error">Campo obligatorio y debe ser 0 o mayor</p>
+  }
+
+  <label for="perdidos">Perdidos:</label>
+  <input type="number" id="perdidos" formControlName="perdidos" />
+  @if (formularioClasificacion?.get('perdidos')?.touched && formularioClasificacion?.get('perdidos')?.invalid) {
+    <p class="form-error">Campo obligatorio y debe ser 0 o mayor</p>
+  }
+
+  <label for="golesAFavor">Goles a Favor:</label>
+  <input type="number" id="golesAFavor" formControlName="golesAFavor" />
+  @if (formularioClasificacion?.get('golesAFavor')?.touched && formularioClasificacion?.get('golesAFavor')?.invalid) {
+    <p class="form-error">Campo obligatorio y debe ser 0 o mayor</p>
+  }
+
+  <label for="golesContra">Goles en Contra:</label>
+  <input type="number" id="golesContra" formControlName="golesContra" />
+  @if (formularioClasificacion?.get('golesContra')?.touched && formularioClasificacion?.get('golesContra')?.invalid) {
+    <p class="form-error">Campo obligatorio y debe ser 0 o mayor</p>
+  }
+
+  <div class="botones-formulario">
+    <button type="button" class="boton boton-y" (click)="formularioClasificacion?.reset()">
+      <span class="tecla">Y</span> Limpiar
+    </button>
+    <button type="submit" class="boton boton-a" [disabled]="formularioClasificacion?.invalid">
+      <span class="tecla">A</span> Confirmar cambios
+    </button>
+    <button type="button" class="boton boton-b" (click)="volverAtras()">
+      <span class="tecla">B</span> Volver atrás
+    </button>
+  </div>
+
+</form>

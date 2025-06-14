@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:host {
+  display: block;
+  height: 100vh;
+  font-family: 'Press Start 2P', cursive;
+  overflow: hidden;
+}
+
+.menu-layout {
+  display: grid;
+  grid-template-rows: 120px 80px 1fr 100px;
+  grid-template-columns: 1fr;
+  height: 100vh;
+  background-color: #fdf6dd;
+}
+
+.menu-header {
+  background-color: #1e7c2a;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 6px #0b4213;
+  text-align: center;
+}
+
+.menu-title {
+  margin: 0;
+  font-size: 42px;
+  letter-spacing: 3px;
+  text-shadow: 4px 4px #0b4213;
+}
+
+.menu-subtitle {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 24px 0;
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto;
+  padding: 32px 40px;
+  height: 100%;
+  align-items: start;
+  justify-items: center;
+}
+
+.menu-btn {
+  background-color: #2ecc71;
+  color: #fff;
+  font-size: 26px;
+  font-family: 'Press Start 2P', cursive;
+  border: 6px solid #000;
+  width: 100%;
+  max-width: 550px;
+  height: 140px;         
+  box-shadow: 6px 6px 0 #1e7c2a;
+  cursor: pointer;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  transition: transform 0.2s, box-shadow 0.2s;
+  background-image: url('/assets/ball-bg.png');
+  background-size: 120%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.menu-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 8px 8px 0 #105c24;
+}
+
+.menu-btn.partidos {
+  grid-column: 1 / span 2;
+  justify-self: center;
+  margin-bottom: 25px;
+}
+
+.menu-footer {
+  background-color: #2a9d3c;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 40px;
+}
+
+.boton-b {
+  width: 60px;
+  height: 60px;
+  background-color: #105c24;
+  border-radius: 50%;
+  cursor: pointer;
+  color: white;
+  font-size: 24px;
+  font-family: 'Press Start 2P', cursive;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.boton-b:hover {
+  transform: scale(1.15);
+  background-color: #2ecc71;
+  box-shadow: 0 0 15px #2ecc71, 0 0 8px #1abc9c;
+}
