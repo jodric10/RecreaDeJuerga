@@ -1,9 +1,12 @@
 package com.recreadejuerga.recrea.servicios;
 
+import com.recreadejuerga.recrea.dtos.equipo.EquipoDTO;
 import com.recreadejuerga.recrea.dtos.jugador.JugadorDTO;
 import com.recreadejuerga.recrea.dtos.jugador.JugadorFormularioDTO;
+import com.recreadejuerga.recrea.entidades.Equipo;
 import com.recreadejuerga.recrea.entidades.Jugador;
 import com.recreadejuerga.recrea.error.*;
+import com.recreadejuerga.recrea.mappers.EquipoMapper;
 import com.recreadejuerga.recrea.mappers.JugadorMapper;
 import com.recreadejuerga.recrea.repositorios.JugadorRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,12 +41,13 @@ public class JugadorServicio {
     }
 
     public JugadorDTO insertarJugador(JugadorFormularioDTO jugador) {
-        String nombreEquipo= EquipoServicio.getEquipo(jugador.getEquipoId()).getNombre();
+        EquipoDTO equipo= EquipoServicio.getEquipo(jugador.getEquipoId());
         if (repo.getJugador(jugador.getDorsal(),jugador.getEquipoId()).isPresent()) {
-            throw new JugadorYaExistenteException(nombreEquipo,jugador.getDorsal());
+            throw new JugadorYaExistenteException(equipo.getNombre(),jugador.getDorsal());
         }
         try {
-           Jugador insertar_jugador=JugadorMapper.toJugador(jugador);
+            Equipo equipoEntidad = EquipoMapper.toEquipoDesdeDTO(equipo);
+           Jugador insertar_jugador=JugadorMapper.toJugador(jugador,equipoEntidad);
            Jugador insertado=repo.save(insertar_jugador);
            return JugadorMapper.toJugadorDTO(insertado);
 
@@ -54,7 +58,7 @@ public class JugadorServicio {
                 if (mensaje.contains("uk_jugador_equipo_dorsal")) {
 
                     throw new CamposDuplicadosException(Map.of(
-                            "dorsal", "Ya existe un jugador con ese dorsal ("+ jugador.getDorsal() + ") en"+ nombreEquipo
+                            "dorsal", "Ya existe un jugador con ese dorsal ("+ jugador.getDorsal() + ") en"+ equipo.getNombre()
                     ));
                 }
             }

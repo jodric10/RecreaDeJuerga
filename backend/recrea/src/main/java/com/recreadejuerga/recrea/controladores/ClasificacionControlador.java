@@ -91,6 +91,51 @@ public class ClasificacionControlador {
 
 
     @Operation(
+            summary = "Obtener la clasificación por nombre de equipo",
+            description = "Permite obtener la información de clasificación de un equipo específico por nombre.",
+            tags = {"clasificación", "equipo"}
+    )
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "Información de clasificación del equipo",
+                    content = @Content(
+                            mediaType = "application/json",
+                            schema = @Schema(implementation = ClasificacionDTO.class),
+                            examples = @ExampleObject("""
+                                {
+                                  "id": "b1c2d3e4-1111-4a22-8bbb-0abc00000001",
+                                  "puntos": 55,
+                                  "partidosJugados": 20,
+                                  "ganados": 18,
+                                  "empatados": 1,
+                                  "perdidos": 1,
+                                  "golesFavor": 55,
+                                  "golesContra": 15,
+                                  "diferenciaGoles": 40,
+                                  "promedioTfTc": 3.67,
+                                  "equipo": {
+                                    "id": "b1c2d3e4-1111-4a22-8bbb-0abc00000001",
+                                    "nombre": "Real Madrid",
+                                    "urlLogo": "https://cdn.recrea.com/logos/realmadrid.png"
+                                  }
+                                }
+                            """)
+                    )
+            )
+    })
+    @GetMapping("/equipo/{nombre}")
+    public ResponseEntity<ClasificacionDTO> getClasificacionPorEquipo(
+            @Parameter(description = "Nombre del equipo a buscar", example = "Real Madrid")
+            @PathVariable String nombre) {
+
+        ClasificacionDTO clasificacion = clasificacionServicio.getClasificacionPorNombre(nombre);
+        return ResponseEntity.ok(clasificacion);
+    }
+
+
+
+    @Operation(
             summary = "Modificar la clasificación de un equipo",
             description = "Edita los datos de una clasificación existente mediante su ID. Si no se encuentra la clasificación o el equipo relacionado, se devuelve un error 404.",
             tags = {"parámetros", "actualizar"}

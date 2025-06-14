@@ -1,8 +1,7 @@
 package com.recreadejuerga.recrea.controladores;
 
 import com.recreadejuerga.recrea.dtos.jugadorParecido.JugadorParecidoDTO;
-import com.recreadejuerga.recrea.dtos.jugadorParecido.JugadorParecidoInsertarDTO;
-import com.recreadejuerga.recrea.dtos.jugadorParecido.JugadorParecidoModificarDTO;
+import com.recreadejuerga.recrea.dtos.jugadorParecido.JugadorParecidoFormularioDTO;
 import com.recreadejuerga.recrea.servicios.JugadorParecidoServicio;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -158,26 +157,26 @@ public class JugadorParecidoControlador {
                     )
             )
     })
-    @PostMapping("/alta")
+    @PostMapping("/alta/{jugadorId}")
     public ResponseEntity<JugadorParecidoDTO> crear(
             @io.swagger.v3.oas.annotations.parameters.RequestBody(
                     description = "Parecido del jugador a crear",
                     required = true,
                     content = @Content(
                             mediaType = "application/json",
-                            schema = @Schema(implementation = JugadorParecidoInsertarDTO.class),
+                            schema = @Schema(implementation = JugadorParecidoFormularioDTO.class),
                             examples = {
                                     @ExampleObject("""
                                                 {
-                                                  "jugadorId": "a41a8f6e-8e8d-4f2a-aef3-829a2d13b4de",
                                                   "parecido": "Cristiano Ronaldo"
                                                 }
                                             """)
                             }
                     )
-            ) @Valid @RequestBody JugadorParecidoInsertarDTO jugador
+            ) @Valid @RequestBody JugadorParecidoFormularioDTO parecido, @Parameter(description = "Identificador del parecido") @PathVariable UUID jugadorId
+
     ) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(jugadorParecidoServicio.insertarJugadorParecido(jugador));
+        return ResponseEntity.status(HttpStatus.CREATED).body(jugadorParecidoServicio.insertarJugadorParecido(parecido,jugadorId));
     }
 
 
@@ -247,7 +246,7 @@ public class JugadorParecidoControlador {
                     required = true,
                     content = @Content(
                             mediaType = "application/json",
-                            schema = @Schema(implementation = JugadorParecidoModificarDTO.class),
+                            schema = @Schema(implementation = JugadorParecidoFormularioDTO.class),
                             examples = @ExampleObject("""
                                         {
                                           "parecido": "Andrés Iniesta"
@@ -255,7 +254,7 @@ public class JugadorParecidoControlador {
                                     """)
                     )
             )
-            @Valid @RequestBody JugadorParecidoModificarDTO parecidoJugador,
+            @Valid @RequestBody JugadorParecidoFormularioDTO parecidoJugador,
             @Parameter(description = "Identificador del parecido") @PathVariable UUID id
     ) {
         JugadorParecidoDTO actualizado = jugadorParecidoServicio.modificarJugadorParecido(parecidoJugador, id);

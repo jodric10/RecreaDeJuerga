@@ -10,11 +10,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class JugadorParecidoInsertarDTO {
-
-    @NotNull
-    private UUID jugadorId;
-
+public class JugadorParecidoFormularioDTO {
     @NotNull
     @Size(max = 100)
     private String parecido;

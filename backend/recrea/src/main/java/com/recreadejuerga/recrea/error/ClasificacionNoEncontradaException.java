@@ -7,10 +7,6 @@ import java.util.UUID;
 
 public class ClasificacionNoEncontradaException extends RuntimeException {
 
-    public ClasificacionNoEncontradaException(String message) {
-        super(message);
-    }
-
     public ClasificacionNoEncontradaException() {
         super("No hay datos de clasificación disponibles");
     }
@@ -19,5 +15,7 @@ public class ClasificacionNoEncontradaException extends RuntimeException {
         super("La clasificación no pudo ser encontrada con ese ID:"+ id);
     }
 
-
+    public ClasificacionNoEncontradaException(String nombre) {
+        super("La clasificación del equipo ("+nombre+") no pudo ser encontrada");
+    }
 }

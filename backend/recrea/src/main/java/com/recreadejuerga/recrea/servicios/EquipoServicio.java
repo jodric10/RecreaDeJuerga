@@ -64,7 +64,7 @@ public class EquipoServicio {
     public EquipoDTO modificarEquipo(EquipoFormularioDTO e, UUID id) {
         if (repo.existsById(id)) {
             try {
-                repo.actualizarEquipo(id, e.getNombre(), e.getUrl_logo());
+                repo.actualizarEquipo(id, e.getNombre(), e.getUrl_logo(), e.getEslogan(), e.getDescripcion(), e.getUrl_equipo());
                 return repo.findById(id).map(EquipoMapper::toEquipoDTO).orElseThrow(() -> new EquipoNoEncontradoException(id));
             } catch (DataIntegrityViolationException ex) {
                 Throwable causa = ex.getRootCause();

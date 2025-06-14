@@ -27,12 +27,23 @@ public interface EquipoRepositorio extends JpaRepository<Equipo, UUID> {
     @Modifying
     @Transactional
     @Query("""
-            UPDATE Equipo e
-            SET e.nombre = :nombre,
-                e.url_logo = :url_logo
-            WHERE e.id = :id
-            """)
-    void actualizarEquipo(@Param("id") UUID id,@Param("nombre") String nombre, @Param("url_logo") String url_logo);
+        UPDATE Equipo e
+        SET e.nombre = :nombre,
+            e.url_logo = :url_logo,
+            e.eslogan = :eslogan,
+            e.descripcion = :descripcion,
+            e.url_equipo = :url_equipo
+        WHERE e.id = :id
+        """)
+    void actualizarEquipo(
+            @Param("id") UUID id,
+            @Param("nombre") String nombre,
+            @Param("url_logo") String url_logo,
+            @Param("eslogan") String eslogan,
+            @Param("descripcion") String descripcion,
+            @Param("url_equipo") String url_equipo
+    );
+
 
     @Modifying
     @Transactional

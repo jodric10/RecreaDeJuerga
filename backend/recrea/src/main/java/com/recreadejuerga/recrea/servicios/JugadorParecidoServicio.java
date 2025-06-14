@@ -1,8 +1,7 @@
 package com.recreadejuerga.recrea.servicios;
 
 import com.recreadejuerga.recrea.dtos.jugadorParecido.JugadorParecidoDTO;
-import com.recreadejuerga.recrea.dtos.jugadorParecido.JugadorParecidoInsertarDTO;
-import com.recreadejuerga.recrea.dtos.jugadorParecido.JugadorParecidoModificarDTO;
+import com.recreadejuerga.recrea.dtos.jugadorParecido.JugadorParecidoFormularioDTO;
 import com.recreadejuerga.recrea.entidades.Jugador;
 import com.recreadejuerga.recrea.entidades.JugadorParecido;
 import com.recreadejuerga.recrea.error.CamposDuplicadosException;
@@ -37,11 +36,11 @@ public class JugadorParecidoServicio {
     }
 
 
-    public JugadorParecidoDTO insertarJugadorParecido(JugadorParecidoInsertarDTO insertar_parecido) {
-        if (repo.existsByJugadorIdAndParecido(insertar_parecido.getJugadorId(), insertar_parecido.getParecido()).isPresent()) {
-            throw new JugadorParecidoYaExistenteException(insertar_parecido.getJugadorId(),insertar_parecido.getParecido());
+    public JugadorParecidoDTO insertarJugadorParecido(JugadorParecidoFormularioDTO insertar_parecido, UUID jugador_id) {
+        if (repo.existsByJugadorIdAndParecido(jugador_id, insertar_parecido.getParecido()).isPresent()) {
+            throw new JugadorParecidoYaExistenteException(jugador_id,insertar_parecido.getParecido());
         }
-        Jugador jugador = Jugador.builder().id(insertar_parecido.getJugadorId()).build();
+        Jugador jugador = Jugador.builder().id(jugador_id).build();
         JugadorParecido entidad = JugadorParecidoMapper.toJugadorParecido(insertar_parecido, jugador);
         try {
             return JugadorParecidoMapper.toJugadorParecidoDTO(repo.save(entidad));
@@ -54,7 +53,7 @@ public class JugadorParecidoServicio {
         }
     }
 
-    public JugadorParecidoDTO modificarJugadorParecido(JugadorParecidoModificarDTO modificar_parecido, UUID parecido_id){
+    public JugadorParecidoDTO modificarJugadorParecido(JugadorParecidoFormularioDTO modificar_parecido, UUID parecido_id){
         if (repo.existsById(parecido_id)) {
             try {
                 repo.actualizarParecido(parecido_id,modificar_parecido.getParecido());

@@ -3,6 +3,7 @@ package com.recreadejuerga.recrea.mappers;
 import com.recreadejuerga.recrea.dtos.jugador.JugadorDTO;
 import com.recreadejuerga.recrea.dtos.jugador.JugadorFormularioDTO;
 import com.recreadejuerga.recrea.dtos.jugador.JugadorSimpleDTO;
+import com.recreadejuerga.recrea.entidades.Equipo;
 import com.recreadejuerga.recrea.entidades.Jugador;
 
 public class JugadorMapper {
@@ -39,20 +40,21 @@ public class JugadorMapper {
         );
     }
 
-    public static Jugador toJugador(JugadorFormularioDTO insertar_jugador) {
+    public static Jugador toJugador(JugadorFormularioDTO dto, Equipo equipo) {
         return Jugador.builder()
-                .nombre(insertar_jugador.getNombre())
-                .apodo(insertar_jugador.getApodo())
-                .dorsal(insertar_jugador.getDorsal())
-                .posicion(insertar_jugador.getPosicion())
-                .pieDominante(insertar_jugador.getPieDominante())
-                .golesTotales(insertar_jugador.getGolesTotales())
-                .asistenciasTotales(insertar_jugador.getAsistenciasTotales())
-                .fortalezas(insertar_jugador.getFortalezas())
-                .fechaNacimiento(insertar_jugador.getFechaNacimiento())
-                .cromo(insertar_jugador.getCromo())
-                .fotoPose(insertar_jugador.getFotoPose())
-                .num_coleccionable(insertar_jugador.getNum_coleccionable())
+                .nombre(dto.getNombre())
+                .apodo(dto.getApodo())
+                .dorsal(dto.getDorsal())
+                .posicion(dto.getPosicion())
+                .pieDominante(dto.getPieDominante())
+                .golesTotales(dto.getGolesTotales())
+                .asistenciasTotales(dto.getAsistenciasTotales())
+                .fortalezas(dto.getFortalezas())
+                .fechaNacimiento(dto.getFechaNacimiento())
+                .cromo(dto.getCromo())
+                .fotoPose(dto.getFotoPose())
+                .num_coleccionable(dto.getNum_coleccionable())
+                .equipo(equipo)
                 .build();
     }
 }

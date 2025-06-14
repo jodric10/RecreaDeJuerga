@@ -1,7 +1,7 @@
 package com.recreadejuerga.recrea.mappers;
 
 import com.recreadejuerga.recrea.dtos.jugadorParecido.JugadorParecidoDTO;
-import com.recreadejuerga.recrea.dtos.jugadorParecido.JugadorParecidoInsertarDTO;
+import com.recreadejuerga.recrea.dtos.jugadorParecido.JugadorParecidoFormularioDTO;
 import com.recreadejuerga.recrea.dtos.jugadorParecido.JugadorParecidoSimpleDTO;
 import com.recreadejuerga.recrea.entidades.Jugador;
 import com.recreadejuerga.recrea.entidades.JugadorParecido;
@@ -26,7 +26,7 @@ public class JugadorParecidoMapper {
     }
 
 
-    public static JugadorParecido toJugadorParecido(JugadorParecidoInsertarDTO dto, Jugador jugador) {
+    public static JugadorParecido toJugadorParecido(JugadorParecidoFormularioDTO dto, Jugador jugador) {
         if (dto == null || jugador==null) return null;
         return JugadorParecido.builder()
                 .jugador(jugador)

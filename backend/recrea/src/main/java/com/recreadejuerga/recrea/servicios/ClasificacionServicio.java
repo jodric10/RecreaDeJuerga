@@ -2,6 +2,7 @@ package com.recreadejuerga.recrea.servicios;
 
 import com.recreadejuerga.recrea.dtos.clasificacion.ClasificacionDTO;
 import com.recreadejuerga.recrea.dtos.clasificacion.ClasificacionEditarDTO;
+import com.recreadejuerga.recrea.entidades.Clasificacion;
 import com.recreadejuerga.recrea.error.ClasificacionNoEncontradaException;
 import com.recreadejuerga.recrea.error.EquipoNoEncontradoException;
 import com.recreadejuerga.recrea.mappers.ClasificacionMapper;
@@ -34,6 +35,11 @@ public class ClasificacionServicio {
             throw new ClasificacionNoEncontradaException();
         }
         return clasificacion;
+    }
+
+
+    public ClasificacionDTO getClasificacionPorNombre(String nombre){
+        return repo.findByNombreEquipo(nombre).map(ClasificacionMapper::toClasificacionDTO).orElseThrow(() -> new ClasificacionNoEncontradaException(nombre));
     }
 
     public ClasificacionDTO modificarClasificacion(ClasificacionEditarDTO c, UUID id) {

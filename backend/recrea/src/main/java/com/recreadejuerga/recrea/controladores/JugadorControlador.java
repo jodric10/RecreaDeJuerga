@@ -296,9 +296,9 @@ public class JugadorControlador {
                                                    "fortalezas": "Velocidad explosiva, regate en carrera, definición precisa, desmarques inteligentes",
                                                    "fechaNacimiento": "1998-12-20",
                                                    "equipoId": "123e4567-e89b-12d3-a456-426614174000",
-                                                   "fotoFrontal": "https://example.com/fotos/mbappe-2024-frontal.jpg",
-                                                   "fotoTarjeta": "https://example.com/fotos/mbappe-2024-tarjeta.jpg",
-                                                   "fotoPose": "https://example.com/fotos/mbappe-2024-pose.jpg"
+                                                   "cromo": "https://example.com/fotos/mbappe-2024-frontal.jpg",
+                                                   "fotoPose": "https://example.com/fotos/mbappe-2024-tarjeta.jpg",
+                                                   "num_coleccionable": 0
                                                 }
                                             """)
                             }
