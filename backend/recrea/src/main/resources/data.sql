@@ -23,7 +23,7 @@ INSERT INTO jugadores (
     fortalezas, fecha_nacimiento,nacionalidad, equipo_id,cromo, foto_pose, num_coleccionable
 ) VALUES
 ('ecf8164a-2220-46fe-affb-7679a03f3a6d', 'Jorge González Pérez', 'González', 11, 'Ala', 'Derecho', 9, 15, 'Calidad, control, pase, arranque', '2004-05-03', 'España',
- (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), null, 'http://example.com/foto_pose1.png', null),
+ (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), 'assets/cromos/gonzalez.png', 'assets/poses/gonzalez.png', 7),
 
 ('522fb925-c88d-4680-84d8-1dfacfd0c70b', 'Nacho Manzano Pérez', 'Manzano', 17, 'Ala', 'Derecho', 4, 7, 'Pulmón, visión, box to box', '2004-09-17', 'España',
  (SELECT id FROM equipos WHERE nombre = 'Recrea de Juerga'), null, 'http://example.com/foto_pose2.png', null),
